@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Made in chez toi !</title>
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
+        <script src="{{ asset('js/gallery.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/baguetteBox.min.css') }}"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+<!-- NavBar Menu Start -->
+      <div class="container">
+
+        <nav class="navbar" role="navigation">
+          <div class="container-fluid">
+          <!--  <div class="navbar-header">
+              <img src="http://blog.madeincheztoi.com/wp-content/uploads/2015/08/logo_made_in_chez_toi_turquoise.png" style="height: 45px;  width: 45px; margin-right: 50px;">
+            </div> -->
+              <ul class="nav navbar-nav myNavbar">
+                <li class="active"><a href="/">ACCUEIL</a></li>
+                <li class=""><a class='navigate' href="/offres">OFFRES</a></li>
+                <li class=""><a href="/photos">PHOTOS</a></li>
+                <li class=""><a href="/livreor">LIVRE D'OR</a></li>
+                <li class=""><a href="/contact">CONTACT</a></li>
+                <li class=""><a href="/boutique">BOUTIQUE</a></li>
+                <li class=""><a href="http://blog.madeincheztoi.com/">BLOG</a></li>
+                <li class=""><a href="/profile/">MON ESPACE</a></li>
+                <!-- {% if is_granted('ROLE_ADMIN') %} -->
+                <li class=""><a href="/admin">GESTION</a></li>
+                <!-- {% endif %} -->
+          </div>
+        </nav>
+      </div>
+<!-- NavBar Menu End -->
+
+      <div class="container-fluid">
+        <!-- {% block body %}{% endblock %} -->
+        <!-- {% block javascripts %}{% endblock %} -->
+      </div>
+    </body>
+</html>
