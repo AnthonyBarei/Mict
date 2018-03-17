@@ -5,6 +5,8 @@ class User {
         $usr = new userModel();
         $result = $usr->getUsers();
 
+        // Traiter les données reçues
+
         return $result;
     }
 
@@ -14,33 +16,38 @@ class User {
         $usr = new userModel();
         $result = $usr->getUserbyId();
 
+        // Traiter les données reçues
+
         return $result;
     }
 
     public function createUser($params) {
-        $p = [
-            'user_firstname' => ['type' => 'string', 'required' => true],
-            'user_lastname' => ['type' => 'string', 'required' => true],
-            'user_password' => ['type' => 'string', 'required' => true],
-            'user_email' => ['type' => 'string', 'required' => true],
-            'user_fix_phone' => ['type' => 'string'],
-            'user_mobile_phone' => ['type' => 'string'],
-            'user_address' => ['type' => 'string'],
-            'user_type' => ['type' => 'boolean', 'required' => true],
-            'user_isadmin' => ['type' => 'boolean', 'required' => true]
-        ];
-
-        checkParams($params, $p);
 
         $usr = new userModel();
-        $result = $usr->createUser();
+
+        if(isset($params['email']) || isset($params['fix_phone']) || isset($params['mobile_phone'])) {
+            $result = $usr->createUserOnlyRequired($params);
+        } else {
+            $result = $usr->createUser($params);
+        }
+
+        // Traiter les données reçues
 
         return $result;
     }
 
     public function updateUser($params) {
+        // Traiter les données reçues
+
         $usr = new userModel();
-        $result = $usr->updateUser();
+
+        if(isset($params['address']) || isset($params['fix_phone']) || isset($params['mobile_phone'])) {
+            $result = $usr->updateUserOnlyRequired($params);
+        } else {
+            $result = $usr->updateUser($params);
+        }
+
+        // Traiter les données reçues
 
         return $result;
     }
@@ -50,6 +57,8 @@ class User {
 
         $usr = new userModel();
         $result = $usr->deleteUser();
+
+        // Traiter les données reçues
 
         return $result;
     }

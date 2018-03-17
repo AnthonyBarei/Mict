@@ -77,6 +77,64 @@ class userModel extends DbConnect {
         return $result;
     }
 
+    public function createUserOnlyRequired($params) {
+        $dbh = $this->connect();
+
+        $rows = "";
+        $conditions = "";
+        foreach ($params as $key => $param) {
+            if($key === "address" || $key === "fix_phone" || $key === "mobile_phone") {
+                $key = (string) $key;
+                $rows = $rows . "user_" . $key . ", ";
+                $conditions = $conditions . ":" . $key . ", ";
+            }
+        }
+
+        $res = $dbh->prepare('
+            INSERT INTO user (
+                user_firstname,
+                user_lastname,
+                user_password,
+                '.$rows.'
+                user_email,
+                user_type,
+                user_isadmin)
+            VALUES (:firstname, :lastname, :password, '.$conditions.' :email, :type, :isadmin)
+        ');
+
+        $result = $res->execute($params);
+
+        return $result;
+    }
+
+    public function updateUserOnlyRequired($params) {
+        $dbh = $this->connect();
+
+        $req = "";
+        foreach ($params as $key => $param) {
+            if($key == "address" || $key == "fix_phone" || $key == "mobile_phone") {
+                $req += "user_".$key." = ".":".$key.", ";
+            }
+        }
+
+        $res = $dbh->prepare('
+            UPDATE user
+            SET
+                user_firstname = :firstname,
+                user_lastname = :lastname,
+                user_password = :password,
+                '.$req.'
+                user_email = :email,
+                user_type = :type,
+                user_isadmin = :isadmin
+            WHERE user_id = :id
+        ');
+
+        $result = $res->execute($params);
+
+        return $result;
+    }
+
     public function deleteUser($id) {
         $dbh = $this->connect();
 

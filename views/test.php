@@ -18,13 +18,13 @@ TEST
             // $test = $usr->userList();
 
             $test = $usr->createUser(array(
-                            'user_firstname' => 'anthony',
-                            'user_lastname' => 'barei',
-                            'user_password' => 'test',
-                            'user_email' => 'anthony.barei@outlook.fr',
-                            'user_mobile_phone' => '0665245218',
-                            'user_type' => 0,
-                            'user_isadmin' => 1));
+                            'firstname' => 'anthony',
+                            'lastname' => 'barei',
+                            'password' => 'test',
+                            'email' => 'anthony.barei@outlook.fr',
+                            'mobile_phone' => '0665245218',
+                            'type' => 0,
+                            'isadmin' => 1));
 
             die(var_dump($test));
          ?>
