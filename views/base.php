@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <title>Made in chez toi !</title>
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.js') }}"></script>
-        <script src="{{ asset('js/gallery.js') }}"></script>
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/baguetteBox.min.css') }}"/>
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.js"></script>
+        <script src="../assets/js/gallery.js"></script>
+        <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../assets/css/style.css"/>
+        <link rel="stylesheet" href="../assets/css/baguetteBox.min.css"/>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
