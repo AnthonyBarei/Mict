@@ -3,46 +3,34 @@
     <head>
         <meta charset="UTF-8" />
         <title>Made in chez toi !</title>
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/bootstrap.js"></script>
+        <script src="../assets/js/madeincheztoi-min.js"></script>
+        <script src="../assets/js/made_in_chez_toi-min.js"></script>
         <script src="../assets/js/gallery.js"></script>
-        <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
-        <link rel="stylesheet" href="../assets/css/style.css"/>
+        <script src="../assets/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="../assets/css/style_madeincheztoi.css"/>
+        <link rel="stylesheet" href="../assets/css/style_email.css"/>
         <link rel="stylesheet" href="../assets/css/baguetteBox.min.css"/>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     </head>
     <body>
 <!-- NavBar Menu Start -->
-      <div class="container">
-
-        <nav class="navbar" role="navigation">
-          <div class="container-fluid">
-          <!--  <div class="navbar-header">
-              <img src="http://blog.madeincheztoi.com/wp-content/uploads/2015/08/logo_made_in_chez_toi_turquoise.png" style="height: 45px;  width: 45px; margin-right: 50px;">
-            </div> -->
-              <ul class="nav navbar-nav myNavbar">
-                <li class="active"><a href="/">ACCUEIL</a></li>
-                <li class=""><a class='navigate' href="/offres">OFFRES</a></li>
-                <li class=""><a href="/photos">PHOTOS</a></li>
-                <li class=""><a href="/livreor">LIVRE D'OR</a></li>
-                <li class=""><a href="/contact">CONTACT</a></li>
-                <li class=""><a href="/boutique">BOUTIQUE</a></li>
-                <li class=""><a href="http://blog.madeincheztoi.com/">BLOG</a></li>
-                <li class=""><a href="/profile/">MON ESPACE</a></li>
-                <!-- {% if is_granted('ROLE_ADMIN') %} -->
-                <li class=""><a href="/admin">GESTION</a></li>
-                <!-- {% endif %} -->
-          </div>
-        </nav>
-      </div>
+        <nav>
+    <div id="menu_call"><img src="../assets/images/bg/bottom.png" alt=""/> MENU</div>
+    <ul id="menutop" class="menu">
+    <li><a class="scrollTo" href="#home" title="Début">Home</a></li>  
+    <li><a class="scrollTo" href="#quoi" title="C'est quoi ?">C'est quoi ?</a></li> 
+    <li><a class="scrollTo" href="#offres" title="Les offres Made in chez toi">Offres</a></li>
+    <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">Ateliers</a></li>
+    <li><a class="scrollTo" href="#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
+    <li><a href="photos_realisations_ateliers_et_cours_de_couture.html" title="Galerie photos">Photzos</a></li>
+    <li><a class="scrollTo" href="#faq" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
+    <li><a class="scrollTo" href="#partenaires" title="Plus on est de fous...">Partenaires</a></li>
+    <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>
+    </ul>
+  </nav>
 <!-- NavBar Menu End -->
-
-      <div class="container-fluid">
-        <!-- {% block body %}{% endblock %} -->
-        <!-- {% block javascripts %}{% endblock %} -->
-      </div>
     </body>
+
 </html>
