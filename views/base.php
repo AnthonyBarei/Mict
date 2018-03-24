@@ -20,7 +20,7 @@
     <div id="menu_call"><img src="../assets/images/bg/bottom.png" alt=""/> MENU</div>
     <ul id="menutop" class="menu">
     <li><a class="scrollTo" href="#home" title="Début">Home</a></li>  
-    <li><a class="scrollTo" href="#quoi" title="C'est quoi ?">C'est quoi ?</a></li> 
+    <li><a class="scrollTo" href="#quoi" title="C'est quoi ?">C'est quoi ?</a></li>
     <li><a class="scrollTo" href="#offres" title="Les offres Made in chez toi">Offres</a></li>
     <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">Ateliers</a></li>
     <li><a class="scrollTo" href="#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
