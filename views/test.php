@@ -3,7 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include_once('../controllers/user.php'); ?>
+include_once('../controllers/user.php');
+include_once('../controllers/workshop.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,17 @@ include_once('../controllers/user.php'); ?>
         <title></title>
     </head>
     <body>
+
+      <?php
+       $ws = new Workshop();
+
+       $okmek = $ws->workshopList();
+       print_r($okmek[0][1]);
+
+       ?>
 TEST
+
+
         <?php
             $usr = new User();
             // $test = $usr->userList();
@@ -28,6 +39,7 @@ TEST
 
             die(var_dump($test));
          ?>
+
 
     </body>
 </html>

@@ -1,4 +1,6 @@
-<?php require_once('base.php'); ?>
+<?php require_once('base.php');
+include_once('../controllers/workshop.php');?>
+
 
 
   <section id="offres">
@@ -20,16 +22,35 @@
              <a class="scrollTo" href="#CE" Title="Entreprises / CE">Entreprises / CE</a>
             </div>
            </div>
-    
-  <hr id="les_ateliers">
-  
+
+
+ <?php
+  $ws = new Workshop();
+  $atelier = $ws->workshopList();
+
+  foreach( $atelier as $at ){
+
+    echo('<div class="texte">');
+    echo ('<h2>' . $at["workshop_name"].'</h2>');
+
+    echo($at["workshop_infos"]); //TODO parser ce json pour l'afficher proprement
+    echo ('<div class="acc2">3 heures&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;3 à 6 personnes&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;chez toi ou tes amis&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Paris / région parisienne&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;tout inclus</div>');
+
+    echo("<p>" . $at["workshop_description"] . "<p>" );
+
+    echo ('</div>');
+    } ?>
+
+
+<?/*  <hr id="les_ateliers">
+
     <div class="n3-1">
     <div class="left clients">
       <div class="image"></div>
       <div class="picto"></div>
     </div>
     <div class="texte">
-     <h2>Les ateliers</h2> 
+     <h2>Les ateliers</h2>
   <div class="acc2">3 heures&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;3 à 6 personnes&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;chez toi ou tes amis&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Paris / région parisienne&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;tout inclus</div>
 <p>
 L'essence même de Made in chez toi, c'est de coudre ensemble, de partager de bons moments avec ses amis ou avec de nouvelles connaissances, le tout dans un environnement agréable et cosy.
@@ -49,7 +70,7 @@ Si tes amis ne sont pas intéressés, si vous n'avez jamais les mêmes créneaux
 Enfin, pense à Made in chez toi pour tous tes événements festifs. Noël, Pâques, Halloween, anniversaires, EVJF, fête des mères (et des pères :) ), Made in chez toi a <a href="ateliers_et_cours_de_couture_a_domicile.php#theme10">des ateliers spécifiques et sur-mesure</a> prévus pour passer de bons moments avec tes amis et tes proches !
 </p>
            </div>
-    
+
      <div class="a_suivre">
             <div class="bouton tiers">
              <a href="ateliers_et_cours_de_couture_a_domicile.php" Title="Détail des thèmes">Les thèmes</a>
@@ -61,7 +82,7 @@ Enfin, pense à Made in chez toi pour tous tes événements festifs. Noël, Pâq
              <a href="reserver_atelier_ou_cours_de_couture.php" Title="Réserver">Je réserve !</a>
             </div>
            </div>
-    
+
        <div class="show_tarifs">
         <div class="tarifs">
          <div class="table">
@@ -110,11 +131,11 @@ Enfin, pense à Made in chez toi pour tous tes événements festifs. Noël, Pâq
     <p>Tu te reconnais bien ci-dessus mais... pas de chance ! Toutes tes copines qui étaient partantes pour l'atelier se laissent rattraper par... tu sais... les enfants... le boulot... les courses... la famille... Bref, difficile de trouver un créneau pour tout le monde !</p>
 
     <p>Tu décides de ne plus attendre pour sortir ton livre de couture de l'étagère :) Made in chez toi pense aussi à toi ! La formule Cours Particuliers, c'est le sur-mesure de l'apprentissage de la couture !</p>
- 
+
     <p>Tu débutes ? On commence pas à pas en détaillant chaque étape, et tu repars vite avec une de tes réalisations ; parce qu'elle est importante, cette première...</p>
 
     <p>Tu t'y connais déjà un peu ? Made in chez toi arrive là où ça coince ! Tu avances ton projet autant que tu peux/veux, et on se penche sur les difficultés en temps réel pour un temps d'enseignement optimisé.</p>
-  
+
     <p>Tu n'as pas de machine à coudre ? Tu peux quand même suivre un cours particulier, Made in chez toi t'en fournit une. Oui ! Il faut bien s'y frotter pour s'y piquer, à la couture ! En revanche, les fournitures, elles, ne sont pas fournies.</p>
                 </div>
      <div class="a_suivre">
@@ -165,14 +186,14 @@ Enfin, pense à Made in chez toi pour tous tes événements festifs. Noël, Pâq
                 </div>
 
   <hr id="carte_cadeau">
-  
+
     <div class="n3-3">
     <div class="left clients">
       <div class="image"></div>
       <div class="picto"></div>
     </div>
     <div class="texte">
-     <h2>La carte cadeau Made in chez toi</h2> 
+     <h2>La carte cadeau Made in chez toi</h2>
   <div class="acc2">90 €&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Valable un an&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Ateliers ou cours particuliers&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Paris / région parisienne&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Son coupe-fil offert</div>
 <p>
 Tu es à la recherche d'un cadeau original et personnalisé pour Noël ? Pour un anniversaire ? Une fête de famille ? Un départ en retraite ?
@@ -187,7 +208,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 </p>
                 </div>
            </div>
-    
+
      <div class="a_suivre">
             <div class="bouton entier">
              <a href="commander_carte_cadeau_couture_madeincheztoi.php" Title="Commander">Je commande une carte cadeau !</a>
@@ -224,4 +245,5 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 
     </div>
    </div>
+   */?>
   </section>

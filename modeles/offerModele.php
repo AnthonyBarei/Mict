@@ -4,7 +4,7 @@ require_once('../functions.php');
 
 class offerModel extends DbConnect {
 
-    public function getOfferss() {
+    public function getOffers() {
 
         $dbh = $this->connect();
 
