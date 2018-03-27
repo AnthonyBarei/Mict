@@ -12,15 +12,15 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <img src="{{ asset('images/MICT/carrousel/carrouselP1.jpg') }}">
+          <img src="assets/images/carrousel/carrouselP1.jpg">
         </div>
 
         <div class="item">
-          <img src="{{ asset('images/MICT/carrousel/carrouselP2.jpg') }}">
+          <img src="assets/images/carrousel/carrouselP2.jpg">
         </div>
 
         <div class="item">
-          <img src="{{ asset('images/MICT/carrousel/carrouselP3.jpg') }}">
+          <img src="assets/images/carrousel/carrouselP3.jpg">
         </div>
       </div>
 

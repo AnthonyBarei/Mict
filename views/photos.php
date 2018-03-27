@@ -30,13 +30,13 @@
         <div class="row">
           <h3>Les créations des membres :</h3>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/1.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/1.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/2.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/2.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
         </div>
@@ -49,43 +49,43 @@
         <div class="row">
           <h3>Ambiances :</h3>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/1.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/1.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/2.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/2.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
                      <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/1.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/1.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/2.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/2.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
                      <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/1.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/1.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/2.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/2.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
                      <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/1.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/1.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/2.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/2.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
         </div>
@@ -97,43 +97,43 @@
         <div class="row">
           <h3>Partenaires :</h3>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/1.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/1.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/2.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/2.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
                        <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/1.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/1.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/2.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/2.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
                        <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/1.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/1.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/2.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/2.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
                        <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/1.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/1.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
             <div class="col-sm-3 col-md-2">
-                <a class="lightbox" href="{{ asset('images/MICT/photos/2.jpg') }}">
-                    <img src="{{ asset('images/MICT/photos/thumbs/2.jpg') }}">
+                <a class="lightbox" href="../assets/images/1.jpg">
+                    <img src="../assets/images/thumbs/2.jpg">
                 </a>
             </div>
         </div>
