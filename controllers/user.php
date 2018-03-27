@@ -24,12 +24,12 @@ class User {
     public function createUser($params) {
 
         $usr = new userModel();
-
-        if(isset($params['email']) || isset($params['fix_phone']) || isset($params['mobile_phone'])) {
-            $result = $usr->createUserOnlyRequired($params);
-        } else {
+        //
+        // if(isset($params['email']) || isset($params['fix']) || isset($params['mobile'])) {
+        //     $result = $usr->createUserOnlyRequired($params);
+        // } else {
             $result = $usr->createUser($params);
-        }
+        // }
 
         // Traiter les données reçues
 
