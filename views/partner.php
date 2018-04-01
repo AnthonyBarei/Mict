@@ -9,7 +9,7 @@
 	   <div class="partner_a impair">
 		   <div class="partner">
 		     <a href="http://www.lamodette.fr/" target="_blank">
-		   <img src="../assets/images/bg/partenaire1.png" alt="" />
+		   <img src="assets/images/bg/partenaire1.png" alt="" />
 		     </a>
 		   <div class="desc">
 		     <a href="http://www.lamodette.fr/" target="_blank">
@@ -26,7 +26,7 @@
 	   <div class="partner_a pair">
 		   <div class="partner">
 		     <a href="http://www.gasparine.fr/" target="_blank">
-		   <img src="../assets/images/bg/partenaire2.png" alt="" />
+		   <img src="assets/images/bg/partenaire2.png" alt="" />
 		     </a>
 		   <div class="desc">
 		     <a href="http://www.gasparine.fr/" target="_blank">
@@ -42,7 +42,7 @@
 	   <div class="partner_a impair">
 		   <div class="partner">
 		     <a href="http://www.sewingcolors.com/" target="_blank">
-		   <img src="../assets/images/bg/partenaire4.png" alt="" />
+		   <img src="assets/images/bg/partenaire4.png" alt="" />
 		     </a>
 		   <div class="desc">
 		     <a href="http://www.sewingcolors.com/" target="_blank">
@@ -58,7 +58,7 @@
 	   <div class="partner_a pair">
 		   <div class="partner">
 		     <a href="http://www.multilili.com/" target="_blank">
-		   <img src="../assets/images/bg/partenaire3.png" alt="" />
+		   <img src="assets/images/bg/partenaire3.png" alt="" />
 		     </a>
 		   <div class="desc">
 		     <a href="http://www.multilili.com/" target="_blank">

@@ -36,18 +36,9 @@
     </div>
 
   <hr/>
-  <div class="row" style="margin-bottom: 50px" >
-    <h1 class="centered"> C'est quoi ? </h1>
-    <h2 class="centered" style="margin-bottom: 10px;"> Les seuls ateliers couture chez toi, entre amis, 100% tout inclus ! </h2>
-    <ul class="col-md-offset-1 indexList">
-      <li class="elem">Ton super livre de couture tout neuf t'attend toujours pour quitter son étagère ?</li>
-      <li class="elem">« Commencer la couture » est sur ta todo-list 2017 ? Oui mais il faut bien une machine ! Et puis, t'y connais rien en tissu... Ok, To-do list 2018 !</li>
-      <li class="elem">Tu couds déjà comme tu peux, et tu en as marre de faire et défaire, et tu as envie de repartir sur des bases solides ?</li>
-      <li class="elem">La création, c'est pas pour toi, t'es tout sauf créa ! Que tu crois...</li>
-      <li class="elem">Tu cours chez ta mère dès que tu as un bouton à recoudre ?</li>
-      <li class="elem"> Tu en as assez des vêtements du commerce, rien ne te plaît et ça t'énerve de voir ton T-shirt préféré sur les épaules de tout le monde ?  </li>
-      <li class="elem"> Tu n'as pas le temps de t'y mettre, même si tu en as très envie !!  </li>
-      <li><a href="/offres"><button type="button" class="btn btn-default">Alors viens vite decouvrir nos offres !</button></a>
-      </li>
-    </ul>
-  </div>
+
+  <?php require_once('./views/quoi.php'); ?>
+  <?php require_once('./views/xp.php'); ?>
+  <?php require_once('./views/contact.php'); ?>
+  <?php require_once('./views/faq.php'); ?>
+  <?php require_once('./views/partner.php'); ?>

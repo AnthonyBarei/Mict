@@ -2,9 +2,9 @@
 	<section id="faq">
 	 <div class="cell1">
 	  <div class="contenu">
-		<img class="qm1" src="../assets/images/bg/qm1.png" alt="" />
-		<img class="qm2" src="../assets/images/bg/qm2.png" alt="" />
-		<img class="qm3" src="../assets/images/bg/qm3.png" alt="" />
+		<img class="qm1" src="assets/images/bg/qm1.png" alt="" />
+		<img class="qm2" src="assets/images/bg/qm2.png" alt="" />
+		<img class="qm3" src="assets/images/bg/qm3.png" alt="" />
 	   <h1>Tout ce que vous avez toujours voulu savoir sur Made in chez toi...</h1>
 	    <div class="gauche">
 	      <h2>la Foire aux Questions</h2>

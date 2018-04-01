@@ -3,21 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <title>Made in chez toi !</title>
-        <script src="../assets/js/madeincheztoi-min.js"></script>
-        <script src="../assets/js/made_in_chez_toi-min.js"></script>
-        <script src="../assets/js/gallery.js"></script>
-        <script src="../assets/js/bootstrap.js"></script>
-        <link rel="stylesheet" href="../assets/css/style_madeincheztoi.css"/>
-        <link rel="stylesheet" href="../assets/css/style_email.css"/>
-        <link rel="stylesheet" href="../assets/css/baguetteBox.min.css"/>
-        <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
+        <script src="assets/js/madeincheztoi-min.js"></script>
+        <script src="assets/js/made_in_chez_toi-min.js"></script>
+        <script src="assets/js/gallery.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="assets/css/style_madeincheztoi.css"/>
+        <link rel="stylesheet" href="assets/css/style_email.css"/>
+        <link rel="stylesheet" href="assets/css/baguetteBox.min.css"/>
+        <link rel="stylesheet" href="assets/css/bootstrap.css"/>
 
-        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     </head>
     <body>
 <!-- NavBar Menu Start -->
         <nav>
-    <div id="menu_call"><img src="../assets/images/bg/bottom.png" alt=""/> MENU</div>
+    <div id="menu_call"><img src="assets/images/bg/bottom.png" alt=""/> MENU</div>
     <ul id="menutop" class="menu">
     <li><a class="scrollTo" href="#home" title="Début">Home</a></li>  
     <li><a class="scrollTo" href="#quoi" title="C'est quoi ?">C'est quoi ?</a></li>

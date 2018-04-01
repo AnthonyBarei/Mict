@@ -116,7 +116,7 @@ h1, #quoi .contenu > h2, #solution, .surprendre, #offres h2 { font-size:2em; fon
 /* Home avec slider */
 /****************************************************************************************/
 
-#home { background: url('../assets/images/bg/bgstar.png') repeat; position:relative;}
+#home { background: url('images/bg/bgstar.png') repeat; position:relative;}
 #home .contenu{ z-index:2; }
 
 /* Slider avec animation */
@@ -160,7 +160,7 @@ h1, #quoi .contenu > h2, #solution, .surprendre, #offres h2 { font-size:2em; fon
 /* Baseline Home et flèche */
 
 #home h1 { font-family:"f1", "Trebuchet MS", Arial, Helvetica, sans-serif;text-transform:uppercase; color:#000; font-size:60px; font-weight:normal; width:700px; margin:60px auto 0 auto; padding:0; background:#fff; border-style:double none; border-width:6px; z-index:3; position:relative;}
-#home .suite_fleche { background: url('../assets/images/bg/suite_fleche.png') no-repeat top center;background-size:36px 100px; height:100px; width:100%;position:absolute;bottom:15px;left:0;z-index:1;}
+#home .suite_fleche { background: url('images/bg/suite_fleche.png') no-repeat top center;background-size:36px 100px; height:100px; width:100%;position:absolute;bottom:15px;left:0;z-index:1;}
 
 
 
@@ -173,7 +173,7 @@ h1, #quoi .contenu > h2, #solution, .surprendre, #offres h2 { font-size:2em; fon
 #solution {color:#B0FF27;text-shadow:1px 1px 5px #000;}
 .accroche {color:#B0FF27;text-shadow:1px 1px 5px #000;font-family:"f2", "Trebuchet MS", Arial, Helvetica, sans-serif;font-size:1.5em;text-align:center;padding-bottom:50px;}
 #quoi ul { } 
-#quoi li { font-size:1.2em; padding:0 0 20px 42px; background:url('../assets/images/bg/li1.png') no-repeat 0 0.32em;}
+#quoi li { font-size:1.2em; padding:0 0 20px 42px; background:url('../images/bg/li1.png') no-repeat 0 0.32em;}
 #quoi .contenu > ul li {color:#fff;}
 #quoi p { font-size:1.2em; padding-bottom:20px; color:#ccc; font-style:Italic; text-align:right; } 
 .the_solution a { margin:30px auto 50px auto; padding: 20px 150px 0; box-shadow: 0 0 30px #000 inset;} 
@@ -182,7 +182,7 @@ h1, #quoi .contenu > h2, #solution, .surprendre, #offres h2 { font-size:2em; fon
 #quoi .boulettes h2 { font-size:1.7em; color:#ff818c; text-align:center; padding:0 0 25px;}
 /*padding:0 0 25px 30px;}*/
 #quoi .boulettes ul { padding-left:15px; } 
-#quoi .boulettes li { background:url('../assets/images/bg/li2.png') no-repeat 0 0.32em; padding:0 0 10px 30px;} 
+#quoi .boulettes li { background:url('../images/bg/li2.png') no-repeat 0 0.32em; padding:0 0 10px 30px;} 
 .bouton .offres {padding: 10px 30px;}
 #quoi .bouton a {border: solid 3px #FFF;}
 .surprendre {font-size:1.8em;clear:both;font-family:"f2", "Trebuchet MS", Arial, Helvetica, sans-serif;}
@@ -285,7 +285,7 @@ hr { border: 0; margin:20px auto 60px; width:100%; height:1px; background: -webk
 #contact form .champ { width:100%; padding:10px 30px; margin-bottom:10px; font-family:"f2", "Trebuchet MS", Arial, Helvetica, sans-serif; color: #222; box-sizing: border-box; } 
 #contact form p { text-align:left; font-size:0.8em; font-weight:normal; color:#fff; } 
 #contact .radio { padding:10px 0 20px; } 
-#contact form .submit { height:48px; width:64px; background:url('../assets/images/bg/mail.png') top left no-repeat; cursor: pointer; border:0; } 
+#contact form .submit { height:48px; width:64px; background:url('../images/bg/mail.png') top left no-repeat; cursor: pointer; border:0; } 
 
 
 
@@ -477,12 +477,12 @@ section + section:before { content:''; position:absolute; top:0; left:0; width:1
 
 @media (min-width: 1000px) {
 
-.top {right: 50px; bottom: 50px; background:url('../assets/images/bg/top.png') 0 0/50px 50px;}
+.top {right: 50px; bottom: 50px; background:url('../images/bg/top.png') 0 0/50px 50px;}
 
 
 /* Coup de tampon */
 
-#home .coup_tampon {position:absolute; z-index:10;-ms-transform: rotate(10deg); -webkit-transform: rotate(10deg); -moz-transform: rotate(10deg); -o-transform: rotate(10deg); transform: rotate(10deg);top:12%; right:8%;height:100px;width:324px;background:url('../assets/images/bg/tampon2.png') center center/cover;-webkit-animation: tampon 3s 1 linear; -moz-animation: tampon 3s 1 linear; -o-animation: tampon 3s 1 linear; animation: tampon 3s 1 linear;}
+#home .coup_tampon {position:absolute; z-index:10;-ms-transform: rotate(10deg); -webkit-transform: rotate(10deg); -moz-transform: rotate(10deg); -o-transform: rotate(10deg); transform: rotate(10deg);top:12%; right:8%;height:100px;width:324px;background:url('../images/bg/tampon2.png') center center/cover;-webkit-animation: tampon 3s 1 linear; -moz-animation: tampon 3s 1 linear; -o-animation: tampon 3s 1 linear; animation: tampon 3s 1 linear;}
 #home .slide_home {-webkit-animation: tampsl 3s 1 linear; -moz-animation: tampsl 3s 1 linear;-o-animation: tampsl 3s 1 linear;animation: tampsl 3s 1 linear;}
 
 @-webkit-keyframes tampon { 0%, 95.5% { height:150px;width:486px;opacity:0;} 96% { height:140px;width:453px;opacity:1;} 98% { height:90px;width:292px;} 99% { height:100px;width:324px;} }
@@ -494,9 +494,9 @@ section + section:before { content:''; position:absolute; top:0; left:0; width:1
 @-o-keyframes tampsl { 0%, 98% { height:400px;width:800px;} 98.5% { height:380px;width:760px;} 99% { height:400px;width:800px;} }
 @keyframes tampsl { 0%, 98% { height:400px;width:800px;} 98.5% { height:380px;width:760px;} 99% { height:400px;width:800px;} }
 
-#home .slider_home { background: url('../assets/images/bg/bg_slide_201602.jpg') no-repeat 0 top;}
+#home .slider_home { background: url('../images/bg/bg_slide_201602.jpg') no-repeat 0 top;}
 
-#intermediaire_1{background: url('../assets/images/bg/pied.jpg') top center/cover;}
+#intermediaire_1{background: url('../images/bg/pied.jpg') top center/cover;}
 
 /* #offres .n3-2 .texte {overflow:hidden;} */
 .clients { width:200px; height:400px; padding:30px 50px 0; margin:0 auto; position:relative;}
@@ -505,25 +505,25 @@ section + section:before { content:''; position:absolute; top:0; left:0; width:1
 
 /* Image et picto animé */
 
-.n3-1 .image {background:url('../assets/images/bg/atelier_madeincheztoi.jpg') no-repeat;}
-.n3-1 .picto {background:url('../assets/images/bg/picto_client1.png') no-repeat;}
-.n3-2 .image {background:url('../assets/images/bg/cours_particulier_madeincheztoi.jpg') no-repeat;}
-.n3-2 .picto {background:url('../assets/images/bg/picto_client2.png') no-repeat;}
-.n3-3 .image {background:url('../assets/images/bg/carte_cadeau_madeincheztoi.jpg') no-repeat;}
-.n3-3 .picto {background:url('../assets/images/bg/picto_client3.png?v=2') no-repeat;}
-.n3-4 .image {background:url('../assets/images/bg/offre_sur_mesure_madeincheztoi.jpg') no-repeat;}
-.n3-4 .picto {background:url('../assets/images/bg/picto_client4.png') no-repeat;}
+.n3-1 .image {background:url('../images/bg/atelier_madeincheztoi.jpg') no-repeat;}
+.n3-1 .picto {background:url('../images/bg/picto_client1.png') no-repeat;}
+.n3-2 .image {background:url('../images/bg/cours_particulier_madeincheztoi.jpg') no-repeat;}
+.n3-2 .picto {background:url('../images/bg/picto_client2.png') no-repeat;}
+.n3-3 .image {background:url('../images/bg/carte_cadeau_madeincheztoi.jpg') no-repeat;}
+.n3-3 .picto {background:url('../images/bg/picto_client3.png?v=2') no-repeat;}
+.n3-4 .image {background:url('../images/bg/offre_sur_mesure_madeincheztoi.jpg') no-repeat;}
+.n3-4 .picto {background:url('../images/bg/picto_client4.png') no-repeat;}
 
-#offres { background: url('../assets/images/bg/haut_etoiles.jpg') right center/cover;}
-#contact { background: url('../assets/images/bg/grass.jpg') repeat; }
-#reserver form { background: url('../assets/images/bg/grass.jpg') repeat; }
-#faq{ background: url('../assets/images/bg/poussette.jpg') center top/cover; } 
-#partenaires { background: url('../assets/images/bg/tirets.jpg') center top/cover; } 
-footer{ background: url('../assets/images/bg/bobines.jpg') center top/cover; } 
-.credits {background-image: url('../assets/images/bg/pied.jpg');}
+#offres { background: url('../images/bg/haut_etoiles.jpg') right center/cover;}
+#contact { background: url('../images/bg/grass.jpg') repeat; }
+#reserver form { background: url('../images/bg/grass.jpg') repeat; }
+#faq{ background: url('../images/bg/poussette.jpg') center top/cover; } 
+#partenaires { background: url('../images/bg/tirets.jpg') center top/cover; } 
+footer{ background: url('../images/bg/bobines.jpg') center top/cover; } 
+.credits {background-image: url('../images/bg/pied.jpg');}
 
 #intermediaire_2 {height:160px;}
-#intermediaire_2 img { height:80px;width:80px;background:url('../assets/images/bg/pictos.png') 0px 0px no-repeat;}
+#intermediaire_2 img { height:80px;width:80px;background:url('../images/bg/pictos.png') 0px 0px no-repeat;}
 #intermediaire_2 .pict2 {background-position:-80px 0px;}
 #intermediaire_2 .pict3 {background-position:-160px 0px;}
 #intermediaire_2 .pict4 {background-position:-240px 0px;}
@@ -534,19 +534,19 @@ footer{ background: url('../assets/images/bg/bobines.jpg') center top/cover; }
 .impair { margin-right:100px; }
 .pair { margin-left:100px; }
 
-#ateliers {background:url('../assets/images/bg/papier.jpg') repeat;}
+#ateliers {background:url('../images/bg/papier.jpg') repeat;}
 #ateliers aside .bouton a { display:block;}
-#theme1 .img_th { background:url('../assets/images/bg/atelier_theme1.jpg') center center/cover border-box;}
-#theme2 .img_th { background:url('../assets/images/bg/atelier_theme2.jpg') center center/cover border-box;}
-#theme3 .img_th { background:url('../assets/images/bg/atelier_theme3.jpg') center center/cover border-box;}
-#theme4 .img_th { background:url('../assets/images/bg/atelier_theme4.jpg') center center/cover border-box;}
-#theme5 .img_th { background:url('../assets/images/bg/atelier_theme5.jpg') center center/cover border-box;}
-#theme6 .img_th { background:url('../assets/images/bg/atelier_theme6.jpg') center center/cover border-box;}
-#theme7 .img_th { background:url('../assets/images/bg/atelier_theme7.jpg') center center/cover border-box;}
-#theme8 .img_th { background:url('../assets/images/bg/atelier_theme8.jpg') center center/cover border-box;}
-#theme9 .img_th { background:url('../assets/images/bg/atelier_theme9.jpg') center center/cover border-box;}
-#theme10 .img_th { background:url('../assets/images/bg/atelier_theme10.jpg') center center/cover border-box;}
-#theme11 .img_th { background:url('../assets/images/bg/atelier_theme11.jpg') center center/cover border-box;}
+#theme1 .img_th { background:url('../images/bg/atelier_theme1.jpg') center center/cover border-box;}
+#theme2 .img_th { background:url('../images/bg/atelier_theme2.jpg') center center/cover border-box;}
+#theme3 .img_th { background:url('../images/bg/atelier_theme3.jpg') center center/cover border-box;}
+#theme4 .img_th { background:url('../images/bg/atelier_theme4.jpg') center center/cover border-box;}
+#theme5 .img_th { background:url('../images/bg/atelier_theme5.jpg') center center/cover border-box;}
+#theme6 .img_th { background:url('../images/bg/atelier_theme6.jpg') center center/cover border-box;}
+#theme7 .img_th { background:url('../images/bg/atelier_theme7.jpg') center center/cover border-box;}
+#theme8 .img_th { background:url('../images/bg/atelier_theme8.jpg') center center/cover border-box;}
+#theme9 .img_th { background:url('../images/bg/atelier_theme9.jpg') center center/cover border-box;}
+#theme10 .img_th { background:url('../images/bg/atelier_theme10.jpg') center center/cover border-box;}
+#theme11 .img_th { background:url('../images/bg/atelier_theme11.jpg') center center/cover border-box;}
 .theme .projet {overflow:hidden;}
 .theme li {margin:0 20px; padding:20px;}
 
@@ -578,9 +578,9 @@ section, #ateliers, footer {padding:0 0 70px 0;}
 
 /* Coup de tampon */
 
-#home .coup_tampon {position:absolute; z-index:10;-ms-transform: rotate(10deg); -webkit-transform: rotate(10deg); -moz-transform: rotate(10deg); -o-transform: rotate(10deg); transform: rotate(10deg);top:10%; right:1%;height:70px;width:226px;background:url('../assets/images/bg/tampon2_m.png') center center/cover;}
+#home .coup_tampon {position:absolute; z-index:10;-ms-transform: rotate(10deg); -webkit-transform: rotate(10deg); -moz-transform: rotate(10deg); -o-transform: rotate(10deg); transform: rotate(10deg);top:10%; right:1%;height:70px;width:226px;background:url('../images/bg/tampon2_m.png') center center/cover;}
 #home .slide_home {height:350px; width:500px;}
-#home .slider_home {background: url('../assets/images/bg/bg_slide_201602_m.jpg') no-repeat 0 top;}
+#home .slider_home {background: url('../images/bg/bg_slide_201602_m.jpg') no-repeat 0 top;}
 #home .slider_bas {bottom:20px; font-size:2em;}
 #home .texte2 {left:500px;}
 #home .texte3 {left:1000px;}
@@ -594,9 +594,9 @@ section, #ateliers, footer {padding:0 0 70px 0;}
 .the_solution a {padding:20px 20px 0; margin:10px auto 30px;}
 .boulettes {padding:10px 10px 0;}
 
-#intermediaire_1{background: url('../assets/images/bg/pied_m.jpg') top center/cover;}
+#intermediaire_1{background: url('../images/bg/pied_m.jpg') top center/cover;}
 
-#offres { background: url('../assets/images/bg/haut_etoiles_m.jpg') right center/cover;}
+#offres { background: url('../images/bg/haut_etoiles_m.jpg') right center/cover;}
 #offres .contenu { width:100%;} 
 .clients { width:200px; height:400px; padding:30px 50px 0; margin:0 auto; position:relative;}
 .clients .image { width:200px; height:200px; border-radius:25px;}
@@ -608,19 +608,19 @@ hr {margin:30px 0;}
 
 /* Image et picto animé */
 
-.n3-1 .image {background:url('../assets/images/bg/atelier_madeincheztoi.jpg') no-repeat;}
-.n3-1 .picto {background:url('../assets/images/bg/picto_client1.png') no-repeat;}
-.n3-2 .image {background:url('../assets/images/bg/cours_particulier_madeincheztoi.jpg') no-repeat;}
-.n3-2 .picto {background:url('../assets/images/bg/picto_client2.png') no-repeat;}
-.n3-3 .image {background:url('../assets/images/bg/carte_cadeau_madeincheztoi.jpg') no-repeat;}
-.n3-3 .picto {background:url('../assets/images/bg/picto_client3.png?v=2') no-repeat;}
-.n3-4 .image {background:url('../assets/images/bg/offre_sur_mesure_madeincheztoi.jpg') no-repeat;}
-.n3-4 .picto {background:url('../assets/images/bg/picto_client4.png') no-repeat;}
+.n3-1 .image {background:url('../images/bg/atelier_madeincheztoi.jpg') no-repeat;}
+.n3-1 .picto {background:url('../images/bg/picto_client1.png') no-repeat;}
+.n3-2 .image {background:url('../images/bg/cours_particulier_madeincheztoi.jpg') no-repeat;}
+.n3-2 .picto {background:url('../images/bg/picto_client2.png') no-repeat;}
+.n3-3 .image {background:url('../images/bg/carte_cadeau_madeincheztoi.jpg') no-repeat;}
+.n3-3 .picto {background:url('../images/bg/picto_client3.png?v=2') no-repeat;}
+.n3-4 .image {background:url('../images/bg/offre_sur_mesure_madeincheztoi.jpg') no-repeat;}
+.n3-4 .picto {background:url('../images/bg/picto_client4.png') no-repeat;}
 
 .retour_xp { width:100%; max-width: 450px; margin-top:20px; margin-bottom:30px; } 
 
 #intermediaire_2{ height:130px; } 
-#intermediaire_2 img { height:60px;width:60px;background:url('../assets/images/bg/pictos_m.png') 0px 0px no-repeat;}
+#intermediaire_2 img { height:60px;width:60px;background:url('../images/bg/pictos_m.png') 0px 0px no-repeat;}
 #intermediaire_2 .pict2 {background-position:-60px 0px;}
 #intermediaire_2 .pict3 {background-position:-120px 0px;}
 #intermediaire_2 .pict4 {background-position:-180px 0px;}
@@ -630,41 +630,41 @@ hr {margin:30px 0;}
 .photo { width:50%; }
 #preview_photos .contenu{ margin-top: 0px; padding:0; }
 
-#contact{ background: url('../assets/images/bg/grass_m.jpg') repeat; padding-bottom: 30px; } 
+#contact{ background: url('../images/bg/grass_m.jpg') repeat; padding-bottom: 30px; } 
 #contact form { max-width: 416px; margin:0 auto; } 
 form .champ { padding:5px 20px; }
 
-#reserver form { background: url('../assets/images/bg/grass_m.jpg') repeat; }
+#reserver form { background: url('../images/bg/grass_m.jpg') repeat; }
 
-#faq{ background: url('../assets/images/bg/poussette_m.jpg') center top/cover; } 
+#faq{ background: url('../images/bg/poussette_m.jpg') center top/cover; } 
 .gauche { width:100% } 
 .droite { width:100% }
 #faq .contenu{ width:90%; padding-top:50px; }
 #faq .gauche, .droite { width:100%; } 
 #faq .gauche ul { margin-bottom:50px; }
 
-#partenaires { background: url('../assets/images/bg/tirets_m.jpg') center top/cover; } 
+#partenaires { background: url('../images/bg/tirets_m.jpg') center top/cover; } 
 
-footer{ background: url('../assets/images/bg/bobines_m.jpg') center top/cover; } 
+footer{ background: url('../images/bg/bobines_m.jpg') center top/cover; } 
 .copyright { left:10px; } 
-.credits { left:50%; top:50%; height:350px; width:500px; margin-top:-175px; margin-left:-250px; background-image: url('../assets/images/bg/pied_m.jpg'); } 
+.credits { left:50%; top:50%; height:350px; width:500px; margin-top:-175px; margin-left:-250px; background-image: url('../images/bg/pied_m.jpg'); } 
 
-#ateliers {background:url('../assets/images/bg/papier_m.jpg') repeat;}
+#ateliers {background:url('../images/bg/papier_m.jpg') repeat;}
 #ateliers .contenu { width:100%; box-sizing: border-box; } 
 #ateliers main{float:none;margin:0 auto;}
 #ateliers aside{ float:none;width:100%; max-width:720px; margin:0 auto 30px; } 
 .img_th {height:150px;}
-#theme1 .img_th { background:url('../assets/images/bg/atelier_theme1.jpg') center center/cover border-box;}
-#theme2 .img_th { background:url('../assets/images/bg/atelier_theme2.jpg') center center/cover border-box;}
-#theme3 .img_th { background:url('../assets/images/bg/atelier_theme3.jpg') center center/cover border-box;}
-#theme4 .img_th { background:url('../assets/images/bg/atelier_theme4.jpg') center center/cover border-box;}
-#theme5 .img_th { background:url('../assets/images/bg/atelier_theme5.jpg') center center/cover border-box;}
-#theme6 .img_th { background:url('../assets/images/bg/atelier_theme6.jpg') center center/cover border-box;}
-#theme7 .img_th { background:url('../assets/images/bg/atelier_theme7.jpg') center center/cover border-box;}
-#theme8 .img_th { background:url('../assets/images/bg/atelier_theme8.jpg') center center/cover border-box;}
-#theme9 .img_th { background:url('../assets/images/bg/atelier_theme9.jpg') center center/cover border-box;}
-#theme10 .img_th { background:url('../assets/images/bg/atelier_theme10.jpg') center center/cover border-box;}
-#theme11 .img_th { background:url('../assets/images/bg/atelier_theme11.jpg') center center/cover border-box;}
+#theme1 .img_th { background:url('../images/bg/atelier_theme1.jpg') center center/cover border-box;}
+#theme2 .img_th { background:url('../images/bg/atelier_theme2.jpg') center center/cover border-box;}
+#theme3 .img_th { background:url('../images/bg/atelier_theme3.jpg') center center/cover border-box;}
+#theme4 .img_th { background:url('../images/bg/atelier_theme4.jpg') center center/cover border-box;}
+#theme5 .img_th { background:url('../images/bg/atelier_theme5.jpg') center center/cover border-box;}
+#theme6 .img_th { background:url('../images/bg/atelier_theme6.jpg') center center/cover border-box;}
+#theme7 .img_th { background:url('../images/bg/atelier_theme7.jpg') center center/cover border-box;}
+#theme8 .img_th { background:url('../images/bg/atelier_theme8.jpg') center center/cover border-box;}
+#theme9 .img_th { background:url('../images/bg/atelier_theme9.jpg') center center/cover border-box;}
+#theme10 .img_th { background:url('../images/bg/atelier_theme10.jpg') center center/cover border-box;}
+#theme11 .img_th { background:url('../images/bg/atelier_theme11.jpg') center center/cover border-box;}
 .theme .projet {overflow:hidden;}
 .theme li {margin:0 20px; padding:20px;}
 
@@ -687,7 +687,7 @@ body{ min-width: 320px; font-size:10px;}
 #menutop { display:none; } 
 .menu{ filter: alpha(opacity=90); opacity: 0.9; }
 
-.top { background:url('../assets/images/bg/top.png') 0 0/50px 50px;}
+.top { background:url('../images/bg/top.png') 0 0/50px 50px;}
 
 section, #ateliers, footer {padding:0 0 30px;}
 .contenu { width:100%; padding:0 10px; box-sizing: border-box; }	
@@ -696,7 +696,7 @@ section, #ateliers, footer {padding:0 0 30px;}
 
 #home { padding:20px 0 70px;}
 #home .slide_home {height:250px; width:300px;}
-#home .slider_home {background: url('../assets/images/bg/bg_slide_201602_s.jpg') no-repeat 0 top;}
+#home .slider_home {background: url('../images/bg/bg_slide_201602_s.jpg') no-repeat 0 top;}
 #home .slider_bas {bottom:20px; font-size:2em;}
 #home .texte2 {left:300px;}
 #home .texte3 {left:600px;}
@@ -711,7 +711,7 @@ section, #ateliers, footer {padding:0 0 30px;}
 .the_solution a {padding:20px 20px 0; margin:10px auto 30px;}
 .boulettes {padding:10px 10px 0;}
 
-#intermediaire_1{background: url('../assets/images/bg/pied_s.jpg') top center/cover;}
+#intermediaire_1{background: url('../images/bg/pied_s.jpg') top center/cover;}
 
 #offres { background:#FCDEB9;}
 #offres .contenu { width:100%;} 
@@ -724,20 +724,20 @@ hr {margin:20px 0;}
 
 /* Image et picto animé */
 
-.n3-1 .image {background:url('../assets/images/bg/atelier_madeincheztoi_s.jpg') no-repeat;left:0;}
-.n3-1 .picto {background:url('../assets/images/bg/picto_client1_s.png') no-repeat;right:10px;}
-.n3-2 .image {background:url('../assets/images/bg/cours_particulier_madeincheztoi_s.jpg') no-repeat;right:0;}
-.n3-2 .picto {background:url('../assets/images/bg/picto_client2_s.png') no-repeat;left:10px;}
-.n3-3 .image {background:url('../assets/images/bg/carte_cadeau_madeincheztoi_s.jpg') no-repeat;left:0;}
-.n3-3 .picto {background:url('../assets/images/bg/picto_client3_s.png?v=2') no-repeat;right:10px;}
-.n3-4 .image {background:url('../assets/images/bg/offre_sur_mesure_madeincheztoi_s.jpg') no-repeat;right:0;}
-.n3-4 .picto {background:url('../assets/images/bg/picto_client4_s.png') no-repeat;left:10px;}
+.n3-1 .image {background:url('../images/bg/atelier_madeincheztoi_s.jpg') no-repeat;left:0;}
+.n3-1 .picto {background:url('../images/bg/picto_client1_s.png') no-repeat;right:10px;}
+.n3-2 .image {background:url('../images/bg/cours_particulier_madeincheztoi_s.jpg') no-repeat;right:0;}
+.n3-2 .picto {background:url('../images/bg/picto_client2_s.png') no-repeat;left:10px;}
+.n3-3 .image {background:url('../images/bg/carte_cadeau_madeincheztoi_s.jpg') no-repeat;left:0;}
+.n3-3 .picto {background:url('../images/bg/picto_client3_s.png?v=2') no-repeat;right:10px;}
+.n3-4 .image {background:url('../images/bg/offre_sur_mesure_madeincheztoi_s.jpg') no-repeat;right:0;}
+.n3-4 .picto {background:url('../images/bg/picto_client4_s.png') no-repeat;left:10px;}
 .clients {-webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; transition: all 1s ease; }
 
 .retour_xp { width:100%; margin-top:20px; margin-bottom:30px;} 
 
 #intermediaire_2{ height:120px; } 
-#intermediaire_2 img { height:40px;width:40px;background:url('../assets/images/bg/pictos_s.png') 0px 0px no-repeat;}
+#intermediaire_2 img { height:40px;width:40px;background:url('../images/bg/pictos_s.png') 0px 0px no-repeat;}
 #intermediaire_2 .pict2 {background-position:-40px 0px;}
 #intermediaire_2 .pict3 {background-position:-80px 0px;}
 #intermediaire_2 .pict4 {background-position:-120px 0px;}
@@ -747,12 +747,12 @@ hr {margin:20px 0;}
 .photo { width:50%; } 
 #preview_photos .contenu{ margin-top: 0px; padding:0; }
 
-#contact{ background: url('../assets/images/bg/grass_s.jpg') repeat; padding-bottom: 30px;} 
+#contact{ background: url('../images/bg/grass_s.jpg') repeat; padding-bottom: 30px;} 
 form .champ { padding:5px 20px;}
 
-#reserver form { background: url('../assets/images/bg/grass_s.jpg') repeat; }
+#reserver form { background: url('../images/bg/grass_s.jpg') repeat; }
 
-#faq{ background: url('../assets/images/bg/poussette_s.jpg') center top/cover; } 
+#faq{ background: url('../images/bg/poussette_s.jpg') center top/cover; } 
 .gauche { width:100% } 
 .droite { width:100% }
 #faq .contenu{ width:90%; padding-top:50px; } 
@@ -762,30 +762,30 @@ form .champ { padding:5px 20px;}
 .qm2 { left:30%; } 
 .qm3 { right:10px; }
 
-#partenaires { background: url('../assets/images/bg/tirets_s.jpg') center top/cover; } 
+#partenaires { background: url('../images/bg/tirets_s.jpg') center top/cover; } 
 .partner { text-align:center; } 
 #partenaires img { float:none; margin:0 0 10px 0; }
 .desc {margin:0;}
 
-footer{ background: url('../assets/images/bg/bobines_s.jpg') center top/cover; } 
+footer{ background: url('../images/bg/bobines_s.jpg') center top/cover; } 
 .copyright { left:10px;} 
 .credits { left:0; top:0; height:100%; width:100%; margin:0; background-image: none; } 
 
-#ateliers {background:url('../assets/images/bg/papier_s.jpg') repeat;}
+#ateliers {background:url('../images/bg/papier_s.jpg') repeat;}
 #ateliers .contenu { width:100%; box-sizing: border-box; }
 #ateliers aside{ width:100%; margin:0 0 30px 0; } 
 .img_th {height:100px;}
-#theme1 .img_th { background:url('../assets/images/bg/atelier_theme1_s.jpg') center center/cover border-box;}
-#theme2 .img_th { background:url('../assets/images/bg/atelier_theme2_s.jpg') center center/cover border-box;}
-#theme3 .img_th { background:url('../assets/images/bg/atelier_theme3_s.jpg') center center/cover border-box;}
-#theme4 .img_th { background:url('../assets/images/bg/atelier_theme4_s.jpg') center center/cover border-box;}
-#theme5 .img_th { background:url('../assets/images/bg/atelier_theme5_s.jpg') center center/cover border-box;}
-#theme6 .img_th { background:url('../assets/images/bg/atelier_theme6_s.jpg') center center/cover border-box;}
-#theme7 .img_th { background:url('../assets/images/bg/atelier_theme7_s.jpg') center center/cover border-box;}
-#theme8 .img_th { background:url('../assets/images/bg/atelier_theme8_s.jpg') center center/cover border-box;}
-#theme9 .img_th { background:url('../assets/images/bg/atelier_theme9_s.jpg') center center/cover border-box;}
-#theme10 .img_th { background:url('../assets/images/bg/atelier_theme10_s.jpg') center center/cover border-box;}
-#theme11 .img_th { background:url('../assets/images/bg/atelier_theme11_s.jpg') center center/cover border-box;}
+#theme1 .img_th { background:url('../images/bg/atelier_theme1_s.jpg') center center/cover border-box;}
+#theme2 .img_th { background:url('../images/bg/atelier_theme2_s.jpg') center center/cover border-box;}
+#theme3 .img_th { background:url('../images/bg/atelier_theme3_s.jpg') center center/cover border-box;}
+#theme4 .img_th { background:url('../images/bg/atelier_theme4_s.jpg') center center/cover border-box;}
+#theme5 .img_th { background:url('../images/bg/atelier_theme5_s.jpg') center center/cover border-box;}
+#theme6 .img_th { background:url('../images/bg/atelier_theme6_s.jpg') center center/cover border-box;}
+#theme7 .img_th { background:url('../images/bg/atelier_theme7_s.jpg') center center/cover border-box;}
+#theme8 .img_th { background:url('../images/bg/atelier_theme8_s.jpg') center center/cover border-box;}
+#theme9 .img_th { background:url('../images/bg/atelier_theme9_s.jpg') center center/cover border-box;}
+#theme10 .img_th { background:url('../images/bg/atelier_theme10_s.jpg') center center/cover border-box;}
+#theme11 .img_th { background:url('../images/bg/atelier_theme11_s.jpg') center center/cover border-box;}
 .theme li {margin:0 10px; padding:10px;}
 
 }
