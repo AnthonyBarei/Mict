@@ -34,7 +34,7 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-
+<marquee>Le texte à faire défiler, On place la donnée de la base ici et ca defile </marquee>
   <hr/>
 
   <?php require_once('./views/quoi.php'); ?>
