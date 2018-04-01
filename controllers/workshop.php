@@ -35,7 +35,7 @@ class Workshop {
         // Traiter les données reçues
 
         $ws = new workshopModel();
-        $result = $ws->updateWorkshop();
+        $result = $ws->updateWorkshop($params);
 
         // Traiter les données reçues
 

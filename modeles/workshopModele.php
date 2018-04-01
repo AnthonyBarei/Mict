@@ -51,7 +51,7 @@ class workshopModel extends DbConnect {
 
     public function updateWorkshop($params) {
         $dbh = $this->connect();
-
+ 
         $res = $dbh->prepare('
             UPDATE workshop
             SET
@@ -59,6 +59,7 @@ class workshopModel extends DbConnect {
                 workshop_description = :description,
                 workshop_price = :price,
                 workshop_projects = :projects,
+                workshop_infos = :infos
             WHERE workshop_id = :id
         ');
 
