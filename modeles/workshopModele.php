@@ -40,8 +40,9 @@ class workshopModel extends DbConnect {
                 workshop_name,
                 workshop_description,
                 workshop_price,
-                workshop_projects)
-            VALUES (:name, :description, :price, :projects)
+                workshop_projects,
+                workshop_infos)
+            VALUES (:name, :description, :price, :projects, :infos)
         ');
 
         $result = $res->execute($params);
@@ -51,7 +52,7 @@ class workshopModel extends DbConnect {
 
     public function updateWorkshop($params) {
         $dbh = $this->connect();
- 
+
         $res = $dbh->prepare('
             UPDATE workshop
             SET

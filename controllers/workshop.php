@@ -24,7 +24,7 @@ class Workshop {
     public function createWorkshop($params) {
 
         $ws = new workshopModel();
-        $result = $ws->createWorkshop();
+        $result = $ws->createWorkshop($params);
 
         // Traiter les données reçues
 
@@ -46,7 +46,7 @@ class Workshop {
         $id = (integer) $id;
 
         $ws = new workshopModel();
-        $result = $ws->deleteWorkshop();
+        $result = $ws->deleteWorkshop($id);
 
         // Traiter les données reçues
 
