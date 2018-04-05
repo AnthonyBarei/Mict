@@ -7,19 +7,19 @@
         <script src="assets/js/made_in_chez_toi-min.js"></script>
         <script src="assets/js/gallery.js"></script>
         <script src="assets/js/bootstrap.js"></script>
-        <link rel="stylesheet" href="assets/css/style_madeincheztoi.css"/>
-        <link rel="stylesheet" href="assets/css/style_email.css"/>
-        <link rel="stylesheet" href="assets/css/baguetteBox.min.css"/>
-        <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../assets/css/style_madeincheztoi.css"/>
+        <link rel="stylesheet" href="../assets/css/style_email.css"/>
+        <link rel="stylesheet" href="../assets/css/baguetteBox.min.css"/>
+        <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
 
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     </head>
     <body>
 <!-- NavBar Menu Start -->
         <nav>
-    <div id="menu_call"><img src="assets/images/bg/bottom.png" alt=""/> MENU</div>
+    <div id="menu_call"><img src="../assets/images/bg/bottom.png" alt=""/> MENU</div>
     <ul id="menutop" class="menu">
-    <li><a class="scrollTo" href="#home" title="Début">Home</a></li>  
+    <li><a class="scrollTo" href="#home" title="Début">Home</a></li>
     <li><a class="scrollTo" href="#quoi" title="C'est quoi ?">C'est quoi ?</a></li>
     <li><a class="scrollTo" href="#offres" title="Les offres Made in chez toi">Offres</a></li>
     <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">Ateliers</a></li>

@@ -21,7 +21,7 @@ include_once('../controllers/workshop.php'); ?>
             "mobile" => $_POST['mobile'],
             "address" => $_POST['address'],
             "type" => $_POST['type'],
-            "isadmin" => 0 // l'utilisateur ne doit definir lui meme si il est un admin
+            "isadmin" => 0 // l'utilisateur ne doit pas se definir lui meme si il est un admin
         )
     );
  }
