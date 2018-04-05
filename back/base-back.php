@@ -5,11 +5,15 @@
       <title>Gestion</title>
 
       <script src="{{ asset('js/jquery.min.js') }}"></script>
-      <script src="{{ asset('js/bootstrap.js') }}"></script>
-      <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
-      <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+      <script src="../assets/js/bootstrap.js"></script>
+      <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
+      <link rel="stylesheet" href="../assets/css/style.css"/>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+      <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+      <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -29,28 +33,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/gestion">Home <span class="sr-only">(current)</span></a></li>
-            <li><a href="/gestion/offre">Offre</a></li>
-            <li><a href="/gestion/photo">Photo</a></li>
-            <li><a href="/gestion/livre">Livre d'or</a></li>
-            <li><a href="/gestion/contact">Contact</a></li>
-            <li><a href="/gestion/boutique">Boutique</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
+            <li class="active"><a href="/Mict/back">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="/Mict/back/offre.php">Offre</a></li>
+            <li><a href="/Mict/back/photo.php">Photo</a></li>
+            <li><a href="/Mict/back/livre.php">Livre d'or</a></li>
+            <li><a href="/Mict/back/contact.php">Contact</a></li>
+            <li><a href="/Mict/back/boutique.php">Boutique</a></li>
           </ul>
 
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
-
