@@ -11,6 +11,11 @@
         <link rel="stylesheet" href="../assets/css/style_email.css"/>
         <link rel="stylesheet" href="../assets/css/baguetteBox.min.css"/>
         <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
+        <!-- lien pour Onepage -->
+        <link rel="stylesheet" href="assets/css/style_madeincheztoi.css"/>
+        <link rel="stylesheet" href="assets/css/style_email.css"/>
+        <link rel="stylesheet" href="assets/css/baguetteBox.min.css"/>
+        <link rel="stylesheet" href="assets/css/bootstrap.css"/>
 
         <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     </head>
