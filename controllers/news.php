@@ -14,11 +14,20 @@ class News {
         $id = (integer) $id;
 
         $news = new newsModel();
-        $result = $offer->getNewsbyId();
+        $result = $news->getNewsbyId();
 
         // Traiter les données reçues
 
         return $result;
+    }
+
+    public function getCurrentNews(){
+      $news = new newsModel();
+      $result = $news->getCurrentNews();
+
+      // Traiter les données reçues
+
+      return $result;
     }
 
     public function createNews($params) {
@@ -31,7 +40,7 @@ class News {
         return $result;
     }
 
-    public function updateOffer($params) {
+    public function updateNews($params) {
         // Traiter les données reçues
 
         $news = new newsModel();
@@ -42,7 +51,7 @@ class News {
         return $result;
     }
 
-    public function deleteOffer($id) {
+    public function deleteNews($id) {
         $id = (integer) $id;
 
         $news = new newsModel();

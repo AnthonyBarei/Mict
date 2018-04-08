@@ -35,10 +35,10 @@ include_once('../controllers/workshop.php');?>
 
     //$jsonarray = json_decode('{ "durée": "3 heures", "capacité": "3 à 6 personnes", "contexte": "chez toi ou tes amis", "lieu": "Paris / région parisienne", "complément": "tout inclus" }', true);
     $jsonstring = $at['workshop_infos'];
-    $jsonarray = json_decode( $jsonstring);
+    $jsonarray = json_decode($jsonstring);
 
-    echo($jsonarray);
-    echo($at['workshop_infos']);
+    //echo($jsonarray);
+    //echo($at['workshop_infos']);
 
     //echo($at["workshop_infos"]); //TODO parser ce json pour l'afficher proprement
     echo ('<div class="acc2">3 heures&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;3 à 6 personnes&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;chez toi ou tes amis&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Paris / région parisienne&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;tout inclus</div>');

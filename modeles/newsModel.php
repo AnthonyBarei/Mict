@@ -19,8 +19,8 @@ class newsModel extends DbConnect {
 
         $res = $dbh->prepare('
             SELECT *
-            FROM offer
-            WHERE offer_id = :id
+            FROM news
+            WHERE news_id = :id
         ');
 
         $res->bindParam(':id', $id);
@@ -30,6 +30,19 @@ class newsModel extends DbConnect {
         $result = $res->fetch();
 
         return $result;
+    }
+
+    public function getCurrentNews(){
+      $dbh = $this->connect();
+      $res = $dbh->prepare('
+          SELECT *
+          FROM news WHERE
+          news_start < (SELECT NOW())
+          AND news_end > (SELECT NOW())
+      ');
+      $result = $res->fetchAll();
+
+      return $result;
     }
 
     public function createNews($params) {

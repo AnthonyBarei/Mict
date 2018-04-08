@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+<?php
+include_once('../controllers/news.php');
+?>
+
 <html>
     <head>
         <meta charset="UTF-8" />
@@ -31,6 +36,17 @@
     </ul>
   </nav>
 <!-- NavBar Menu End -->
+
+      <?php
+        $news = new News();
+
+        $currentNews = $news->getCurrentNews();
+
+        foreach ($currentNews as $new) {
+          echo($new['news_body']);
+        }
+      ?>
+
     </body>
 
 </html>
