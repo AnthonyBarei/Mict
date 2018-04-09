@@ -1,4 +1,4 @@
-<?php require_once('../modeles/newsModel.php');
+<?php require_once('modeles/newsModel.php');
 
 class News {
     public function NewsList() {

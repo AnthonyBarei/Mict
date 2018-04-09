@@ -1,4 +1,4 @@
-<?php require_once('base.php'); ?>
+<?php require_once('views/base.php'); ?>
 	<section id="contact">
 	 <div class="cell1">
 	  <div class="contenu">
@@ -13,7 +13,7 @@
 	      </div>
 	      <div class="bouton entier">
                   <a href="reserver_atelier_ou_cours_de_couture.php" Title="Réserver">Je réserve mon atelier !</a>
-              </div>	
+              </div>
 	    </div>
 	    <div class="droite">
 	      <form class="form" id="form1" action="email.php" method="post">
@@ -38,7 +38,7 @@
         	  <textarea name="message" rows=5 class="champ" id="message" placeholder="Mon message ou ma question..."></textarea>
       		</p>
         	<input type="submit" value="" class="submit"/>
-    	      </form>	
+    	      </form>
 	    </div>
 	      <p class="backup_contact">Si tu n'as pas de réponse sous 24 heures, essaye par téléphone au +33 6 14 14 25 46, ou par email : contact@madeincheztoi.com</p>
 	  </div>

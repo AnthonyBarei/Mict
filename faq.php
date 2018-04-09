@@ -1,4 +1,4 @@
-<?php require_once('base.php'); ?>
+<?php require_once('views/base.php'); ?>
 	<section id="faq">
 	 <div class="cell1">
 	  <div class="contenu">
@@ -48,7 +48,7 @@ Pour les heureuses habitantes de province, des ateliers couture seront prévus p
 		<a class="faq_sum" href="javascript:void(0)" data-div="faq2">Comment se passe le règlement ?</a>
 		<div id="faq2" class="faq_detail">
             <p>
-C'est l'hôtesse qui est l'interlocutrice privilégiée de Made in chez toi, et qui se charge du règlement de l'atelier. Ses amies lui remboursent le montant de leur atelier. 
+C'est l'hôtesse qui est l'interlocutrice privilégiée de Made in chez toi, et qui se charge du règlement de l'atelier. Ses amies lui remboursent le montant de leur atelier.
 </p><p>
 Une avance de 100 € sera demandée au plus tard une semaine avant l'atelier, par chèque ou virement, afin de valider la réservation de l'atelier et de prévoir l'achat des fournitures.
 </p><p>
@@ -110,7 +110,7 @@ Il est aussi possible d'acheter du tissu chez notre partenaire La Modette, en su
             <p>
 Oui, c'est possible !
 </p><p>
-Il suffit d'<a class="scrollTo" href="#contact">envoyer un message</a> à contact@madeincheztoi.com en demandant une carte cadeau. 
+Il suffit d'<a class="scrollTo" href="#contact">envoyer un message</a> à contact@madeincheztoi.com en demandant une carte cadeau.
 </p><p>
 Elle vous sera envoyée par email et est valable un an.
             </p>
@@ -121,11 +121,11 @@ Elle vous sera envoyée par email et est valable un an.
 		<a class="faq_sum" href="javascript:void(0)" data-div="faq7">Quelle ambiance y a-t-il lors d'un atelier ?</a>
 		<div id="faq7" class="faq_detail">
             <p>
-Oh là là, je ne m'y attendais pas à celle-là ! ;) 
+Oh là là, je ne m'y attendais pas à celle-là ! ;)
 </p><p>
-L'ambiance est assez différente d'un atelier à l'autre puisque les groupes sont différents (bon, ça c'est dit ! :) ). 
+L'ambiance est assez différente d'un atelier à l'autre puisque les groupes sont différents (bon, ça c'est dit ! :) ).
 </p><p>
-Certains sont très appliqués et calmes, d'autres discutent plus et se charient. Cela dépend des relations d'amitié entre chacun, je pense, tout simplement. 
+Certains sont très appliqués et calmes, d'autres discutent plus et se charient. Cela dépend des relations d'amitié entre chacun, je pense, tout simplement.
 </p><p>
 L'hôtesse qui accueille chez elle joue aussi un grand rôle, elle prépare souvent thé et petits gâteaux. Certaines aiment coudre en silence, d'autres avec une musique de fond.
 </p><p>
@@ -207,9 +207,9 @@ Une seule barrière à franchir, celle de se lancer et de laisser libre cours à
 		<a class="faq_sum" href="javascript:void(0)" data-div="faq12">Comment es-tu venue à la couture ?</a>
 		<div id="faq12" class="faq_detail">
             <p>
-Comme ça, un jour, l'envie m'a prise ! C'est vraiment aussi simple et inexplicable que cela. 
+Comme ça, un jour, l'envie m'a prise ! C'est vraiment aussi simple et inexplicable que cela.
 </p><p>
-Ensuite, le Père Noël qui a des oreilles partout m'a offert un livre de couture pour Bébé : Les Intemporels pour bébé d'Astrid le Provost. 
+Ensuite, le Père Noël qui a des oreilles partout m'a offert un livre de couture pour Bébé : Les Intemporels pour bébé d'Astrid le Provost.
 </p><p>
 Et tout s'est enchaîné, les premières armes, les tutos, beaucoup de temps, les essais, le décryptage de magazines allemands et japonais, les premiers vêtements, la robe de parrainage de ma fille... Puis j'ai pris des cours grâce à la Mairie de Paris, pour ensuite en donner de mon côté, cours collectifs, cours particuliers...
 </p><p>
@@ -224,9 +224,9 @@ Le virus était attrapé :)
 	    <p>
 - Parce que c'est l'entreprise que j'aurais aimé trouver, quand j'avais envie de changement, de nouveauté, de redonner un coup de frais sur ma vie, mes relations et mon travail !
 </p><p>
-- Parce qu’on est souvent dans le « tout intellectuel » et que se laisser aller à la créativité, c’est se détendre sans se juger 
+- Parce qu’on est souvent dans le « tout intellectuel » et que se laisser aller à la créativité, c’est se détendre sans se juger
 </p><p>
-- Parce que l’on repart fiers de d’avoir réalisé de A à Z un projet de ses mains ! 
+- Parce que l’on repart fiers de d’avoir réalisé de A à Z un projet de ses mains !
 </p><p>
 - Parce que c’est se faire de beaux souvenirs ensemble et resserrer les liens avec ses amis (c'est vrai quoi ! Il n'y a pas que spa, resto, sauna, ciné, shopping, apéro, hammam et footing !)
 </p><p>
@@ -273,7 +273,7 @@ Je trouve que l'enthousiasme est le moteur et le plaisir la récompense ! ;)
             <p>
 Conquérir le Monde, MouahahahAHAHAHAHAH !
 </p><p>
-(avec un beau crescendo bien sûr ;) ) 
+(avec un beau crescendo bien sûr ;) )
             </p>
 		</div>
 	      </li>

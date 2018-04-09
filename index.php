@@ -1,4 +1,4 @@
-<?php require_once('./views/base.php'); ?>
+<?php require_once('views/base.php'); ?>
 
   <div class="container">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -37,8 +37,8 @@
 <marquee>Le texte à faire défiler, On place la donnée de la base ici et ca defile </marquee>
   <hr/>
 
-  <?php require_once('./views/quoi.php'); ?>
-  <?php require_once('./views/xp.php'); ?>
-  <?php require_once('./views/contact.php'); ?>
-  <?php require_once('./views/faq.php'); ?>
-  <?php require_once('./views/partner.php'); ?>
+  <?php require_once('quoi.php'); ?>
+  <?php require_once('views/xp.php'); ?>
+  <?php require_once('contact.php'); ?>
+  <?php require_once('faq.php'); ?>
+  <?php require_once('partner.php'); ?>

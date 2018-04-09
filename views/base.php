@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-include_once('../controllers/news.php');
+include_once('controllers/news.php');
 ?>
 
 <html>

@@ -9,7 +9,7 @@ class DbConnect
         $host = 'localhost';
         $dbname = 'mict';
         $user = 'root';
-        $password = '';
+        $password = 'root';
 
         try {
             $dbh = new PDO('mysql:host='.$host.';dbname='.$dbname, $user, $password);

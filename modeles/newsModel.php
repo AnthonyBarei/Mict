@@ -1,6 +1,6 @@
 <?php
 require_once('connectionModel.php');
-require_once('../functions.php');
+require_once('functions.php');
 
 class newsModel extends DbConnect {
 

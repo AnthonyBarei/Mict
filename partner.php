@@ -1,4 +1,4 @@
-<?php require_once('base.php'); ?>
+<?php require_once('views/base.php'); ?>
 
 <section id="partenaires">
 	 <div class="cell1">
