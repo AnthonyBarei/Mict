@@ -1,25 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 24 mars 2018 à 14:55
--- Version du serveur :  5.7.19
--- Version de PHP :  5.6.31
+-- Hôte : localhost:8889
+-- Généré le :  lun. 30 avr. 2018 à 15:44
+-- Version du serveur :  5.6.35
+-- Version de PHP :  7.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
--- Base de données :  `mict`
+-- Base de données :  `Mict`
 --
 
 -- --------------------------------------------------------
@@ -28,15 +20,13 @@ SET time_zone = "+00:00";
 -- Structure de la table `article`
 --
 
-DROP TABLE IF EXISTS `article`;
-CREATE TABLE IF NOT EXISTS `article` (
-  `article_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `article` (
+  `article_id` int(11) NOT NULL,
   `article_name` varchar(255) NOT NULL,
   `article_price` int(11) NOT NULL,
   `article_img` varchar(255) DEFAULT NULL,
   `article_description` varchar(255) NOT NULL,
-  `article_date` date DEFAULT NULL,
-  PRIMARY KEY (`article_id`)
+  `article_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -45,12 +35,10 @@ CREATE TABLE IF NOT EXISTS `article` (
 -- Structure de la table `config`
 --
 
-DROP TABLE IF EXISTS `config`;
-CREATE TABLE IF NOT EXISTS `config` (
-  `config_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `config` (
+  `config_id` int(11) NOT NULL,
   `config_name` varchar(255) NOT NULL,
-  `config_value` tinyint(1) NOT NULL,
-  PRIMARY KEY (`config_id`)
+  `config_value` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -59,15 +47,37 @@ CREATE TABLE IF NOT EXISTS `config` (
 -- Structure de la table `goldenbook`
 --
 
-DROP TABLE IF EXISTS `goldenbook`;
-CREATE TABLE IF NOT EXISTS `goldenbook` (
-  `goldenbook_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `goldenbook` (
+  `goldenbook_id` int(11) NOT NULL,
   `goldenbook_user` int(11) NOT NULL,
   `goldenbook_date` date NOT NULL,
-  `goldenbook_commentary` varchar(255) NOT NULL,
-  PRIMARY KEY (`goldenbook_id`),
-  KEY `goldenbook_user` (`goldenbook_user`)
+  `goldenbook_commentary` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `news_title` varchar(400) NOT NULL,
+  `news_body` varchar(1500) NOT NULL,
+  `news_link` varchar(600) NOT NULL,
+  `news_start` date NOT NULL,
+  `news_end` date NOT NULL,
+  `news_recurrence` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `news`
+--
+
+INSERT INTO `news` (`id`, `news_title`, `news_body`, `news_link`, `news_start`, `news_end`, `news_recurrence`) VALUES
+(1, 'Passé', 'passé', '', '2017-01-01', '2017-12-31', 0),
+(2, 'présent', 'présent', 'présent', '2018-01-01', '2018-12-31', 0),
+(3, 'futur', 'futur', 'futur', '2019-01-01', '2019-12-31', 0);
 
 -- --------------------------------------------------------
 
@@ -75,12 +85,10 @@ CREATE TABLE IF NOT EXISTS `goldenbook` (
 -- Structure de la table `offer`
 --
 
-DROP TABLE IF EXISTS `offer`;
-CREATE TABLE IF NOT EXISTS `offer` (
-  `offer_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `offer` (
+  `offer_id` int(11) NOT NULL,
   `offer_name` varchar(255) NOT NULL,
-  `offer_date` date DEFAULT NULL,
-  PRIMARY KEY (`offer_id`)
+  `offer_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -89,12 +97,10 @@ CREATE TABLE IF NOT EXISTS `offer` (
 -- Structure de la table `page`
 --
 
-DROP TABLE IF EXISTS `page`;
-CREATE TABLE IF NOT EXISTS `page` (
-  `page_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `page` (
+  `page_id` int(11) NOT NULL,
   `page_name` varchar(255) NOT NULL,
-  `page_rows` varchar(255) NOT NULL,
-  PRIMARY KEY (`page_id`)
+  `page_rows` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='rows is a json list';
 
 -- --------------------------------------------------------
@@ -103,13 +109,11 @@ CREATE TABLE IF NOT EXISTS `page` (
 -- Structure de la table `partners`
 --
 
-DROP TABLE IF EXISTS `partners`;
-CREATE TABLE IF NOT EXISTS `partners` (
-  `partners_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `partners` (
+  `partners_id` int(11) NOT NULL,
   `partner_name` varchar(255) NOT NULL,
   `partner_description` varchar(255) NOT NULL,
-  `partner_link` varchar(255) NOT NULL,
-  PRIMARY KEY (`partners_id`)
+  `partner_link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -118,9 +122,8 @@ CREATE TABLE IF NOT EXISTS `partners` (
 -- Structure de la table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
   `user_firstname` varchar(255) NOT NULL,
   `user_lastname` varchar(255) NOT NULL,
   `user_password` varchar(255) NOT NULL,
@@ -129,9 +132,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_mobile_phone` varchar(255) DEFAULT NULL,
   `user_address` varchar(255) DEFAULT NULL,
   `user_type` tinyint(1) NOT NULL,
-  `user_isadmin` tinyint(1) NOT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+  `user_isadmin` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `user`
@@ -212,16 +214,14 @@ INSERT INTO `user` (`user_id`, `user_firstname`, `user_lastname`, `user_password
 -- Structure de la table `workshop`
 --
 
-DROP TABLE IF EXISTS `workshop`;
-CREATE TABLE IF NOT EXISTS `workshop` (
-  `workshop_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `workshop` (
+  `workshop_id` int(11) NOT NULL,
   `workshop_name` varchar(255) NOT NULL,
   `workshop_infos` varchar(10000) NOT NULL,
   `workshop_description` varchar(10000) NOT NULL,
   `workshop_price` int(11) NOT NULL,
-  `workshop_projects` varchar(255) NOT NULL,
-  PRIMARY KEY (`workshop_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='projects is json list';
+  `workshop_projects` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='projects is json list';
 
 --
 -- Déchargement des données de la table `workshop`
@@ -232,6 +232,114 @@ INSERT INTO `workshop` (`workshop_id`, `workshop_name`, `workshop_infos`, `works
 (2, 'Lorem Ipsum', '{\r\n  \"durée\": \"1 heures\",\r\n  \"capacité\": \"2 personnes\",\r\n  \"contexte\": \"ipsum\",\r\n  \"lieu\": \"Paris\",\r\n  \"complément\": \"rien inclus\"\r\n}', 'Verum ad istam omnem orationem brevis est defensio. Nam quoad aetas M. Caeli dare potuit isti suspicioni locum, fuit primum ipsius pudore, deinde etiam patris diligentia disciplinaque munita. Qui ut huic virilem togam deditšnihil dicam hoc loco de me; tantum sit, quantum vos existimatis; hoc dicam, hunc a patre continuo ad me esse deductum; nemo hunc M. Caelium in illo aetatis flore vidit nisi aut cum patre aut mecum aut in M. Crassi castissima domo, cum artibus honestissimis erudiretur.', 152, '');
 
 --
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `article`
+--
+ALTER TABLE `article`
+  ADD PRIMARY KEY (`article_id`);
+
+--
+-- Index pour la table `config`
+--
+ALTER TABLE `config`
+  ADD PRIMARY KEY (`config_id`);
+
+--
+-- Index pour la table `goldenbook`
+--
+ALTER TABLE `goldenbook`
+  ADD PRIMARY KEY (`goldenbook_id`),
+  ADD KEY `goldenbook_user` (`goldenbook_user`);
+
+--
+-- Index pour la table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `offer`
+--
+ALTER TABLE `offer`
+  ADD PRIMARY KEY (`offer_id`);
+
+--
+-- Index pour la table `page`
+--
+ALTER TABLE `page`
+  ADD PRIMARY KEY (`page_id`);
+
+--
+-- Index pour la table `partners`
+--
+ALTER TABLE `partners`
+  ADD PRIMARY KEY (`partners_id`);
+
+--
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Index pour la table `workshop`
+--
+ALTER TABLE `workshop`
+  ADD PRIMARY KEY (`workshop_id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `article`
+--
+ALTER TABLE `article`
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `config`
+--
+ALTER TABLE `config`
+  MODIFY `config_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `goldenbook`
+--
+ALTER TABLE `goldenbook`
+  MODIFY `goldenbook_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT pour la table `offer`
+--
+ALTER TABLE `offer`
+  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `page`
+--
+ALTER TABLE `page`
+  MODIFY `page_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `partners`
+--
+ALTER TABLE `partners`
+  MODIFY `partners_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+--
+-- AUTO_INCREMENT pour la table `workshop`
+--
+ALTER TABLE `workshop`
+  MODIFY `workshop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- Contraintes pour les tables déchargées
 --
 
@@ -240,8 +348,3 @@ INSERT INTO `workshop` (`workshop_id`, `workshop_name`, `workshop_infos`, `works
 --
 ALTER TABLE `goldenbook`
   ADD CONSTRAINT `goldenbook_ibfk_1` FOREIGN KEY (`goldenbook_user`) REFERENCES `user` (`user_id`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
