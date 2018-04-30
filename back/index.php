@@ -1,6 +1,9 @@
-<?php require_once('base-back.php'); ?>
-<?php //die( var_dump( realpath(".htaccess") )); ?>
+<?php
+// echo "<p>Full path to a .htpasswd file in this dir: " . dirname(__FILE__) . "/.htpasswd" . "</p>";
+// die();
+?>
 
+<?php require_once('base-back.php'); ?>
 
     <div class="container-fluid">
 
