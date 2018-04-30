@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ <url>
+  <loc>http://www.madeincheztoi.com/</loc>
+  <priority>1</priority>
+  <image:image>
+   <image:loc>http://www.madeincheztoi.com/promo/ateliers_et_cours_de_couture_a_domicile_madeincheztoi-og.jpg</image:loc>
+   <image:title>Ateliers et cours de couture • Made in chez toi</image:title>
+   <image:caption>La couture vient chez toi !</image:caption>
+  </image:image>
+  <image:image>
+   <image:loc>http://www.madeincheztoi.com/promo/banniere_madeincheztoi_champ.jpg</image:loc>
+   <image:title>Ateliers et cours de couture, même au bout du monde ! • Made in chez toi</image:title>
+   <image:caption>La couture vient jusque chez toi !</image:caption>
+  </image:image>
+  <image:image>
+   <image:loc>http://www.madeincheztoi.com/promo/logo_made_in_chez_toi_turquoise.png</image:loc>
+   <image:title>Ateliers et cours de couture à domicile, entre amis • Made in chez toi</image:title>
+   <image:caption>Made in chez toi - Parce que c'est chez toi que ça se passe !</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>http://www.madeincheztoi.com/ateliers_et_cours_de_couture_a_domicile.php</loc>
+  <priority>0.9</priority>
+ </url>
+ <url>
+  <loc>http://www.madeincheztoi.com/reserver_atelier_ou_cours_de_couture.php</loc>
+  <priority>0.9</priority>
+ </url>
+ <url>
+  <loc>http://www.madeincheztoi.com/photos_realisations_ateliers_et_cours_de_couture.html</loc>
+  <priority>0.9</priority>
+ </url>
+</urlset>

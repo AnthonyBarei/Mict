@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /pre/
+Disallow: /css/
+Disallow: /js/
+Disallow: /fonts/
+Disallow: email.php
+Allow: /
+Sitemap: http://www.madeincheztoi.com/sitemap.xml
