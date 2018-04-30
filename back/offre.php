@@ -162,6 +162,7 @@ require_once('base-back.php');
         var id = $(elem).attr("id");
         $('.WORKSHOP' + id).show();
     }
+    
 
     // var str = document.getElementById("demo").innerHTML;
     // var res = str.replace("Microsoft", "W3Schools");
