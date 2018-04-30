@@ -34,7 +34,7 @@ include_once('controllers/news.php');
     <li><a class="scrollTo" href="#offres" title="Les offres Made in chez toi">Offres</a></li>
     <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">Ateliers</a></li>
     <li><a class="scrollTo" href="#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
-    <li><a href="photos_realisations_ateliers_et_cours_de_couture.html" title="Galerie photos">Photzos</a></li>
+    <li><a href="photos_realisations_ateliers_et_cours_de_couture.html" title="Galerie photos">Photos</a></li>
     <li><a class="scrollTo" href="#faq" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
     <li><a class="scrollTo" href="#partenaires" title="Plus on est de fous...">Partenaires</a></li>
     <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>
