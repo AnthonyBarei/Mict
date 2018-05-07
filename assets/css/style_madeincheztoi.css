@@ -93,7 +93,6 @@ em {font-style:italic;}
     padding-top: 0;
     padding-left: 0;
   }
-
 }
 /* Fin Burger*/
 
@@ -598,8 +597,7 @@ footer{ background: url('../images/bg/bobines.jpg') center top/cover; }
 body{ min-width: 540px; font-size:12px;}
 .madein {font-size:30px; }
 
-#menu_call { display:block; } 
-#menutop { display:none; } 
+
 
 
 .top { background:url('../images/bg/top.png') 0 0/50px 50px;}
@@ -716,8 +714,6 @@ footer{ background: url('../images/bg/bobines_m.jpg') center top/cover; }
 body{ min-width: 320px; font-size:10px;}
 .madein {font-size:25px; }
 
-#menu_call { display:block; } 
-#menutop { display:none; } 
 
 
 .top { background:url('../images/bg/top.png') 0 0/50px 50px;}
