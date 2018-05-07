@@ -2,11 +2,11 @@
 <html lang="fr-FR" prefix="og: http://ogp.me/ns#">
 <head>
 	<meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
-        <meta name="rights" content="Copyright 2014/2016 - Made in chez toi (FR)"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="rights" content="Copyright 2014/2016 - Made in chez toi (FR)"/>
 	<title>Ateliers et cours de couture chez les particuliers • Made in chez toi</title>
-        <meta name="description" content="Ateliers couture collectifs ou cours particuliers, dans ton salon ou chez tes amis :) • Machines et tissus inclus • Pour tous les niveaux !"/> 
-        <meta name="keywords" content="couture, cours, lecons, debuter, debutant, commencer, apprendre, facile, paris, region parisienne, 92, 95, 75, 78, 93, 91, 94, atelier, ateliers, domicile, particulier, inclus, lecon, formation, gratuit, amies, amis, debutante, made in chez toi, idf, made, in, chez, toi"/> 
+        <meta name="description" content="Ateliers couture collectifs ou cours particuliers, dans ton salon ou chez tes amis :) • Machines et tissus inclus • Pour tous les niveaux !"/>
+        <meta name="keywords" content="couture, cours, lecons, debuter, debutant, commencer, apprendre, facile, paris, region parisienne, 92, 95, 75, 78, 93, 91, 94, atelier, ateliers, domicile, particulier, inclus, lecon, formation, gratuit, amies, amis, debutante, made in chez toi, idf, made, in, chez, toi"/>
 	<link rel="shortcut icon" href="assets/images/favicon.png?v=2" type="image/png" />
 	<link rel="stylesheet" href="assets/css/style_madeincheztoi.css" />
 	<!--<link rel="alternate" type="application/rss+xml" title="Made in chez toi • Actus" href="http://blog.madeincheztoi.com/feed/" />-->
@@ -37,12 +37,12 @@
 	  <div id="menu_call"><img src="assets/images/bottom.png" alt=""/> MENU</div>
 
 	  <ul id="menutop" class="menu">
-		<li><a class="scrollTo" href="#home" title="Début">Home</a></li>	
-		<li><a class="scrollTo" href="#quoi" title="C'est quoi ?">C'est quoi ?</a></li>	
+		<li><a class="scrollTo" href="#home" title="Début">Home</a></li>
+		<li><a class="scrollTo" href="#quoi" title="C'est quoi ?">C'est quoi ?</a></li>
 		<li><a class="scrollTo" href="#offres" title="Les offres Made in chez toi">Offres</a></li>
 		<li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">Ateliers</a></li>
 		<li><a class="scrollTo" href="#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
-		<li><a href="photos_realisations_ateliers_et_cours_de_couture.html" title="Galerie photos">Photos</a></li>
+		<li><a href="photos.html" title="Galerie photos">Photos</a></li>
 		<li><a class="scrollTo" href="#faq" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
 		<li><a class="scrollTo" href="#partenaires" title="Plus on est de fous...">Partenaires</a></li>
 		<li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>
@@ -101,7 +101,7 @@
 	    <li> Tu en as assez des vêtements du commerce, rien ne te plaît et ça t'énerve de voir ton T-shirt préféré sur les épaules de tout le monde ?  </li>
 	    <li> Tu n'as pas le temps de t'y mettre, même si tu en as très envie !!  </li>
 	   </ul>
-	   <p>(Découpe les mentions inutiles :) )</p>              
+	   <p>(Découpe les mentions inutiles :) )</p>
 
 	   <div id="solution" class="accroche">Tu es au bon endroit !</div>
 
@@ -161,7 +161,7 @@
 	   <div class="bouton quart">
 	    <a class="scrollTo" href="reserver_atelier_ou_cours_de_couture.php" Title="Je m'inscris !">Je m'inscris !</a>
 	   </div>
-	   </div>	     
+	   </div>
 
           </div>
          </div>
@@ -173,36 +173,113 @@
 	</section>
 
 
-	
+
 	<section id="offres">
 	 <div id="n3" class="cell1">
 	  <div class="contenu">
 		<h1>Les offres Made in chez toi</h1>
 
-	   <div class="a_suivre">
+    <div class="a_suivre">
+        <?php include_once('modeles/workshopModele.php');
+        $offre = new workshopModel();
+        $offreList = $offre->getWorkshops();
+
+        foreach ($offreList as $key => $offer) : $name = str_replace(' ', '_', $offer['workshop_name']); ?>
+
             <div class="bouton quart">
-             <a class="scrollTo" href="#les_ateliers" Title="Les ateliers">Les ateliers</a>
+             <a class="scrollTo" href="#<?= $name ?>" Title="<?= $offer['workshop_name'] ?>" style="margin-bottom: 20px;"><?= $offer['workshop_name'] ?></a>
             </div>
-            <div class="bouton quart">
-             <a class="scrollTo" href="#cours_particuliers" Title="Les cours particuliers">Les cours particuliers</a>
+        <?php endforeach; ?>
+
+        <!-- <div class="bouton quart">
+         <a class="scrollTo" href="#les_ateliers" Title="Les ateliers">Les ateliers</a>
+        </div>
+        <div class="bouton quart">
+         <a class="scrollTo" href="#cours_particuliers" Title="Les cours particuliers">Les cours particuliers</a>
+        </div>
+        <div class="bouton quart">
+         <a class="scrollTo" href="#carte_cadeau" Title="Carte cadeau">La carte cadeau</a>
+        </div>
+        <div class="bouton quart">
+         <a class="scrollTo" href="#CE" Title="Entreprises / CE">Entreprises / CE</a>
+        </div> -->
+    </div>
+
+    <?php foreach ($offreList as $key => $offer) : $name = str_replace(' ', '_', $offer['workshop_name']); ?>
+        <?php $infos = json_decode($offer["workshop_infos"]); ?>
+        <hr id="<?= $name ?>">
+
+        <div class="n3-1">
+            <div class="left clients">
+                <div class="image"></div>
+                <div class="picto"></div>
             </div>
-            <div class="bouton quart">
-             <a class="scrollTo" href="#carte_cadeau" Title="Carte cadeau">La carte cadeau</a>
+            <div class="texte">
+                <h2><?= $offer['workshop_name'] ?></h2>
+                <div class="acc2"><?php foreach($infos as $info) : ?> <?= $info ?> &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; <?php endforeach; ?></div>
+                <p>
+                    <?= $offer['workshop_description'] ?>
+                </p>
             </div>
-            <div class="bouton quart">
-             <a class="scrollTo" href="#CE" Title="Entreprises / CE">Entreprises / CE</a>
+
+            <div class="a_suivre">
+                <div class="bouton tiers">
+                    <a href="ateliers_et_cours_de_couture_a_domicile.php" Title="Détail des thèmes">Les thèmes</a>
+                </div>
+                <div id="toggle_tarif" class="bouton tiers">
+                    <a href="javascript:void(0)" Title="Les tarifs des ateliers">Les tarifs</a>
+                </div>
+                <div class="bouton tiers">
+                    <a href="reserver_atelier_ou_cours_de_couture.php" Title="Réserver">Je réserve !</a>
+                </div>
             </div>
-           </div>
-		
+
+            <div class="show_tarifs">
+                <div class="tarifs">
+                    <div class="table">
+                        <div class="thead">
+                            <div class="tcell">Nombre de participants</div>
+                            <div class="tcell">Tarif par personne</div>
+                            <div class="tcell"></div>
+                        </div>
+                        <div class="tligne">
+                            <div class="tcell">3</div>
+                            <div class="tcell">90 €</div>
+                            <div class="tcell">soit 30 € / h</div>
+                        </div>
+                        <div class="tligne">
+                            <div class="tcell">4</div>
+                            <div class="tcell">80 €</div>
+                            <div class="tcell">soit 27 € / h</div>
+                        </div>
+                        <div class="tligne">
+                            <div class="tcell">5</div>
+                            <div class="tcell">75 €</div>
+                            <div class="tcell">soit 25 € / h</div>
+                        </div>
+                        <div class="tligne">
+                            <div class="tcell">6</div>
+                            <div class="tcell">70 €</div>
+                            <div class="tcell">soit 23 € / h</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="caption">Rappel : 1 atelier = 3 heures, chez toi, machine, tissus et fournitures compris</div>
+            </div>
+
+        </div>
+
+    <?php endforeach; ?>
+
 	<hr id="les_ateliers">
-	
+
 		<div class="n3-1">
 		<div class="left clients">
 			<div class="image"></div>
 			<div class="picto"></div>
 		</div>
 		<div class="texte">
-	   <h2>Les ateliers</h2> 
+	   <h2>Les ateliers</h2>
 	<div class="acc2">3 heures&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;3 à 6 personnes&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;chez toi ou tes amis&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Paris / région parisienne&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;tout inclus</div>
 <p>
 L'essence même de Made in chez toi, c'est de coudre ensemble, de partager de bons moments avec ses amis ou avec de nouvelles connaissances, le tout dans un environnement agréable et cosy.
@@ -222,7 +299,7 @@ Si tes amis ne sont pas intéressés, si vous n'avez jamais les mêmes créneaux
 Enfin, pense à Made in chez toi pour tous tes événements festifs. Noël, Pâques, Halloween, anniversaires, EVJF, fête des mères (et des pères :) ), Made in chez toi a <a href="ateliers_et_cours_de_couture_a_domicile.php#theme10">des ateliers spécifiques et sur-mesure</a> prévus pour passer de bons moments avec tes amis et tes proches !
 </p>
            </div>
-		
+
 	   <div class="a_suivre">
             <div class="bouton tiers">
              <a href="ateliers_et_cours_de_couture_a_domicile.php" Title="Détail des thèmes">Les thèmes</a>
@@ -234,7 +311,7 @@ Enfin, pense à Made in chez toi pour tous tes événements festifs. Noël, Pâq
              <a href="reserver_atelier_ou_cours_de_couture.php" Title="Réserver">Je réserve !</a>
             </div>
            </div>
-		
+
 	     <div class="show_tarifs">
 	      <div class="tarifs">
 	       <div class="table">
@@ -283,11 +360,11 @@ Enfin, pense à Made in chez toi pour tous tes événements festifs. Noël, Pâq
 		<p>Tu te reconnais bien ci-dessus mais... pas de chance ! Toutes tes copines qui étaient partantes pour l'atelier se laissent rattraper par... tu sais... les enfants... le boulot... les courses... la famille... Bref, difficile de trouver un créneau pour tout le monde !</p>
 
 		<p>Tu décides de ne plus attendre pour sortir ton livre de couture de l'étagère :) Made in chez toi pense aussi à toi ! La formule Cours Particuliers, c'est le sur-mesure de l'apprentissage de la couture !</p>
- 
+
 		<p>Tu débutes ? On commence pas à pas en détaillant chaque étape, et tu repars vite avec une de tes réalisations ; parce qu'elle est importante, cette première...</p>
 
 		<p>Tu t'y connais déjà un peu ? Made in chez toi arrive là où ça coince ! Tu avances ton projet autant que tu peux/veux, et on se penche sur les difficultés en temps réel pour un temps d'enseignement optimisé.</p>
-  
+
 		<p>Tu n'as pas de machine à coudre ? Tu peux quand même suivre un cours particulier, Made in chez toi t'en fournit une. Oui ! Il faut bien s'y frotter pour s'y piquer, à la couture ! En revanche, les fournitures, elles, ne sont pas fournies.</p>
                 </div>
 	   <div class="a_suivre">
@@ -338,14 +415,14 @@ Enfin, pense à Made in chez toi pour tous tes événements festifs. Noël, Pâq
                 </div>
 
 	<hr id="carte_cadeau">
-	
+
 		<div class="n3-3">
 		<div class="left clients">
 			<div class="image"></div>
 			<div class="picto"></div>
 		</div>
 		<div class="texte">
-	   <h2>La carte cadeau Made in chez toi</h2> 
+	   <h2>La carte cadeau Made in chez toi</h2>
 	<div class="acc2">90 €&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Valable un an&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Ateliers ou cours particuliers&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Paris / région parisienne&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Son coupe-fil offert</div>
 <p>
 Tu es à la recherche d'un cadeau original et personnalisé pour Noël ? Pour un anniversaire ? Une fête de famille ? Un départ en retraite ?
@@ -360,7 +437,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 </p>
                 </div>
            </div>
-		
+
 	   <div class="a_suivre">
             <div class="bouton entier">
              <a href="commander_carte_cadeau_couture_madeincheztoi.php" Title="Commander">Je commande une carte cadeau !</a>
@@ -457,7 +534,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	</section>
 
 
-	
+
 	<section id="intermediaire_2">
 	 <div class="cell6">
 	  <img class="pict1" src="assets/images/px.png" alt=""/>
@@ -500,14 +577,14 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 		  Plein de trucs et astuces, et des explications très claires
 		</h5>
 		<p>
-		  Ma trousse est superbe ! Pour les filles et moi, le prochain, ce sera un vêtement pour femme ! 
+		  Ma trousse est superbe ! Pour les filles et moi, le prochain, ce sera un vêtement pour femme !
 --Marianne
 		</p>
 	    </div>
 	  </div>
 	 </div>
 	</section>
-	
+
 
 
 	<section id="contact">
@@ -524,7 +601,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	      </div>
 	      <div class="bouton entier">
                   <a href="reserver_atelier_ou_cours_de_couture.php" Title="Réserver">Je réserve mon atelier !</a>
-              </div>	
+              </div>
 	    </div>
 	    <div class="droite">
 	      <form class="form" id="form1" action="email.php" method="post">
@@ -549,7 +626,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
         	  <textarea name="message" rows=5 class="champ" id="message" placeholder="Mon message ou ma question..."></textarea>
       		</p>
         	<input type="submit" value="" class="submit"/>
-    	      </form>	
+    	      </form>
 	    </div>
 	      <p class="backup_contact">Si tu n'as pas de réponse sous 24 heures, essaye par téléphone au +33 6 14 14 25 46, ou par email : contact@madeincheztoi.com</p>
 	  </div>
@@ -557,7 +634,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	</section>
 
 
-	
+
 	<section id="faq">
 	 <div class="cell1">
 	  <div class="contenu">
@@ -607,7 +684,7 @@ Pour les heureuses habitantes de province, des ateliers couture seront prévus p
 		<a class="faq_sum" href="javascript:void(0)" data-div="faq2">Comment se passe le règlement ?</a>
 		<div id="faq2" class="faq_detail">
             <p>
-C'est l'hôtesse qui est l'interlocutrice privilégiée de Made in chez toi, et qui se charge du règlement de l'atelier. Ses amies lui remboursent le montant de leur atelier. 
+C'est l'hôtesse qui est l'interlocutrice privilégiée de Made in chez toi, et qui se charge du règlement de l'atelier. Ses amies lui remboursent le montant de leur atelier.
 </p><p>
 Une avance de 100 € sera demandée au plus tard une semaine avant l'atelier, par chèque ou virement, afin de valider la réservation de l'atelier et de prévoir l'achat des fournitures.
 </p><p>
@@ -669,7 +746,7 @@ Il est aussi possible d'acheter du tissu chez notre partenaire La Modette, en su
             <p>
 Oui, c'est possible !
 </p><p>
-Il suffit d'<a class="scrollTo" href="#contact">envoyer un message</a> à contact@madeincheztoi.com en demandant une carte cadeau. 
+Il suffit d'<a class="scrollTo" href="#contact">envoyer un message</a> à contact@madeincheztoi.com en demandant une carte cadeau.
 </p><p>
 Elle vous sera envoyée par email et est valable un an.
             </p>
@@ -680,11 +757,11 @@ Elle vous sera envoyée par email et est valable un an.
 		<a class="faq_sum" href="javascript:void(0)" data-div="faq7">Quelle ambiance y a-t-il lors d'un atelier ?</a>
 		<div id="faq7" class="faq_detail">
             <p>
-Oh là là, je ne m'y attendais pas à celle-là ! ;) 
+Oh là là, je ne m'y attendais pas à celle-là ! ;)
 </p><p>
-L'ambiance est assez différente d'un atelier à l'autre puisque les groupes sont différents (bon, ça c'est dit ! :) ). 
+L'ambiance est assez différente d'un atelier à l'autre puisque les groupes sont différents (bon, ça c'est dit ! :) ).
 </p><p>
-Certains sont très appliqués et calmes, d'autres discutent plus et se charient. Cela dépend des relations d'amitié entre chacun, je pense, tout simplement. 
+Certains sont très appliqués et calmes, d'autres discutent plus et se charient. Cela dépend des relations d'amitié entre chacun, je pense, tout simplement.
 </p><p>
 L'hôtesse qui accueille chez elle joue aussi un grand rôle, elle prépare souvent thé et petits gâteaux. Certaines aiment coudre en silence, d'autres avec une musique de fond.
 </p><p>
@@ -766,9 +843,9 @@ Une seule barrière à franchir, celle de se lancer et de laisser libre cours à
 		<a class="faq_sum" href="javascript:void(0)" data-div="faq12">Comment es-tu venue à la couture ?</a>
 		<div id="faq12" class="faq_detail">
             <p>
-Comme ça, un jour, l'envie m'a prise ! C'est vraiment aussi simple et inexplicable que cela. 
+Comme ça, un jour, l'envie m'a prise ! C'est vraiment aussi simple et inexplicable que cela.
 </p><p>
-Ensuite, le Père Noël qui a des oreilles partout m'a offert un livre de couture pour Bébé : Les Intemporels pour bébé d'Astrid le Provost. 
+Ensuite, le Père Noël qui a des oreilles partout m'a offert un livre de couture pour Bébé : Les Intemporels pour bébé d'Astrid le Provost.
 </p><p>
 Et tout s'est enchaîné, les premières armes, les tutos, beaucoup de temps, les essais, le décryptage de magazines allemands et japonais, les premiers vêtements, la robe de parrainage de ma fille... Puis j'ai pris des cours grâce à la Mairie de Paris, pour ensuite en donner de mon côté, cours collectifs, cours particuliers...
 </p><p>
@@ -783,9 +860,9 @@ Le virus était attrapé :)
 	    <p>
 - Parce que c'est l'entreprise que j'aurais aimé trouver, quand j'avais envie de changement, de nouveauté, de redonner un coup de frais sur ma vie, mes relations et mon travail !
 </p><p>
-- Parce qu’on est souvent dans le « tout intellectuel » et que se laisser aller à la créativité, c’est se détendre sans se juger 
+- Parce qu’on est souvent dans le « tout intellectuel » et que se laisser aller à la créativité, c’est se détendre sans se juger
 </p><p>
-- Parce que l’on repart fiers de d’avoir réalisé de A à Z un projet de ses mains ! 
+- Parce que l’on repart fiers de d’avoir réalisé de A à Z un projet de ses mains !
 </p><p>
 - Parce que c’est se faire de beaux souvenirs ensemble et resserrer les liens avec ses amis (c'est vrai quoi ! Il n'y a pas que spa, resto, sauna, ciné, shopping, apéro, hammam et footing !)
 </p><p>
@@ -832,7 +909,7 @@ Je trouve que l'enthousiasme est le moteur et le plaisir la récompense ! ;)
             <p>
 Conquérir le Monde, MouahahahAHAHAHAHAH !
 </p><p>
-(avec un beau crescendo bien sûr ;) ) 
+(avec un beau crescendo bien sûr ;) )
             </p>
 		</div>
 	      </li>
@@ -844,7 +921,7 @@ Conquérir le Monde, MouahahahAHAHAHAHAH !
 	</section>
 
 
-	
+
 	<section id="partenaires">
 	 <div class="cell1">
 	  <div class="contenu">
@@ -923,13 +1000,13 @@ Tous les patrons sont disponibles en Kit avec des tissus bio et exclusifs, pour 
 	</section>
 
 
-	
+
 	<footer>
 	 <div class="cell1">
 	  <div class="contenu">
 		<p class="baseline"><span class="madein">Made in... <em>Chez toi !</em></span></p>
 		<p>Parce que c'est <u>Chez Toi</u> que ça se passe !!!</p>
-	    
+
 	  </div>
 	 </div>
 	 <div class="copyright">
