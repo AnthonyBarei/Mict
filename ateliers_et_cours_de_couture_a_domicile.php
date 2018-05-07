@@ -37,7 +37,7 @@
                 <li><a href="index.html#offres" title="Les offres Made in chez toi">Offres</a></li>
                 <li><a class="scrollTo" href="#ateliers" title="Le détail des ateliers">Ateliers</a></li>
                 <li><a href="index.html#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
-                <li><a href="photos_realisations_ateliers_et_cours_de_couture.html" title="Galerie photos">Photos</a></li>
+                <li><a href="photos.html" title="Galerie photos">Photos</a></li>
                 <li><a href="index.html#faq-a_propos" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
                 <li><a href="index.html#partenaires" title="Plus on est de fous...">Partenaires</a></li>
                 <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>

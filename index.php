@@ -30,12 +30,12 @@
 <body>
 
 
-	<nav class="nav_menu">
+		<nav class="nav_menu">
 		<input type="checkbox" class="menu-toggler" id="menu-toggler" aria-hidden="true">
                 <label for="menu-toggler" class="menu-toggler__label" aria-hidden="true">
-                </label>
+               
 	  <div id="menu_call"><img src="assets/images/bottom.png" alt=""/> MENU</div>
-
+ </label>
 	  <ul id="menutop" class="menu">
 		<li><a class="scrollTo" href="#home" title="Début">Home</a></li>
 		<li><a class="scrollTo" href="#quoi" title="C'est quoi ?">C'est quoi ?</a></li>
@@ -156,7 +156,7 @@
 	    <a class="scrollTo" href="ateliers_et_cours_de_couture_a_domicile.php" Title="Les ateliers">Les ateliers</a>
 	   </div>
 	   <div class="bouton quart">
-	    <a href="photos_realisations_ateliers_et_cours_de_couture.html" Title="Les photos">Les photos</a>
+	    <a href="photos.html" Title="Les photos">Les photos</a>
 	   </div>
 	   <div class="bouton quart">
 	    <a class="scrollTo" href="reserver_atelier_ou_cours_de_couture.php" Title="Je m'inscris !">Je m'inscris !</a>
@@ -482,7 +482,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	 <div class="cell1">
 	  <div class="contenu">
 	   <div class="photo">
-	    <a href="photos_realisations_ateliers_et_cours_de_couture.html#assets/images/album1/10.jpg">
+	    <a href="photos.html#assets/images/album1/10.jpg">
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:3"/>
@@ -494,7 +494,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	    </a>
 	   </div>
 	   <div class="photo">
-	    <a href="photos_realisations_ateliers_et_cours_de_couture.html#assets/images/album1/19.jpg">
+	    <a href="photos.html#assets/images/album1/19.jpg">
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:5"/>
@@ -506,7 +506,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	    </a>
 	   </div>
 	   <div class="photo">
-	    <a href="photos_realisations_ateliers_et_cours_de_couture.html#assets/images/album1/30.jpg">
+	    <a href="photos.html#assets/images/album1/30.jpg">
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:7"/>
@@ -518,7 +518,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	    </a>
 	   </div>
 	   <div class="photo">
-	    <a href="photos_realisations_ateliers_et_cours_de_couture.html#assets/images/album1/26.jpg">
+	    <a href="photos.html#assets/images/album1/26.jpg">
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:9"/>
