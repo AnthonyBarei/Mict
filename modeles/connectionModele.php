@@ -6,10 +6,10 @@ class DbConnect
 {
 
     public function connect() {
-        $host = 'localhost';
+        $host = 'db727863824.db.1and1.com';
         $dbname = 'mict';
-        $user = 'root';
-        $password = '';
+        $user = 'dbo727863824';
+        $password = 'LPDW-mict2018';
 
         try {
             $dbh = new PDO('mysql:host='.$host.';dbname='.$dbname, $user, $password);
