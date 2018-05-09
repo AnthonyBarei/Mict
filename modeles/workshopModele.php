@@ -1,6 +1,5 @@
 <?php
 require_once('connectionModel.php');
-require_once('../functions.php');
 
 class workshopModel extends DbConnect {
 
@@ -52,6 +51,9 @@ class workshopModel extends DbConnect {
 
     public function updateWorkshop($params) {
         $dbh = $this->connect();
+
+        $params["infos"] = json_encode($params["infos"]);
+        // die(var_dump($params["infos"]));
 
         $res = $dbh->prepare('
             UPDATE workshop

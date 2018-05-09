@@ -1,0 +1,300 @@
+<!doctype html>
+  
+<!--
+  ~ /*******************************************************************************
+  ~  jquery.mb.components
+  ~  file: demo.html
+  ~
+  ~  Copyright (c) 2001-2013. Matteo Bicocchi (Pupunzi);
+  ~  Open lab srl, Firenze - Italy
+  ~  email: matteo@open-lab.com
+  ~  site: 	http://pupunzi.com
+  ~  blog:	http://pupunzi.open-lab.com
+  ~ 	http://open-lab.com
+  ~
+  ~  Licences: MIT, GPL
+  ~  http://www.opensource.org/licenses/mit-license.php
+  ~  http://www.gnu.org/licenses/gpl.html
+  ~
+  ~  last modified: 02/10/13 22.42
+  ~  ******************************************************************************/
+  -->
+
+<html>
+<head>
+  <head>
+  <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <meta name="rights" content="Copyright 2014/2016 - Made in chez toi (FR)"/> 
+  <title>Ateliers et cours de couture chez les particuliers • Made in chez toi</title>
+        <meta name="description" content="Ateliers couture collectifs ou cours particuliers, dans ton salon ou chez tes amis :) • Machines et tissus inclus • Pour tous les niveaux !"/> 
+        <meta name="keywords" content="couture, cours, lecons, debuter, debutant, commencer, apprendre, facile, paris, region parisienne, 92, 95, 75, 78, 93, 91, 94, atelier, ateliers, domicile, particulier, inclus, lecon, formation, gratuit, amies, amis, debutante, made in chez toi, idf, made, in, chez, toi"/> 
+  <link rel="shortcut icon" href="assets/images/favicon.png?v=2" type="image/png" />
+  <link rel="stylesheet" href="assets/css/style_madeincheztoi.css" />
+  <!--<link rel="alternate" type="application/rss+xml" title="Made in chez toi • Actus" href="http://blog.madeincheztoi.com/feed/" />-->
+  <link rel="author" href="http://www.madeincheztoi.com/index.php#faq11" />
+  <link rel="canonical" href="http://www.madeincheztoi.com/" />
+
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ateliers et cours de couture chez les particuliers • Made in chez toi" />
+<meta property="og:description" content="Ateliers couture collectifs ou cours particuliers, dans ton salon ou chez tes amis :) • Machines et tissus inclus • Pour tous les niveaux !" />
+<meta property="og:url" content="http://www.madeincheztoi.com/" />
+<meta property="og:site_name" content="Made in chez toi" />
+<meta property="og:image" content="http://www.madeincheztoi.com/assets/images/madeincheztoi-og_thumb.jpg" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ateliers et cours de couture chez les particuliers • Made in chez toi"/>
+<meta name="twitter:description" content="Ateliers couture collectifs ou cours particuliers, dans ton salon ou chez tes amis :) • Machines et tissus inclus • Pour tous les niveaux !"/>
+<meta name="twitter:domain" content="Made in chez toi"/>
+<meta name="twitter:image:src" content="http://www.madeincheztoi.com/assets/images/madeincheztoi-og_thumb.jpg"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <style type="text/css">
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+    }
+    .wrapper{
+      position:relative;
+      font-family:Arial, Helvetica, sans-serif;
+      padding-top:90px;
+      padding-left:50px;
+      width:80%;
+      margin:auto
+    }
+    .galleryCont{
+      display:none;
+    }
+    .wrapper .text{
+      font-family:Arial, Helvetica, sans-serif;
+    }
+    .wrapper h1{
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:26px;
+    }
+    .longText{
+      margin-top:20px;
+      width:600px;
+      font:18px/24px Arial, Helvetica, sans-serif;
+      color:gray;
+    }
+    span.btn{
+      padding:10px;
+      display:inline-block;
+      cursor:pointer;
+      font:12px/14px Arial, Helvetica, sans-serif;
+      color:#aaa;
+      background-color:#eee;
+      -moz-border-radius:10px;
+      -webkit-border-radius:10px;
+      -moz-box-shadow:#999 2px 0px 3px;
+      -webkit-box-shadow:#999 2px 0px 3px;
+    }
+    span.btn:hover{
+      background-color:#000;
+    }
+  </style>
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/mbGallery.js"></script>
+
+</head>
+<body >
+    <nav class="nav_menu">
+    <input type="checkbox" class="menu-toggler" id="menu-toggler" aria-hidden="true">
+                <label for="menu-toggler" class="menu-toggler__label" aria-hidden="true">
+               
+    <div id="menu_call"><img src="assets/images/bottom.png" alt=""/> MENU</div>
+ </label>
+    <ul id="menutop" class="menu">
+    <li><a class="scrollTo" href="index.php#home" title="Début">Home</a></li>  
+    <li><a class="scrollTo" href="index.php#quoi" title="C'est quoi ?">C'est quoi ?</a></li> 
+    <li><a class="scrollTo" href="index.php#offres" title="Les offres Made in chez toi">Offres</a></li>
+    <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">Ateliers</a></li>
+    <li><a class="scrollTo" href="index.php#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
+    <li><a href="photos.html" title="Galerie photos">Photos</a></li>
+    <li><a class="scrollTo" href="index.php#faq" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
+    <li><a class="scrollTo" href="index.php#partenaires" title="Plus on est de fous...">Partenaires</a></li>
+    <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>
+    </ul>
+  </nav>
+
+<div class="wrapper">
+  <h1>Galerie des réalisations :</h1>
+  <div class="text">
+ <span class="btn" onclick="$('#g1').mbGallery({maskBgnd:'#ccc',minWidth: 50, minHeight: 50, overlayOpacity:.9,startFrom: 5,addRaster:true, printOutThumbs:true});">Nos Réalisations</span>&nbsp;&nbsp;
+ <span class="btn" onclick="$('#g2').mbGallery({maskBgnd:'#ccc',minWidth: 50, minHeight: 50, overlayOpacity:.9,startFrom: 5,addRaster:true, printOutThumbs:true});">Ambiances</span>&nbsp;&nbsp;  
+  <span class="btn" onclick="$('#g3').mbGallery({maskBgnd:'#ccc',minWidth: 50, minHeight: 50, overlayOpacity:.9,startFrom: 5,addRaster:true, printOutThumbs:true});">Partenaires</span>&nbsp;&nbsp;  
+    <br>
+    <br>
+  </div>
+
+  <div  id="g1" class="galleryCont">
+    <a class="imgThumb" href="assets/images/gallery1/LR/01.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery1/HR/01.jpg"></a>
+    <div class="imgDesc">Description 01</div>
+
+    <a class="imgThumb" href="assets/images/gallery1/LR/02.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery1/HR/02.jpg"></a>
+    <div class="imgDesc">Description 02</div>
+
+    <a class="imgThumb" href="assets/images/gallery1/LR/03.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery1/HR/03.jpg"></a>
+    <div class="imgDesc">Description 03</div>
+
+    <a class="imgThumb" href="assets/images/gallery1/LR/04.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery1/HR/04.jpg"></a>
+    <div class="imgDesc">Description 04</div>
+
+    <a class="imgThumb" href="assets/images/gallery1/LR/05.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery1/HR/05.jpg"></a>
+    <div class="imgDesc">Description 05</div>
+
+    <a class="imgThumb" href="assets/images/gallery1/LR/06.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery1/HR/06.jpg"></a>
+    <div class="imgDesc">Description 06</div>
+
+    <a class="imgThumb" href="assets/images/gallery1/LR/07.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery1/HR/07.jpg"></a>
+
+    <div class="imgDesc">Description 07</div>
+
+    <a class="imgThumb" href="assets/images/gallery1/LR/08.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery1/HR/08.jpg"></a>
+    <div class="imgDesc">Description 08</div>
+
+    <a class="imgThumb" href="assets/images/gallery1/LR/09.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery1/HR/09.jpg"></a>
+    <div class="imgDesc">Description 09</div>
+
+    <a class="imgThumb" href="assets/images/gallery1/LR/10.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery1/HR/10.jpg"></a>
+    <div class="imgDesc">Description 10</div>
+
+    <a class="imgThumb" href="assets/images/gallery1/LR/11.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery1/HR/11.jpg"></a>
+    <div class="imgDesc">Description 11</div>
+  </div>
+
+  <div  id="g2" class="galleryCont">
+    <a class="imgThumb" href="assets/images/gallery2/LR/01.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/01.jpg"></a>
+    <div class="imgDesc">Description 01</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/02.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/02.jpg"></a>
+    <div class="imgDesc">Description 02</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/03.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/03.jpg"></a>
+    <div class="imgDesc">Description 03</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/04.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/04.jpg"></a>
+    <div class="imgDesc">Description 04</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/05.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/05.jpg"></a>
+    <div class="imgDesc">Description 05</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/06.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/06.jpg"></a>
+    <div class="imgDesc">Description 06</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/07.jpg"></a>
+
+    <a class="imgFull" href="assets/images/gallery2/HR/07.jpg"></a>
+    <div class="imgDesc">Description 07</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/08.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/08.jpg"></a>
+    <div class="imgDesc">Description 08</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/09.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/09.jpg"></a>
+
+    <div class="imgDesc">Description 09</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/10.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/10.jpg"></a>
+    <div class="imgDesc">Description 10</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/11.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/11.jpg"></a>
+    <div class="imgDesc">Description 11</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/12.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/12.jpg"></a>
+    <div class="imgDesc">Description 11</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/13.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/13.jpg"></a>
+    <div class="imgDesc">Description 11</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/14.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/14.jpg"></a>
+    <div class="imgDesc">Description 11</div>
+  </div>
+
+  <div  id="g3" class="galleryCont">
+    <a class="imgThumb" href="assets/images/gallery2/LR/01.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/01.jpg"></a>
+    <div class="imgDesc">Description 01</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/02.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/02.jpg"></a>
+    <div class="imgDesc">Description 02</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/03.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/03.jpg"></a>
+    <div class="imgDesc">Description 03</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/04.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/04.jpg"></a>
+    <div class="imgDesc">Description 04</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/05.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/05.jpg"></a>
+    <div class="imgDesc">Description 05</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/06.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/06.jpg"></a>
+    <div class="imgDesc">Description 06</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/07.jpg"></a>
+
+    <a class="imgFull" href="assets/images/gallery2/HR/07.jpg"></a>
+    <div class="imgDesc">Description 07</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/08.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/08.jpg"></a>
+    <div class="imgDesc">Description 08</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/09.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/09.jpg"></a>
+
+    <div class="imgDesc">Description 09</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/10.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/10.jpg"></a>
+    <div class="imgDesc">Description 10</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/11.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/11.jpg"></a>
+    <div class="imgDesc">Description 11</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/12.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/12.jpg"></a>
+    <div class="imgDesc">Description 11</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/13.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/13.jpg"></a>
+    <div class="imgDesc">Description 11</div>
+
+    <a class="imgThumb" href="assets/images/gallery2/LR/14.jpg"></a>
+    <a class="imgFull" href="assets/images/gallery2/HR/14.jpg"></a>
+    <div class="imgDesc">Description 11</div>
+  </div>
+
+</div>
+
+</body>
+</html>

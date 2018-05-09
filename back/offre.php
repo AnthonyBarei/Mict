@@ -18,17 +18,30 @@ if(isset($_POST['create'])) {
 
 $atelier = $ws->workshopList();
 
+$infosInputs = [];
+
+// nombre d'infos limitées à 10
+
+
 foreach( $atelier as $at ) {
     if(isset($_POST['update' . $at['workshop_id']])) {
-        $try = $ws->updateWorkshop(
-          array(
-              "id" => $_POST['secretid' . $at['workshop_id']],
-              "name" =>  $_POST['name' . $at['workshop_id']],
-              "infos" => $_POST['infos' . $at['workshop_id']],
-              "description" => $_POST['desc' . $at['workshop_id']],
-              "price" => $_POST['prix' . $at['workshop_id']],
-              "projects" => $_POST['project' . $at['workshop_id']]
-         ));
+        $try = [
+                "id" => $_POST['secretid' . $at['workshop_id']],
+                "name" =>  $_POST['name' . $at['workshop_id']],
+                "infos" => [$_POST['infos' . $at['workshop_id']]],
+                "description" => $_POST['desc' . $at['workshop_id']],
+                "price" => $_POST['prix' . $at['workshop_id']],
+                "projects" => $_POST['project' . $at['workshop_id']]
+            ];
+
+            for($i = 0; $i < 10; $i++) {
+                if(isset($_POST['infos' . $at['workshop_id'] . "_" . $i])) {
+                    array_push($try["infos"], $_POST['infos' . $at['workshop_id'] . "_" . $i]);
+                }
+            }
+
+        $ws->updateWorkshop($try);
+
     }
 }
 
@@ -102,6 +115,7 @@ require_once('base-back.php');
                 </div>
 
                     <?php foreach( $atelier as $at ) : ?>
+                        <?php $at['workshop_infos'] = json_decode($at['workshop_infos']); ?>
 
                             <div class="WORKSHOP<?= $i ?>">
                                 <form class="" action="" method="post">
@@ -112,7 +126,12 @@ require_once('base-back.php');
 
                                     <div class="form-group" id="updateInfos<?= $at['workshop_id'] ?>">
                                       <label for="infos">Infos</label>
-                                      <input type="text" class="form-control" id="infos_update" name="infos<?= $at['workshop_id'] ?>" value="<?= $at['workshop_infos'] ?>" placeholder="Entrer les infos">
+                                      <a href="#updateInfos<?= $at['workshop_id'] ?>" id="add_info" onclick="addInfo(<?= $at['workshop_id'] ?>)">
+                                          <i class="fas fa-plus fa-lg" style="float: right; margin-top: 5px;"></i>
+                                      </a>
+                                      <?php foreach ($at['workshop_infos'] as $key => $info) : ?>
+                                          <input type="text" class="form-control" id="infos_update" name="infos<?= $at['workshop_id'] ?>" value="<?= $info ?>" placeholder="Entrer les infos">
+                                      <?php endforeach; ?>
                                     </div>
 
                                     <div class="form-group" id="updateDescription<?= $at['workshop_id'] ?>">
@@ -133,7 +152,7 @@ require_once('base-back.php');
                                     <input type="hidden" name="secretid<?= $at['workshop_id'] ?>" value="<?= $at['workshop_id'] ?>">
 
                                     <button id="updateButton<?= $at['workshop_id'] ?>" type="submit" class="btn btn-primary" name="update<?= $at['workshop_id'] ?>">Modifier l'atelier</button>
-                                <a href="/Mict/back/offre.php?delete=<?= $at['workshop_id'] ?>" onclick="return confirm('êtes vous sûr de vouloir supprimer cet atelier ?');"><i class="fas fa-times fa-2x" style="float: right; margin-top: 5px;"></i></a>
+                                    <a href="/Mict/back/offre.php?delete=<?= $at['workshop_id'] ?>" onclick="return confirm('êtes vous sûr de vouloir supprimer cet atelier ?');"><i class="fas fa-times fa-2x" style="float: right; margin-top: 5px;"></i></a>
                                 </form>
                             </div>
 
@@ -162,11 +181,47 @@ require_once('base-back.php');
         var id = $(elem).attr("id");
         $('.WORKSHOP' + id).show();
     }
-    
+
 
     // var str = document.getElementById("demo").innerHTML;
     // var res = str.replace("Microsoft", "W3Schools");
     // document.getElementById("demo").innerHTML = res;
+
+    var info_row = 0;
+
+    function addInfo(id) {
+        if(info_row < 9) {
+            var row = `<div id="infos_${info_row}">
+                            <input type="text" class="form-control" id="infos_update" name="infos${id}_${info_row}" placeholder="Entrer l'info" style="margin-top: 10px; width: 96%; display: inline;">
+                            <a href="#updateInfos${id}" id="remove_info" onclick="removeInfo(this, ${info_row})">
+                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px;"></i>
+                            </a>
+                        </div>`;
+            $('#updateInfos' + id).append(row);
+            info_row++;
+            window.scrollTo(0,document.querySelector("#updateInfos" + id).scrollHeight);
+        } else {
+            if($("#error-infos").length === 0) {
+                var row = `<div class="alert alert-danger" role="alert" id="error-infos" style="margin-top: 20px;">
+                              Vous ne pouver ajouter que 10 informations pour une offre.
+                            </div>`;
+
+                $('#updateInfos' + id).append(row);
+
+                $("#error-infos").fadeTo(5000, 500).slideUp(500, function(){
+                    $("#error-infos").slideUp(500);
+                });
+
+                window.scrollTo(0,document.querySelector("#updateInfos" + id).scrollHeight);
+            }
+        }
+    }
+
+    function removeInfo(input, id) {
+        var element = $('#infos_' + id);
+        element.remove();
+    }
+
 </script>
 
 

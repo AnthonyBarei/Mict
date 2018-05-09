@@ -10,7 +10,7 @@
         <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png" />
         <link rel="stylesheet" href="assets/css/style_madeincheztoi.css" />
         <!--<link rel="alternate" type="application/rss+xml" title="Made in chez toi • Actus" href="http://blog.madeincheztoi.com/feed/" />-->
-        <link rel="author" href="http://www.madeincheztoi.com/index.html#faq11" />
+        <link rel="author" href="http://www.madeincheztoi.com/index.php#faq11" />
         <link rel="canonical" href="http://www.madeincheztoi.com/ateliers_et_cours_de_couture_a_domicile.php" />
 
 <meta property="og:locale" content="fr_FR" />
@@ -32,14 +32,14 @@
         <nav>
           <div id="menu_call"><img src="assets/images/bottom.png" alt=""/> MENU</div>
           <ul id="menutop" class="menu">
-                <li><a href="index.html#home" title="Début">Home</a></li>
-                <li><a href="index.html#quoi" title="C'est quoi ?">C'est quoi ?</a></li>
-                <li><a href="index.html#offres" title="Les offres Made in chez toi">Offres</a></li>
+                <li><a href="index.php#home" title="Début">Home</a></li>
+                <li><a href="index.php#quoi" title="C'est quoi ?">C'est quoi ?</a></li>
+                <li><a href="index.php#offres" title="Les offres Made in chez toi">Offres</a></li>
                 <li><a class="scrollTo" href="#ateliers" title="Le détail des ateliers">Ateliers</a></li>
-                <li><a href="index.html#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
-                <li><a href="photos_realisations_ateliers_et_cours_de_couture.html" title="Galerie photos">Photos</a></li>
-                <li><a href="index.html#faq-a_propos" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
-                <li><a href="index.html#partenaires" title="Plus on est de fous...">Partenaires</a></li>
+                <li><a href="index.php#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
+                <li><a href="photos.html" title="Galerie photos">Photos</a></li>
+                <li><a href="index.php#faq-a_propos" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
+                <li><a href="index.php#partenaires" title="Plus on est de fous...">Partenaires</a></li>
                 <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>
           </ul>
         </nav>
@@ -141,7 +141,7 @@
 			<h3>Qu'y a-t-il dans ce thème ?</h3>
 			<p>Que tu attendes ton petit bout, qu'il soit déjà là à gazouiller auprès de toi, ou bien que ce soit pour tes copines jeunes maman, réalise plein de petits vêtements douillets et adaptés à tous les âges, de la naissance à 3 ans !</p>
 			<p>Quoi de plus mignon qu'une robe en taille 3 mois ? On craque tous, non ? :) Apprendre à coudre, c'est pouvoir créer pour chaque âge, rallonger, relooker et au final moins faire chauffer sa CB...</p>
-			<p class="partner_projet">Patrons Made in chez toi, <a href="index.html#partenaires">Gasparine</a>, <a href="index.html#partenaires">MultiLiLi</a> et <a href="index.html#partenaires">Sewing Colors</a></p>
+			<p class="partner_projet">Patrons Made in chez toi, <a href="index.php#partenaires">Gasparine</a>, <a href="index.php#partenaires">MultiLiLi</a> et <a href="index.php#partenaires">Sewing Colors</a></p>
 			<h3>Projets proposés :</h3>
 			<ul>
 			<li>
@@ -206,7 +206,7 @@
 			<h3>Qu'y a-t-il dans ce thème ?</h3>
 			<p>Ahh, les enfants. Tour à tour charmeurs ou terribles... Une chose est sûre : ils poussent vite ! Et ils foncent... Le challenge est de faire à la fois solide, confortable, évolutif... et joli !</p>
 			<p>Ça tombe bien ! Tu trouveras ici plein de modèles qui répondent à ces critères. Tes petits auront les habits que tu leur imagines, beaux, originaux, sans oublier les customisations qu'ils adooorent ! Cerise sur le gâteau, tu apprendras plein d'astuces pour qu'ils les portent plus longtemps !</p>
-			<p class="partner_projet">Patrons Made in chez toi et <a href="index.html#partenaires">Gasparine</a></p>
+			<p class="partner_projet">Patrons Made in chez toi et <a href="index.php#partenaires">Gasparine</a></p>
 			<h3>Projets proposés :</h3>
 			<ul>
 			<li>
@@ -273,7 +273,7 @@
 			<p>Les accessoires pour les enfants sont une source inépuisable d'inspiration pour le couturier ou la couturière en herbe.</p>
 			<p>Les sujets sont tellement variés : accessoires à porter, objets de la vie courante, cadeaux... Ils répondent à des besoins précis (bavoirs, tapis d'éveil, sac à langer ou tapis de change, siège bébé en balade...) et, encore plus que pour les vêtements, tu peux donner libre cours à ton imagination !</p>
 			<p>Si tu as une idée spécifique ou un besoin précis, n'hésite pas à m'en faire part, on trouvera un moyen pour que ton projet se réalise.</p>
-			<p class="partner_projet">Patrons Made in chez toi et <a href="index.html#partenaires">MultiLiLi</a></p>
+			<p class="partner_projet">Patrons Made in chez toi et <a href="index.php#partenaires">MultiLiLi</a></p>
 			<h3>Projets proposés :</h3>
 			<ul>
 			<li>
@@ -340,7 +340,7 @@
 			<p>Les projets indiqués ci-dessous proposent des bases de vêtements, sur lesquels il est possible d'appliquer des variantes : types d'encolures, de manches, ajout de poches, fronces, plis... Le tout adapté à ton niveau, bien sûr !</p>
 			<p>Les modèles cousus en atelier sont basés sur des tailles standard. À quelques exceptions près, pour des raisons de temps et d'organisation, il n'est pas possible de faire du sur-mesure en atelier collectif. Pour travailler le patronage et le sur-mesure, visite le thème <a class="lien_interne" href="ateliers_et_cours_de_couture_a_domicile.php#theme9" data-div="theme9">Techniques de couture</a>.</p>
 			<p>Enfin, certains projets peuvent être longs à réaliser. Dans ce cas, il se peut que le vêtement ne soit pas fini à la fin de l'atelier. Si tu as une machine à coudre personnelle, et si tu souhaites finir ton projet de ton côté, tu auras toutes les indications utiles pour finir ta réalisation. Sinon, un second atelier sera nécessaire.</p>
-			<p class="partner_projet">Patrons Made in chez toi et <a href="index.html#partenaires">Gasparine</a></p>
+			<p class="partner_projet">Patrons Made in chez toi et <a href="index.php#partenaires">Gasparine</a></p>
 			<h3>Projets proposés :</h3>
 			<ul>
 			<li>
@@ -707,7 +707,7 @@
 				<div class="n1"></div>
 				<div class="projet">
 				<p class="titre_projet">Atelier enfants/ados</p>
-				<p class="desc_projet">À l'occasion d'un anniversaire ou pas, coudre avec ses amis commence petit. Déjà testé et approuvé à l'école ou à la maison, avec des enfants de 6 à 16 ans. Ils sont fiers de leur premier objet réalisé et décoré selon leur humeur ! Tarif sur devis en fonction de l'âge et nu nombre d'enfants. Demande toutes les infos <a href="index.html#contact">ici</a>.</p>
+				<p class="desc_projet">À l'occasion d'un anniversaire ou pas, coudre avec ses amis commence petit. Déjà testé et approuvé à l'école ou à la maison, avec des enfants de 6 à 16 ans. Ils sont fiers de leur premier objet réalisé et décoré selon leur humeur ! Tarif sur devis en fonction de l'âge et nu nombre d'enfants. Demande toutes les infos <a href="index.php#contact">ici</a>.</p>
 				</div>
 			</li>
 			<li>
@@ -723,7 +723,7 @@
 				<div class="n1"></div>
 				<div class="projet">
 				<p class="titre_projet">Atelier Mère-fille à 4 mains</p>
-				<p class="desc_projet">Des moments de complicité partagés entre parents et enfants... autour de la transmission d'un savoir passionnant ! Là encore, un tarif adapté t'attend, contacte-moi directement <a href="index.html#contact">ici</a> !</p>
+				<p class="desc_projet">Des moments de complicité partagés entre parents et enfants... autour de la transmission d'un savoir passionnant ! Là encore, un tarif adapté t'attend, contacte-moi directement <a href="index.php#contact">ici</a> !</p>
 				</div>
 			</li>
 			</ul>
