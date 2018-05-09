@@ -33,7 +33,7 @@
 		<nav class="nav_menu">
 		<input type="checkbox" class="menu-toggler" id="menu-toggler" aria-hidden="true">
                 <label for="menu-toggler" class="menu-toggler__label" aria-hidden="true">
-               
+
 	  <div id="menu_call"><img src="assets/images/bottom.png" alt=""/> MENU</div>
  </label>
 	  <ul id="menutop" class="menu">
@@ -44,6 +44,7 @@
 		<li><a class="scrollTo" href="#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
 		<li><a href="photos.html" title="Galerie photos">Photos</a></li>
 		<li><a class="scrollTo" href="#faq" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
+		<li><a href="boutique.php" title="Boutique">Boutique</a></li>
 		<li><a class="scrollTo" href="#partenaires" title="Plus on est de fous...">Partenaires</a></li>
 		<li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>
 	  </ul>
