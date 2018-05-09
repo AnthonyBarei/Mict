@@ -348,3 +348,5 @@ ALTER TABLE `workshop`
 --
 ALTER TABLE `goldenbook`
   ADD CONSTRAINT `goldenbook_ibfk_1` FOREIGN KEY (`goldenbook_user`) REFERENCES `user` (`user_id`);
+
+ALTER TABLE `workshop` CHANGE `workshop_infos` `workshop_infos` VARCHAR(10000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL;

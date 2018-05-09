@@ -34,6 +34,14 @@ class workshopModel extends DbConnect {
     public function createWorkshop($params) {
         $dbh = $this->connect();
 
+        //die(var_dump($params));
+
+        if($params["infos"][0] !== "") {
+            $params["infos"] = json_encode($params["infos"]);
+        } else {
+            $params["infos"] = null;
+        }
+
         $res = $dbh->prepare('
             INSERT INTO workshop (
                 workshop_name,
@@ -44,7 +52,13 @@ class workshopModel extends DbConnect {
             VALUES (:name, :description, :price, :projects, :infos)
         ');
 
-        $result = $res->execute($params);
+        try {
+            $result = $res->execute($params);
+        } catch (PDOException $e) {
+            die(var_dump($e));
+        }
+
+
 
         return $result;
     }
@@ -52,8 +66,11 @@ class workshopModel extends DbConnect {
     public function updateWorkshop($params) {
         $dbh = $this->connect();
 
-        $params["infos"] = json_encode($params["infos"]);
-        // die(var_dump($params["infos"]));
+        if($params["infos"][0] !== "") {
+            $params["infos"] = json_encode($params["infos"]);
+        } else {
+            $params["infos"] = null;
+        }
 
         $res = $dbh->prepare('
             UPDATE workshop

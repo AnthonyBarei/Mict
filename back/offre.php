@@ -4,23 +4,27 @@ include_once('../controllers/workshop.php');
 
 $ws = new Workshop();
 if(isset($_POST['create'])) {
-    $try = $ws->createWorkshop(
-        array(
-          "name" =>  $_POST['name'],
-          "infos" => $_POST['infos'],
-          "description" => $_POST['desc'],
-          "price" => $_POST['prix'],
-          "projects" => $_POST['project']
-        ));
+    $try = [
+        "name" =>  $_POST['name'],
+        "infos" => [$_POST['infos']],
+        "description" => $_POST['desc'],
+        "price" => $_POST['prix'],
+        "projects" => $_POST['project']
+    ];
+
+        for($i = 0; $i < 10; $i++) {
+            if(isset($_POST['infos' . "_" . $i])) {
+                array_push($try["infos"], $_POST['infos' . "_" . $i]);
+            }
+        }
+
+        $ws->createWorkshop($try);
+
     header("Location: /Mict/back/offre.php");
     die();
 }
 
 $atelier = $ws->workshopList();
-
-$infosInputs = [];
-
-// nombre d'infos limitées à 10
 
 
 foreach( $atelier as $at ) {
@@ -28,15 +32,20 @@ foreach( $atelier as $at ) {
         $try = [
                 "id" => $_POST['secretid' . $at['workshop_id']],
                 "name" =>  $_POST['name' . $at['workshop_id']],
-                "infos" => [$_POST['infos' . $at['workshop_id']]],
+                "infos" => [],
                 "description" => $_POST['desc' . $at['workshop_id']],
                 "price" => $_POST['prix' . $at['workshop_id']],
                 "projects" => $_POST['project' . $at['workshop_id']]
             ];
 
-            for($i = 0; $i < 10; $i++) {
-                if(isset($_POST['infos' . $at['workshop_id'] . "_" . $i])) {
-                    array_push($try["infos"], $_POST['infos' . $at['workshop_id'] . "_" . $i]);
+            // nombre d'infos limitées à 10
+            for($i = 0; $i <= 10; $i++) {
+                if(isset($_POST['update_infos' . "_" . $i])) {
+                    array_push($try["infos"], $_POST['update_infos' . "_" . $i]);
+                }
+
+                if(isset($_POST['exists_update_infos' . "_" . $i])) {
+                    array_push($try["infos"], $_POST['exists_update_infos' . "_" . $i]);
                 }
             }
 
@@ -61,15 +70,18 @@ require_once('base-back.php');
         <div class="panel-heading"><h1>Gestion d'atelier</h1></div>
         <div class="panel-body">
           <h3>Créer un atelier</h3>
-              <form class="" action="" method="post">
+              <form class="" action="" method="post" id="createForm">
 
                   <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Entrer un nom">
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group" id="createInfos">
                     <label for="infos">Infos</label>
+                    <a href="#infos" id="create_add_info" onclick="createAddInfo()">
+                        <i class="fas fa-plus fa-lg" style="float: right; margin-top: 5px;"></i>
+                    </a>
                     <input type="text" class="form-control" id="infos" name="infos" placeholder="Entrer les infos">
                   </div>
 
@@ -115,7 +127,9 @@ require_once('base-back.php');
                 </div>
 
                     <?php foreach( $atelier as $at ) : ?>
-                        <?php $at['workshop_infos'] = json_decode($at['workshop_infos']); ?>
+                        <?php $k = 0; $at['workshop_infos'] = ($at['workshop_infos'] !== null) ? json_decode($at['workshop_infos']) : null;
+                                $total_infos = count($at['workshop_infos']);
+                        ?>
 
                             <div class="WORKSHOP<?= $i ?>">
                                 <form class="" action="" method="post">
@@ -126,12 +140,23 @@ require_once('base-back.php');
 
                                     <div class="form-group" id="updateInfos<?= $at['workshop_id'] ?>">
                                       <label for="infos">Infos</label>
-                                      <a href="#updateInfos<?= $at['workshop_id'] ?>" id="add_info" onclick="addInfo(<?= $at['workshop_id'] ?>)">
+                                      <a href="#updateInfos<?= $at['workshop_id'] ?>" id="add_info" onclick="addInfo(<?= $at['workshop_id'] ?>, <?= $total_infos ?>)">
                                           <i class="fas fa-plus fa-lg" style="float: right; margin-top: 5px;"></i>
                                       </a>
-                                      <?php foreach ($at['workshop_infos'] as $key => $info) : ?>
-                                          <input type="text" class="form-control" id="infos_update" name="infos<?= $at['workshop_id'] ?>" value="<?= $info ?>" placeholder="Entrer les infos">
-                                      <?php endforeach; ?>
+                                    <?php if($at['workshop_infos'] !== null) : ?>
+                                        <?php foreach ($at['workshop_infos'] as $key => $info) : ?>
+                                            <div id="existsInfos_<?= $k ?>">
+                                                <input type="text" class="form-control" id="infos_update" name="exists_update_infos_<?= $k ?>" value="<?= $info ?>" placeholder="Entrer les infos" style="margin-bottom: 10px; width: 96%; display: inline;">
+                                                <a href="#updateInfos<?= $k ?>" id="remove_info" onclick="removeInfo(true, <?= $k ?>)">
+                                                    <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px;"></i>
+                                                </a>
+                                            </div>
+                                            <?php $k++ ?>
+                                        <?php endforeach; ?>
+                                    <?php else : ?>
+                                        <input type="text" class="form-control" id="infos_update" name="exists_update_infos_<?= $k ?>" placeholder="Entrer les infos" style="margin-bottom: 10px;">
+                                        <?php $k++ ?>
+                                    <?php endif; ?>
                                     </div>
 
                                     <div class="form-group" id="updateDescription<?= $at['workshop_id'] ?>">
@@ -188,19 +213,21 @@ require_once('base-back.php');
     // document.getElementById("demo").innerHTML = res;
 
     var info_row = 0;
+    var create_info_row = 0;
 
-    function addInfo(id) {
-        if(info_row < 9) {
+    function addInfo(id, row_number) {
+        row_number += info_row;
+        if(row_number < 10) {
             var row = `<div id="infos_${info_row}">
-                            <input type="text" class="form-control" id="infos_update" name="infos${id}_${info_row}" placeholder="Entrer l'info" style="margin-top: 10px; width: 96%; display: inline;">
-                            <a href="#updateInfos${id}" id="remove_info" onclick="removeInfo(this, ${info_row})">
+                            <input type="text" class="form-control" id="infos_update" name="update_infos_${info_row}" placeholder="Entrer l'info" style="margin-top: 10px; width: 96%; display: inline;">
+                            <a href="#updateInfos${id}" id="remove_info" onclick="removeInfo(false, ${info_row})">
                                 <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px;"></i>
                             </a>
                         </div>`;
             $('#updateInfos' + id).append(row);
             info_row++;
             window.scrollTo(0,document.querySelector("#updateInfos" + id).scrollHeight);
-        } else {
+        } else { console.log("Le nombre d'informations ne peut pas dépasser 10.");
             if($("#error-infos").length === 0) {
                 var row = `<div class="alert alert-danger" role="alert" id="error-infos" style="margin-top: 20px;">
                               Vous ne pouver ajouter que 10 informations pour une offre.
@@ -217,9 +244,48 @@ require_once('base-back.php');
         }
     }
 
-    function removeInfo(input, id) {
-        var element = $('#infos_' + id);
-        element.remove();
+    function createAddInfo() {
+        if(create_info_row < 9) {
+            var row = `<div id="infos_${info_row}">
+                            <input type="text" class="form-control" id="infos_update" name="infos_${create_info_row}" placeholder="Entrer l'info" style="margin-top: 10px; width: 96%; display: inline;">
+                            <a href="#createInfos" id="remove_info" onclick="removeInfo(false, ${create_info_row})">
+                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px;"></i>
+                            </a>
+                        </div>`;
+            $('#createInfos').append(row);
+            create_info_row++;
+            window.scrollTo(0,document.querySelector("#createForm").scrollHeight);
+        } else { console.log("Le nombre d'informations ne peut pas dépasser 10.");
+            if($("#error-infos").length === 0) {
+                var row = `<div class="alert alert-danger" role="alert" id="error-infos" style="margin-top: 20px;">
+                              Vous ne pouver ajouter que 10 informations pour une offre.
+                            </div>`;
+
+                $('#createInfos').append(row);
+
+                $("#error-infos").fadeTo(5000, 500).slideUp(500, function(){
+                    $("#error-infos").slideUp(500);
+                });
+
+                window.scrollTo(0,document.querySelector("#createForm").scrollHeight);
+            }
+        }
+    }
+
+    function removeInfo(exists, id) {
+        var element = "";
+        console.log(info_row);
+
+        if(exists === true) {
+            element = $('#existsInfos_' + id);
+            $('exists_update_infos_' + id).removeAttr('value');
+            element.remove();
+            info_row--;
+        } else {
+            element = $('#infos_' + id);
+            element.remove();
+            info_row--;
+        }
     }
 
 </script>
