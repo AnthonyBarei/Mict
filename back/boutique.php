@@ -6,17 +6,17 @@
 
     <div class="col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading">Paramètres de connexion</div>
+        <div class="panel-heading">Paramètres de connexion de la boutique</div>
         <div class="panel-body">
           <div class="input-group">
-              <label for="autoLogin" style="margin-right: 10px;">Connexion obligatoire</label>
-              <label class="radio-inline"><input type="radio" id="autoLoginYes" name="autoLogin">Oui</label>
-              <label class="radio-inline"><input type="radio" id="autoLoginNo" name="autoLogin">Non</label>
-          </div>
-          <div class="input-group">
-              <label for="autoLogin" style="margin-right: 10px;">Autorisation utilisateur automatique</label>
-              <label class="radio-inline"><input type="radio" id="autoLoginYes" name="autoLogin">Oui</label>
-              <label class="radio-inline"><input type="radio" id="autoLoginNo" name="autoLogin">Non</label>
+              <form method="POST" action="boutique.php">
+                <?php
+              $boutique = $_POST["boutique"];
+              echo "Lien actuel de la boutique : $boutique<br />";
+              ?>
+              <label for="boutique" style="margin-right: 10px;">Nouveau lien Payfacile de la collection :
+              <input type="url" name="boutique" /></label><input type="submit" value="Enregistrer" />
+            </form>
           </div>
         </div>
       </div>
@@ -28,38 +28,6 @@
         <div class="panel-body">
           <p class="centered"> C'est quoi ? </p>
           <p class="centered"> Les seuls ateliers couture chez toi, entre amis, 100% tout inclus ! </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">Personnalisation</div>
-        <div class="panel-body">
-          <p>Images deroulantes</p>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span>
-          <br/>
-          <hr>
-          <p>C'est quoi ?</p>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="text" class="form-control" placeholder="Descrition 1">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="text" class="form-control" placeholder="Descrition 2">
-          </div>
-          <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span>
         </div>
       </div>
     </div>

@@ -39,6 +39,7 @@
                 <li><a href="index.php#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
                 <li><a href="photos.html" title="Galerie photos">Photos</a></li>
                 <li><a href="index.php#faq-a_propos" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
+                <li><a href="boutique.php" title="Boutique">Boutique</a></li>
                 <li><a href="index.php#partenaires" title="Plus on est de fous...">Partenaires</a></li>
                 <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>
           </ul>

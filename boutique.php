@@ -28,7 +28,8 @@
 </head>
 
   <body >
-      <nav class="nav_menu">
+    <div>
+      <nav class="nav_menu" style="padding-bottom: 60px">
       <input type="checkbox" class="menu-toggler" id="menu-toggler" aria-hidden="true">
                   <label for="menu-toggler" class="menu-toggler__label" aria-hidden="true">
 
@@ -47,15 +48,13 @@
       <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>
       </ul>
     </nav>
-
-  <div class="wrapper row">
-    <div class="col-md-3">
-      <iframe src="https://www.payfacile.com/made-in-chez-toi/si/carte-cadeau-test" height="680" frameborder="1"></iframe>
-    </div>
-    <div class="col-md-3">
-      <iframe src="https://www.payfacile.com/made-in-chez-toi/si/carte-cadeau-test" height="680" frameborder="1"></iframe>
-    </div>
-  </div>
-
+</div>
+<div class="container" style="height: 100%">
+<iframe 
+ src="<?php echo $boutique;?>"
+ width="100%" height="100%"
+ sandbox>
+</iframe>
+</div>
   </body>
 </html>
