@@ -41,7 +41,7 @@ if (isset($_GET['q'])) {$requete = $_GET['q']; }
                 <li><a href="index.html#offres" title="Les offres Made in chez toi">Offres</a></li>
                 <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">Ateliers</a></li>
                 <li><a href="index.html#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
-                <li><a href="photos.html" title="Galerie photos">Photos</a></li>
+                <li><a href="photo.php" title="Galerie photos">Photos</a></li>
                 <li><a href="index.html#faq" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
                 <li><a href="boutique.php" title="Boutique">Boutique</a></li>
                 <li><a href="index.html#partenaires" title="Plus on est de fous...">Partenaires</a></li>
