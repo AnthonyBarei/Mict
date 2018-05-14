@@ -13,35 +13,40 @@
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
         <link rel="stylesheet" href="assets/css/bootstrap.css"/>
-        <link rel="stylesheet" href="assets/css/style_madeincheztoi.css"/>
+         <link rel="stylesheet" href="assets/css/style_madeincheztoi.css"/>
         <script src="assets/js/gallery.js"></script>
         <link rel="stylesheet" href="assets/css/baguetteBox.min.css"/>
-
+        
     </head>
     <body>
-  <nav class="nav_menu">
-    <input type="checkbox" class="menu-toggler" id="menu-toggler" aria-hidden="true">
-                <label for="menu-toggler" class="menu-toggler__label" aria-hidden="true">
-               
-    <div id="menu_call"><img src="assets/images/bottom.png" alt=""/> MENU</div>
- </label>
-    <ul id="menutop" class="menu">
-    <li><a class="scrollTo" href="index.php#home" title="Début">Home</a></li>  
-    <li><a class="scrollTo" href="index.php#quoi" title="C'est quoi ?">C'est quoi ?</a></li> 
-    <li><a class="scrollTo" href="index.php#offres" title="Les offres Made in chez toi">Offres</a></li>
-    <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">Ateliers</a></li>
-    <li><a class="scrollTo" href="index.php#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
-    <li><a href="photo.php" title="Galerie photos">Photos</a></li>
-    <li><a class="scrollTo" href="index.php#faq" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
-    <li><a href="boutique.php" title="Boutique">Boutique</a></li>
-    <li><a class="scrollTo" href="index.php#partenaires" title="Plus on est de fous...">Partenaires</a></li>
-    <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>
-    </ul>
-  </nav>
 
-  <div class="container" id="photos">
+  <nav class="navbar navbar-inverse navbar-center navbar-fixed-top" role="navigation">
+       
+           <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span>Menu</span>
+                
+              </button>
+            </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">       
+                <li><a class="scrollTo" href="index.php#home" title="Début">HOME</a></li>  
+                <li><a class="scrollTo" href="index.php#quoi" title="C'est quoi ?">C'EST QUOI ?</a></li> 
+                <li><a class="scrollTo" href="index.php#offres" title="Les offres Made in chez toi">OFFRES</a></li>
+                <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">ATELIERS</a></li>
+                <li><a class="scrollTo" href="index.php#contact" title="Je veux contacter Made in chez toi">CONTACT</a></li>
+                <li><a href="photo.php" title="Galerie photos">PHOTOS</a></li>
+                <li><a class="scrollTo" href="index.php#faq" title="Toutes les réponses sont là !">FÀQ-PROPOS</a></li>
+                <li><a href="boutique.php" title="Boutique">BOUTIQUE</a></li>
+                <li><a class="scrollTo" href="index.php#partenaires" title="Plus on est de fous...">PARTENAIRES</a></li>
+                <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">BLOG</a></li>
+              </ul>
+            </div>
+        </nav>
 
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: 20%">
+ <div class="container" id="photos">
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: 15%">
 
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
@@ -480,4 +485,5 @@
     baguetteBox.run('.tz-gallery');
 
 </script>
+
 </html>

@@ -8,8 +8,10 @@
         <meta name="description" content="Ateliers couture collectifs ou cours particuliers, dans ton salon ou chez tes amis :) • Machines et tissus inclus • Pour tous les niveaux !"/>
         <meta name="keywords" content="couture, cours, lecons, debuter, debutant, commencer, apprendre, facile, paris, region parisienne, 92, 95, 75, 78, 93, 91, 94, atelier, ateliers, domicile, particulier, inclus, lecon, formation, gratuit, amies, amis, debutante, made in chez toi, idf, made, in, chez, toi"/>
 	<link rel="shortcut icon" href="assets/images/favicon.png?v=2" type="image/png" />
-	<link rel="stylesheet" href="assets/css/style_madeincheztoi.css" />
-	<!--<link rel="alternate" type="application/rss+xml" title="Made in chez toi • Actus" href="http://blog.madeincheztoi.com/feed/" />-->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/css/style_madeincheztoi.css"/>
 	<link rel="author" href="http://www.madeincheztoi.com/index.html#faq11" />
 	<link rel="canonical" href="http://www.madeincheztoi.com/" />
 
@@ -30,25 +32,30 @@
 <body>
 
 
-		<nav class="nav_menu">
-		<input type="checkbox" class="menu-toggler" id="menu-toggler" aria-hidden="true">
-                <label for="menu-toggler" class="menu-toggler__label" aria-hidden="true">
-
-	  <div id="menu_call"><img src="assets/images/bottom.png" alt=""/> MENU</div>
- </label>
-	  <ul id="menutop" class="menu">
-		<li><a class="scrollTo" href="#home" title="Début">Home</a></li>
-		<li><a class="scrollTo" href="#quoi" title="C'est quoi ?">C'est quoi ?</a></li>
-		<li><a class="scrollTo" href="#offres" title="Les offres Made in chez toi">Offres</a></li>
-		<li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">Ateliers</a></li>
-		<li><a class="scrollTo" href="#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
-		<li><a href="photo.php" title="Galerie photos">Photos</a></li>
-		<li><a class="scrollTo" href="#faq" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
-		<li><a href="boutique.php" title="Boutique">Boutique</a></li>
-		<li><a class="scrollTo" href="#partenaires" title="Plus on est de fous...">Partenaires</a></li>
-		<li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>
-	  </ul>
-	</nav>
+<nav class="navbar navbar-inverse navbar-center navbar-fixed-top" role="navigation">
+       
+           <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span>Menu</span>
+                
+              </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">       
+                <li><a class="scrollTo" href="index.php#home" title="Début">HOME</a></li>  
+                <li><a class="scrollTo" href="index.php#quoi" title="C'est quoi ?">C'EST QUOI ?</a></li> 
+                <li><a class="scrollTo" href="index.php#offres" title="Les offres Made in chez toi">OFFRES</a></li>
+                <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">ATELIERS</a></li>
+                <li><a class="scrollTo" href="index.php#contact" title="Je veux contacter Made in chez toi">CONTACT</a></li>
+                <li><a href="photo.php" title="Galerie photos">PHOTOS</a></li>
+                <li><a class="scrollTo" href="index.php#faq" title="Toutes les réponses sont là !">FÀQ-PROPOS</a></li>
+                <li><a href="boutique.php" title="Boutique">BOUTIQUE</a></li>
+                <li><a class="scrollTo" href="index.php#partenaires" title="Plus on est de fous...">PARTENAIRES</a></li>
+                <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">BLOG</a></li>
+              </ul>
+            </div>
+        
+        </nav>
 
 	<a class="scrollTo top" href="#home" Title="Haut de page"></a>
 
