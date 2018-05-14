@@ -4,7 +4,7 @@
       <meta charset="UTF-8" />
       <title>Gestion</title>
 
-      <script src="{{ asset('js/jquery.min.js') }}"></script>
+      <script src="../assets/js/jquery.min.js"></script>
       <script src="../assets/js/bootstrap.js"></script>
       <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
       <link rel="stylesheet" href="../assets/css/style.css"/>
@@ -19,13 +19,13 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="bs-example-navbar-collapse-1">
+            
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">MICT</a>
+          <a class="navbar-brand" href="index.php">MICT</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
