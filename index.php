@@ -33,17 +33,17 @@
 
 
 <nav class="navbar navbar-inverse navbar-center navbar-fixed-top" role="navigation">
-       
+
            <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span>Menu</span>
-                
+
               </button>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">       
-                <li><a class="scrollTo" href="index.php#home" title="Début">HOME</a></li>  
-                <li><a class="scrollTo" href="index.php#quoi" title="C'est quoi ?">C'EST QUOI ?</a></li> 
+              <ul class="nav navbar-nav">
+                <li><a class="scrollTo" href="index.php#home" title="Début">HOME</a></li>
+                <li><a class="scrollTo" href="index.php#quoi" title="C'est quoi ?">C'EST QUOI ?</a></li>
                 <li><a class="scrollTo" href="index.php#offres" title="Les offres Made in chez toi">OFFRES</a></li>
                 <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">ATELIERS</a></li>
                 <li><a class="scrollTo" href="index.php#contact" title="Je veux contacter Made in chez toi">CONTACT</a></li>
@@ -54,7 +54,7 @@
                 <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">BLOG</a></li>
               </ul>
             </div>
-        
+
         </nav>
 
 	<a class="scrollTo top" href="#home" Title="Haut de page"></a>
@@ -74,22 +74,59 @@
 	  <div class="contenu">
 			<div class="coup_tampon"></div>
 		<div class="slide_home">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<?php
+				if($dossier = opendir('./assets/uploads/homepageCarousel')){
+						$nbfile = count(scandir('./assets/uploads/homepageCarousel')) - 2;
+						echo"<ol class='carousel-indicators'>";
+						for($i = 0; $i < $nbfile ; $i++){
+							echo"<li data-target='#myCarousel' data-slide-to='0' "; if($i == 0){ echo"class='active'";} echo"></li>";
+						}
+						echo"</ol>";
+						echo"<div class='carousel-inner'>";
+						$fichier = readdir($dossier);
+						$fichier = readdir($dossier);
+						if(false !== $fichier = readdir($dossier)){
+							echo"<div class='item active'>";
+				        echo"<img src='./assets/uploads/homepageCarousel/". $fichier ."' style='width:100%;'>";
+				      echo"</div>";
+						}
+						while(false !== ($fichier = readdir($dossier))){
+							echo"<div class='item'>";
+								echo"<img src='./assets/uploads/homepageCarousel/" . $fichier ."' style='width:100%;'>";
+							echo"</div>";
+						}
+						//Left and right controls
+						echo"<a class='left carousel-control' href='#myCarousel' data-slide='prev'>";
+						//echo"<span class='glyphicon glyphicon-chevron-left'></span>";
+						echo"<span class='sr-only'>Previous</span>";
+						echo"</a>";
+						echo"<a class='right carousel-control' href='#myCarousel' data-slide='next'>";
+						//echo"<span class='glyphicon glyphicon-chevron-right'></span>";
+						echo"<span class='sr-only'>Next</span>";
+						echo"</a>";
+				}
+				?>
+			</div>
+
+
+<!--
 			<div class="slider_home">
 				<a class="scrollTo" href="#quoi"><div class="slider_txt texte1" ><span class="madein">Made in... <em>Chez toi !</em></span></div></a>
 <!--				<a href="ateliers_et_cours_de_couture_a_domicile.php#theme10"><div class="slider_txt texte2" ><span class="slider_bas"></span></div></a>
 				<a href="ateliers_et_cours_de_couture_a_domicile.php#theme10"><div class="slider_txt texte1" ><span class="slider_bas">Couds ta déco perso pour les fêtes<br/>et offre des cadeaux faits-main</span></div></a>
--->
+
 				<a class="scrollTo" href="#carte_cadeau"><div class="slider_txt texte2" ><span class="slider_bas">Offre à tes proches<br />un concentré de DIY !</span></div></a>
 <!--				<a class="scrollTo" href="#quoi"><div class="slider_txt texte3" ><span class="madein">Made in... <em>Chez toi !</em></span></div></a>
--->
+
 				<a class="scrollTo" href="#offres"><div class="slider_txt texte3" ><span class="madein">Made in <em>Chez toi !</em></span><br /><span class="slider_bas">Ateliers collectifs à domicile, cours particuliers,<br />comités d'entreprise, écoles, animations...<br />Tout le monde trouve son bonheur chez toi !</span></div></a>
 
 			</div>
 		</div>
 		<div class="boules"><span class="b1">&bull;</span><span class="b2">&bull;</span><span class="b3">&bull;</span><span class="b_select">&bull;</span></div>
-		<h1> Ateliers et cours de couture chez toi <!-- ou chez tes amis --> </h1>
-	  </div>
-	 </div>
+		<h1> Ateliers et cours de couture chez toi <!-- ou chez tes amis</h1> -->
+
+		</div>
 	 <a class="scrollTo" href="#quoi"><div class="suite_fleche"></div></a>
 	</section>
 

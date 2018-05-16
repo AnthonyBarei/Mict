@@ -27,6 +27,19 @@
 
     <div class="col-md-6">
       <div class="panel panel-default">
+        <div class="panel-heading">Ajout d'image carrousel</div>
+        <div class="panel-body">
+          <form action="../controllers/uploadCarousel.php" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
         <div class="panel-heading">Rendu</div>
         <div class="panel-body">
           <p class="centered"> C'est quoi ? </p>
