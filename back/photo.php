@@ -4,64 +4,103 @@
     <div class="container-fluid">
     <div class="col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading">Paramètres de connexion</div>
+        <div class="panel-heading">Ajout d'image Album 1</div>
         <div class="panel-body">
-          <div class="input-group">
-              <label for="autoLogin" style="margin-right: 10px;">Connexion obligatoire</label>
-              <label class="radio-inline"><input type="radio" id="autoLoginYes" name="autoLogin">Oui</label>
-              <label class="radio-inline"><input type="radio" id="autoLoginNo" name="autoLogin">Non</label>
-          </div>
-          <div class="input-group">
-              <label for="autoLogin" style="margin-right: 10px;">Autorisation utilisateur automatique</label>
-              <label class="radio-inline"><input type="radio" id="autoLoginYes" name="autoLogin">Oui</label>
-              <label class="radio-inline"><input type="radio" id="autoLoginNo" name="autoLogin">Non</label>
-          </div>
+          <form action="../controllers/uploadAlbum1.php" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
         </div>
       </div>
     </div>
-
     <div class="col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading">Rendu</div>
+        <div class="panel-heading">Supprimer une image de l'album 1</div>
         <div class="panel-body">
-          <p class="centered"> C'est quoi ? </p>
-          <p class="centered"> Les seuls ateliers couture chez toi, entre amis, 100% tout inclus ! </p>
+          <?php if($dossier = opendir('../assets/images/album1')){ ?>
+            <form action="../controllers/deleteFile.php" method="post">
+              <select class="form-control" name="todeletefile">
+                <?php
+                  $fichier = readdir($dossier);
+                  $fichier = readdir($dossier);
+                  while(false !== ($fichier = readdir($dossier))){
+                    echo"<option value='../assets/images/album1/". $fichier ."'>". $fichier ." ";
+                  }
+                ?>
+              </select> <br>
+              <input type="submit" value="Supprimer le fichier de l'album" name="submit">
+            </form>
+          <?php }else{ echo("L'album est vide"); } ?>
         </div>
       </div>
     </div>
-
+        <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Ajout d'image Album2</div>
+        <div class="panel-body">
+          <form action="../controllers/uploadAlbum2.php" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
+        </div>
+      </div>
+    </div>
     <div class="col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading">Personnalisation</div>
+        <div class="panel-heading">Supprimer une image de l'album 2</div>
         <div class="panel-body">
-          <p>Images deroulantes</p>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span>
-          <br/>
-          <hr>
-          <p>C'est quoi ?</p>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="text" class="form-control" placeholder="Descrition 1">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="text" class="form-control" placeholder="Descrition 2">
-          </div>
-          <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span>
+          <?php if($dossier = opendir('../assets/images/album1')){ ?>
+            <form action="../controllers/deleteFile.php" method="post">
+              <select class="form-control" name="todeletefile">
+                <?php
+                  $fichier = readdir($dossier);
+                  $fichier = readdir($dossier);
+                  while(false !== ($fichier = readdir($dossier))){
+                    echo"<option value='../assets/images/album1/". $fichier ."'>". $fichier ." ";
+                  }
+                ?>
+              </select> <br>
+              <input type="submit" value="Supprimer le fichier de l'album" name="submit">
+            </form>
+          <?php }else{ echo("L'album est vide"); } ?>
         </div>
       </div>
     </div>
-
+        <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Ajout d'image Album 3</div>
+        <div class="panel-body">
+          <form action="../controllers/uploadAlbum3.php" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Supprimer une image de l'album 3</div>
+        <div class="panel-body">
+          <?php if($dossier = opendir('../assets/images/album3')){ ?>
+            <form action="../controllers/deleteFile.php" method="post">
+              <select class="form-control" name="todeletefile">
+                <?php
+                  $fichier = readdir($dossier);
+                  $fichier = readdir($dossier);
+                  while(false !== ($fichier = readdir($dossier))){
+                    echo"<option value='../assets/images/album3/". $fichier ."'>". $fichier ." ";
+                  }
+                ?>
+              </select> <br>
+              <input type="submit" value="Supprimer le fichier de l'album" name="submit">
+            </form>
+          <?php }else{ echo("L'album est vide"); } ?>
+        </div>
+      </div>
+    </div>
 	    </div>
 
   </body>
