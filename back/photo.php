@@ -101,6 +101,16 @@
         </div>
       </div>
     </div>
+        <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Rendu</div>
+        <div class="panel-body">
+          <iframe 
+            src="../photo.php" width="100%" height="500" sandbox >
+</iframe>
+        </div>
+      </div>
+    </div>
 	    </div>
 
   </body>

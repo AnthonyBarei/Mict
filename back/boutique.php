@@ -26,8 +26,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Rendu</div>
         <div class="panel-body">
-          <p class="centered"> C'est quoi ? </p>
-          <p class="centered"> Les seuls ateliers couture chez toi, entre amis, 100% tout inclus ! </p>
+
         </div>
       </div>
     </div>
