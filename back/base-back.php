@@ -20,7 +20,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="bs-example-navbar-collapse-1">
-            
+
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -35,6 +35,7 @@
             <li><a href="/Mict/back/offre.php">Offre</a></li>
             <li><a href="/Mict/back/photo.php">Photo</a></li>
             <li><a href="/Mict/back/livre.php">Livre d'or</a></li>
+            <li><a href="/Mict/back/partners.php">Partenaires</a></li>
             <li><a href="/Mict/back/contact.php">Contact</a></li>
             <li><a href="/Mict/back/boutique.php">Boutique</a></li>
           </ul>

@@ -24,7 +24,7 @@ class Partner {
     public function createPartner($params) {
 
         $partner = new partnerModel();
-        $result = $partner->createPartner();
+        $result = $partner->createPartner($params);
 
         // Traiter les données reçues
 
@@ -35,7 +35,7 @@ class Partner {
         // Traiter les données reçues
 
         $partner = new partnerModel();
-        $result = $partner->updatePartner();
+        $result = $partner->updatePartner($params);
 
         // Traiter les données reçues
 
@@ -46,7 +46,7 @@ class Partner {
         $id = (integer) $id;
 
         $partner = new partnerModel();
-        $result = $partner->deletePartner();
+        $result = $partner->deletePartner($id);
 
         // Traiter les données reçues
 

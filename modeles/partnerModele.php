@@ -1,6 +1,5 @@
 <?php
 require_once('connectionModel.php');
-require_once('../functions.php');
 
 class partnerModel extends DbConnect {
 
@@ -8,7 +7,7 @@ class partnerModel extends DbConnect {
 
         $dbh = $this->connect();
 
-        $res = $dbh->query('select * from partner');
+        $res = $dbh->query('select * from partners');
         $result = $res->fetchAll();
 
         return $result;
@@ -48,7 +47,7 @@ class partnerModel extends DbConnect {
         return $result;
     }
 
-    public function uplinkPartner($params) {
+    public function updatePartner($params) {
         $dbh = $this->connect();
 
         $res = $dbh->prepare('
