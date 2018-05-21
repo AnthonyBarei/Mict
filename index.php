@@ -10,6 +10,7 @@
 	<link rel="shortcut icon" href="assets/images/favicon.png?v=2" type="image/png" />
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/js/made_in_chez_toi-min.js"></script>
         <link rel="stylesheet" href="assets/css/bootstrap.css"/>
         <link rel="stylesheet" href="assets/css/style_madeincheztoi.css"/>
 	<link rel="author" href="http://www.madeincheztoi.com/index.html#faq11" />
@@ -42,15 +43,15 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a class="scrollTo" href="index.php#home" title="Début">HOME</a></li>
-                <li><a class="scrollTo" href="index.php#quoi" title="C'est quoi ?">C'EST QUOI ?</a></li>
-                <li><a class="scrollTo" href="index.php#offres" title="Les offres Made in chez toi">OFFRES</a></li>
+                <li><a class="scrollTo" href="#home" title="Début">HOME</a></li>
+                <li><a class="scrollTo" href="#quoi" title="C'est quoi ?">C'EST QUOI ?</a></li>
+                <li><a class="scrollTo" href="#offres" title="Les offres Made in chez toi">OFFRES</a></li>
                 <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">ATELIERS</a></li>
-                <li><a class="scrollTo" href="index.php#contact" title="Je veux contacter Made in chez toi">CONTACT</a></li>
+                <li><a class="scrollTo" href="#contact" title="Je veux contacter Made in chez toi">CONTACT</a></li>
                 <li><a href="photo.php" title="Galerie photos">PHOTOS</a></li>
-                <li><a class="scrollTo" href="index.php#faq" title="Toutes les réponses sont là !">FÀQ-PROPOS</a></li>
+                <li><a class="scrollTo" href="#faq" title="Toutes les réponses sont là !">FÀQ-PROPOS</a></li>
                 <li><a href="boutique.php" title="Boutique">BOUTIQUE</a></li>
-                <li><a class="scrollTo" href="index.php#partenaires" title="Plus on est de fous...">PARTENAIRES</a></li>
+                <li><a class="scrollTo" href="#partenaires" title="Plus on est de fous...">PARTENAIRES</a></li>
                 <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">BLOG</a></li>
               </ul>
             </div>
@@ -1078,7 +1079,7 @@ Tous les patrons sont disponibles en Kit avec des tissus bio et exclusifs, pour 
 	</footer>
 
 
-	<script type="text/javascript" src="assets/js/madeincheztoi-min.js?v=2016020401"></script>
+	<script type="text/javascript" src="assets/js/madeincheztoi-min.js"></script>
 
 </body>
 </html>
