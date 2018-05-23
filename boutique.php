@@ -54,9 +54,17 @@
             </div>
         
         </nav>
-<div class="container" style="height: 100%">
+<?php
+// Connexion à MySQL
+$base=mysqli_connect("localhost", "root", "", "mict");
+// lancement de la requete
+$req = "SELECT Lien FROM boutique WHERE id=1";
+$res = $base->query($req); 
+$data = mysqli_fetch_array($res); 
+?>         
+<div class="container" style="height: 100%; margin-top: 10%;">
 <iframe 
- src="<?php echo $boutique;?>"
+ src="<?php echo $data['Lien'] ?>"
  width="100%" height="100%"
  sandbox>
 </iframe>
