@@ -18,7 +18,7 @@ class partnerModel extends DbConnect {
 
         $res = $dbh->prepare('
             SELECT *
-            FROM partner
+            FROM partners
             WHERE partner_id = :id
         ');
 
@@ -35,7 +35,7 @@ class partnerModel extends DbConnect {
         $dbh = $this->connect();
 
         $res = $dbh->prepare('
-            INSERT INTO partner (
+            INSERT INTO partners (
                 partner_name,
                 partner_description,
                 partner_link)
@@ -51,7 +51,7 @@ class partnerModel extends DbConnect {
         $dbh = $this->connect();
 
         $res = $dbh->prepare('
-            UPDATE partner
+            UPDATE partners
             SET
                 partner_name = :name,
                 partner_description = :description,
@@ -68,7 +68,7 @@ class partnerModel extends DbConnect {
         $dbh = $this->connect();
 
         $res = $dbh->prepare('
-            DELETE FROM partner
+            DELETE FROM partners
             WHERE partner_id = :id
         ');
 
