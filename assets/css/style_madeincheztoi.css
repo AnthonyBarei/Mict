@@ -513,7 +513,7 @@ section + section:before { content:''; position:absolute; top:0; left:0; width:1
 
 #offres { background: url('../images/bg/haut_etoiles.jpg') right center/cover;}
 #contact { background: url('../images/bg/grass.jpg') repeat; }
-#reserver form { background: url('grass.jpg') repeat; }
+#reserver form { background: url('../images/bg/grass.jpg') repeat; }
 #faq{ background: url('../images/bg/poussette.jpg') center top/cover; } 
 #partenaires { background: url('../images/bg/tirets.jpg') center top/cover; } 
 footer{ background: url('../images/bg/bobines.jpg') center top/cover; } 

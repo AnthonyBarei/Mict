@@ -30,7 +30,7 @@
 </head>
 
   <body >
-<nav class="navbar navbar-inverse navbar-center navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-center" role="navigation">
        
            <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -61,7 +61,7 @@ $req = "SELECT Lien FROM boutique WHERE id=1";
 $res = $base->query($req); 
 $data = mysqli_fetch_array($res); 
 ?>        
-<div class="container" style="height: 100%;width: 100%; margin-top: 5%;">
+<div class="container" style="height: 100%;width: 100%;">
 <iframe 
  src="<?php echo $data['Lien'] ?>"
  width="100%" height="100%"
