@@ -109,25 +109,10 @@
 				}
 				?>
 			</div>
-
-
-<!--
-			<div class="slider_home">
-				<a class="scrollTo" href="#quoi"><div class="slider_txt texte1" ><span class="madein">Made in... <em>Chez toi !</em></span></div></a>
-<!--				<a href="ateliers_et_cours_de_couture_a_domicile.php#theme10"><div class="slider_txt texte2" ><span class="slider_bas"></span></div></a>
-				<a href="ateliers_et_cours_de_couture_a_domicile.php#theme10"><div class="slider_txt texte1" ><span class="slider_bas">Couds ta déco perso pour les fêtes<br/>et offre des cadeaux faits-main</span></div></a>
-
-				<a class="scrollTo" href="#carte_cadeau"><div class="slider_txt texte2" ><span class="slider_bas">Offre à tes proches<br />un concentré de DIY !</span></div></a>
-<!--				<a class="scrollTo" href="#quoi"><div class="slider_txt texte3" ><span class="madein">Made in... <em>Chez toi !</em></span></div></a>
-
-				<a class="scrollTo" href="#offres"><div class="slider_txt texte3" ><span class="madein">Made in <em>Chez toi !</em></span><br /><span class="slider_bas">Ateliers collectifs à domicile, cours particuliers,<br />comités d'entreprise, écoles, animations...<br />Tout le monde trouve son bonheur chez toi !</span></div></a>
-
-			</div>
 		</div>
-		<div class="boules"><span class="b1">&bull;</span><span class="b2">&bull;</span><span class="b3">&bull;</span><span class="b_select">&bull;</span></div>
-		<h1> Ateliers et cours de couture chez toi <!-- ou chez tes amis</h1> -->
-
 		</div>
+
+		<h1> Ateliers et cours de couture chez toi</h1>
 	 <a class="scrollTo" href="#quoi"><div class="suite_fleche"></div></a>
 	</section>
 

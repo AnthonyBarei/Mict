@@ -513,17 +513,10 @@ section + section:before { content:''; position:absolute; top:0; left:0; width:1
 
 #offres { background: url('../images/bg/haut_etoiles.jpg') right center/cover;}
 #contact { background: url('../images/bg/grass.jpg') repeat; }
-<<<<<<< HEAD
-#reserver form { background: url('grass.jpg') repeat; }
+#reserver form { background: url('../images/bg/grass.jpg') repeat; }
 #faq{ background: url('../images/bg/poussette.jpg') center top/cover; }
 #partenaires { background: url('../images/bg/tirets.jpg') center top/cover; }
 footer{ background: url('../images/bg/bobines.jpg') center top/cover; }
-=======
-#reserver form { background: url('../images/bg/grass.jpg') repeat; }
-#faq{ background: url('../images/bg/poussette.jpg') center top/cover; } 
-#partenaires { background: url('../images/bg/tirets.jpg') center top/cover; } 
-footer{ background: url('../images/bg/bobines.jpg') center top/cover; } 
->>>>>>> 18764f566a0b6d3e1c55ead95f6044e482f63f21
 .credits {background-image: url('../images/bg/pied.jpg');}
 
 #intermediaire_2 {height:160px;}
