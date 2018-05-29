@@ -52,8 +52,7 @@
                 <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">BLOG</a></li>
               </ul>
             </div>
-        
-        </nav>
+  </nav>
 <?php
 // Connexion à MySQL
 $base=mysqli_connect("localhost", "root", "", "mict");
@@ -61,8 +60,8 @@ $base=mysqli_connect("localhost", "root", "", "mict");
 $req = "SELECT Lien FROM boutique WHERE id=1";
 $res = $base->query($req); 
 $data = mysqli_fetch_array($res); 
-?>         
-<div class="container" style="height: 100%; margin-top: 10%;">
+?>        
+<div class="container" style="height: 100%;width: 100%; margin-top: 10%;">
 <iframe 
  src="<?php echo $data['Lien'] ?>"
  width="100%" height="100%"
