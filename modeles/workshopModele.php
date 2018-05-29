@@ -67,9 +67,15 @@ class workshopModel extends DbConnect {
         $dbh = $this->connect();
 
         if($params["infos"][0] !== "") {
-            $params["infos"] = json_encode($params["infos"]);
+            $params["infos"] = json_encode($params["infos"], JSON_UNESCAPED_UNICODE);
         } else {
             $params["infos"] = null;
+        }
+
+        if($params["description"][0] !== "") {
+            $params["description"] = json_encode($params["description"], JSON_UNESCAPED_UNICODE);
+        } else {
+            $params["description"] = null;
         }
 
         $res = $dbh->prepare('
