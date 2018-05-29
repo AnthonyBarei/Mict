@@ -65,7 +65,7 @@ mysqli_close($base);
                     <iframe
  src="<?php echo $data['Lien'] ?>"
  width="100%" height="500"
- sandbox>
+ sandbox="allow-same-origin allow-scripts">
 </iframe>
         </div>
       </div>
