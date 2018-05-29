@@ -34,9 +34,7 @@
             <li class="active"><a href="/Mict/back">Home <span class="sr-only">(current)</span></a></li>
             <li><a href="/Mict/back/offre.php">Offre</a></li>
             <li><a href="/Mict/back/photo.php">Photo</a></li>
-            <li><a href="/Mict/back/livre.php">Livre d'or</a></li>
             <li><a href="/Mict/back/partners.php">Partenaires</a></li>
-            <li><a href="/Mict/back/contact.php">Contact</a></li>
             <li><a href="/Mict/back/boutique.php">Boutique</a></li>
           </ul>
 
