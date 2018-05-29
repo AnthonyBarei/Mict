@@ -64,7 +64,7 @@
                       <?php
                         if($dossier = opendir('./assets/images/album1')){
                           while(false !== ($fichier = readdir($dossier))){
-                            if ($Fichier != "." && $Fichier != ".." AND (stristr($fichier,'.gif') OR stristr($fichier,'.jpg') OR stristr($fichier,'.png'))){
+                            if ($fichier != "." && $fichier != ".." AND (stristr($fichier,'.gif') OR stristr($fichier,'.jpg') OR stristr($fichier,'.png'))){
                               echo "<a class='lightbox' href='assets/images/album1/" . $fichier ."'>";
                               echo "<img style='height: 150px; width: 150px;' src='assets/images/album1/". $fichier ."'>";
                               echo "</a>";
