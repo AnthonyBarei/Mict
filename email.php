@@ -101,6 +101,10 @@
         <title>Ateliers et cours de couture à domicile entre amis • Made in chez toi</title>
         <meta name="description" content="Ateliers couture collectifs ou cours particuliers, dans ton salon ou chez tes amis - Plein de projets adaptés à tous les niveaux !"/> 
         <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png" />
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/js/made_in_chez_toi-min.js"></script>
+        <link rel="stylesheet" href="assets/css/bootstrap.css"/>
         <link rel="stylesheet" href="assets/css/style_madeincheztoi.css" />
         <!--<link rel="alternate" type="application/rss+xml" title="Made in chez toi • Actus" href="http://blog.madeincheztoi.com/feed/" />-->
         <link rel="author" href="http://www.madeincheztoi.com/index.html#faq11" />
@@ -110,19 +114,26 @@
 
 <body>
 
-        <nav>
-          <div id="menu_call"><img src="assets/images/bottom.png" alt=""/> MENU</div>
-          <ul id="menutop" class="menu">
-                <li><a href="index.html#home" title="Début">Home</a></li>
-                <li><a href="index.html#quoi" title="C'est quoi ?">C'est quoi ?</a></li>
-                <li><a href="index.html#offres" title="Les offres Made in chez toi">Offres</a></li>
-                <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">Ateliers</a></li>
-                <li><a href="index.html#contact" title="Je veux contacter Made in chez toi">Contact</a></li>
-                <li><a href="photo.php" title="Galerie photos">Photos</a></li>
-                <li><a href="index.html#faq" title="Toutes les réponses sont là !">FÀQ-propos</a></li>
-                <li><a href="index.html#partenaires" title="Plus on est de fous...">Partenaires</a></li>
-                <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">Blog</a></li>
-          </ul>
+        <nav class="navbar navbar-inverse navbar-center" role="navigation">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span>Menu</span> 
+              </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">       
+                <li><a class="scrollTo" href="index.php#home" title="Début">HOME</a></li>  
+                <li><a class="scrollTo" href="index.php#quoi" title="C'est quoi ?">C'EST QUOI ?</a></li> 
+                <li><a class="scrollTo" href="index.php#offres" title="Les offres Made in chez toi">OFFRES</a></li>
+                <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">ATELIERS</a></li>
+                <li><a class="scrollTo" href="index.php#contact" title="Je veux contacter Made in chez toi">CONTACT</a></li>
+                <li><a href="photo.php" title="Galerie photos">PHOTOS</a></li>
+                <li><a class="scrollTo" href="index.php#faq" title="Toutes les réponses sont là !">FÀQ-PROPOS</a></li>
+                <li><a href="boutique.php" title="Boutique">BOUTIQUE</a></li>
+                <li><a class="scrollTo" href="index.php#partenaires" title="Plus on est de fous...">PARTENAIRES</a></li>
+                <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">BLOG</a></li>
+              </ul>
+            </div>
         </nav>
 
 

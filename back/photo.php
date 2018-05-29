@@ -7,9 +7,10 @@
       <div class="panel panel-default">
         <div class="panel-heading">Ajout d'image Album 1</div>
         <div class="panel-body">
-          <form action="../controllers/uploadAlbum1.php" method="post" enctype="multipart/form-data">
+          <form action="../controllers/uploadAlbum.php" method="post" enctype="multipart/form-data">
             <p>Selectionner les images à télécharger :</p>
             <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+            <input type="hidden" name="directorytarget" value="../assets/images/album1/">
             <input style="margin-top: 20px" type="submit" value="Upload Image" name="submit">
         </form>
         </div>
@@ -42,9 +43,10 @@
       <div class="panel panel-default">
         <div class="panel-heading">Ajout d'image Album2</div>
           <div class="panel-body">
-            <form action="../controllers/uploadAlbum2.php" method="post" enctype="multipart/form-data">
+            <form action="../controllers/uploadAlbum.php" method="post" enctype="multipart/form-data">
               <p>Selectionner les images à télécharger :</p>
               <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+              <input type="hidden" name="directorytarget" value="../assets/images/album2/">
               <input style="margin-top: 20px" type="submit" value="Upload Image" name="submit">
             </form>
           </div>
@@ -77,9 +79,10 @@
       <div class="panel panel-default">
         <div class="panel-heading">Ajout d'image Album 3</div>
           <div class="panel-body">
-            <form action="../controllers/uploadAlbum3.php" method="post" enctype="multipart/form-data">
+            <form action="../controllers/uploadAlbum.php" method="post" enctype="multipart/form-data">
               <p>Selectionner les images à télécharger :</p>
               <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+              <input type="hidden" name="directorytarget" value="../assets/images/album2/">
               <input style="margin-top: 20px" type="submit" value="Upload Image" name="submit">
           </form>
           </div>
@@ -111,7 +114,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">Rendu</div>
           <div class="panel-body">
-            <iframe 
+            <iframe
             src="../photo.php" width="100%" height="500" sandbox ></iframe>
           </div>
         </div>

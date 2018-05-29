@@ -47,10 +47,10 @@
       <div class="panel panel-default">
         <div class="panel-heading">Rendu</div>
         <div class="panel-body">
-          <iframe 
+          <iframe
  src="../index.php#home"
  width="100%" height="500"
- sandbox>
+ sandbox="allow-scripts">
 </iframe>
         </div>
       </div>

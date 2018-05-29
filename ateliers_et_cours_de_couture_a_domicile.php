@@ -56,8 +56,6 @@
         
         </nav>
 
-        <a class="scrollTo top" href="#ateliers" Title="Haut de page"></a>
-
 <!--
         <div class="saison saison1">
                 <img src="sapin.png" height="200px" alt=""/>
@@ -902,7 +900,7 @@
 	 </div>
 	</div>
 	
-        <script type="text/javascript" src="assets/js/madeincheztoi-min.js"></script>
+<!--         <script type="text/javascript" src="assets/js/madeincheztoi-min.js"></script> -->
 
 </body>
 </html>
