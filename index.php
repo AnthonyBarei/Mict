@@ -876,7 +876,12 @@ Conquérir le Monde, MouahahahAHAHAHAHAH !
 	 </div>
 	</section>
 
-
+	<?php
+	include_once('controllers/partner.php');
+	$pa = new Partner();
+	echo "test";
+	$partnerlist = $pa->partnerList();
+	?>
 
 	<section id="partenaires">
 	 <div class="cell1">
