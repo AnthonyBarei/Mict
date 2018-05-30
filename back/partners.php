@@ -34,7 +34,7 @@ foreach( $partenaire as $par ) {
 
 if(isset($_GET['delete'])) {
   $try = $pn->deletePartner($_GET['delete']);
-  header("Location: /Mict/back/partner.php");
+  header("Location: /Mict/back/partners.php");
   die();
 }
 
@@ -116,7 +116,7 @@ require_once('base-back.php');
                                     <input type="hidden" name="secretid<?= $pa['partners_id'] ?>" value="<?= $pa['partners_id'] ?>">
 
                                     <button id="updateButton<?= $pa['partners_id'] ?>" type="submit" class="btn btn-primary" name="update<?= $pa['partners_id'] ?>">Modifier l'atelier</button>
-                                    <a href="/Mict/back/offre.php?delete=<?= $pa['partners_id'] ?>" onclick="return confirm('êtes vous sûr de vouloir supprimer cet atelier ?');"><i class="fas fa-times fa-2x" style="float: right; margin-top: 5px;"></i></a>
+                                    <a href="/Mict/back/partners.php?delete=<?= $pa['partners_id'] ?>" onclick="return confirm('êtes vous sûr de vouloir supprimer ce partenaire?');"><i class="fas fa-times fa-2x" style="float: right; margin-top: 5px;"></i></a>
                                 </form>
                             </div>
 
@@ -134,99 +134,17 @@ require_once('base-back.php');
 
 <script type="text/javascript">
     for(j = 1; j < i; j++) {
-        $('.WORKSHOP' + j).hide();
+        $('.PARTNER' + j).hide();
     }
 
     function echoData(elem) {
         for(j = 1; j < i; j++) {
-            $('.WORKSHOP' + j).hide();
+            $('.PARTNER' + j).hide();
         }
 
         var id = $(elem).attr("id");
-        $('.WORKSHOP' + id).show();
+        $('.PARTNER' + id).show();
     }
-
-
-    // var str = document.getElementById("demo").innerHTML;
-    // var res = str.replace("Microsoft", "W3Schools");
-    // document.getElementById("demo").innerHTML = res;
-
-    var info_row = 0;
-    var create_info_row = 0;
-
-    function addInfo(id, row_number) {
-        row_number += info_row;
-        if(row_number < 10) {
-            var row = `<div id="infos_${info_row}">
-                            <input type="text" class="form-control" id="infos_update" name="update_infos_${info_row}" placeholder="Entrer l'info" style="margin-top: 10px; width: 96%; display: inline;">
-                            <a href="#updateInfos${id}" id="remove_info" onclick="removeInfo(false, ${info_row})">
-                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px;"></i>
-                            </a>
-                        </div>`;
-            $('#updateInfos' + id).append(row);
-            info_row++;
-            window.scrollTo(0,document.querySelector("#updateInfos" + id).scrollHeight);
-        } else { console.log("Le nombre d'informations ne peut pas dépasser 10.");
-            if($("#error-infos").length === 0) {
-                var row = `<div class="alert alert-danger" role="alert" id="error-infos" style="margin-top: 20px;">
-                              Vous ne pouver ajouter que 10 informations pour une offre.
-                            </div>`;
-
-                $('#updateInfos' + id).append(row);
-
-                $("#error-infos").fadeTo(5000, 500).slideUp(500, function(){
-                    $("#error-infos").slideUp(500);
-                });
-
-                window.scrollTo(0,document.querySelector("#updateInfos" + id).scrollHeight);
-            }
-        }
-    }
-
-    function createAddInfo() {
-        if(create_info_row < 9) {
-            var row = `<div id="infos_${info_row}">
-                            <input type="text" class="form-control" id="infos_update" name="infos_${create_info_row}" placeholder="Entrer l'info" style="margin-top: 10px; width: 96%; display: inline;">
-                            <a href="#createInfos" id="remove_info" onclick="removeInfo(false, ${create_info_row})">
-                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px;"></i>
-                            </a>
-                        </div>`;
-            $('#createInfos').append(row);
-            create_info_row++;
-            window.scrollTo(0,document.querySelector("#createForm").scrollHeight);
-        } else { console.log("Le nombre d'informations ne peut pas dépasser 10.");
-            if($("#error-infos").length === 0) {
-                var row = `<div class="alert alert-danger" role="alert" id="error-infos" style="margin-top: 20px;">
-                              Vous ne pouver ajouter que 10 informations pour une offre.
-                            </div>`;
-
-                $('#createInfos').append(row);
-
-                $("#error-infos").fadeTo(5000, 500).slideUp(500, function(){
-                    $("#error-infos").slideUp(500);
-                });
-
-                window.scrollTo(0,document.querySelector("#createForm").scrollHeight);
-            }
-        }
-    }
-
-    function removeInfo(exists, id) {
-        var element = "";
-        console.log(info_row);
-
-        if(exists === true) {
-            element = $('#existsInfos_' + id);
-            $('exists_update_infos_' + id).removeAttr('value');
-            element.remove();
-            info_row--;
-        } else {
-            element = $('#infos_' + id);
-            element.remove();
-            info_row--;
-        }
-    }
-
 </script>
 
 
