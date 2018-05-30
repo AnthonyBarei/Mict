@@ -8,10 +8,12 @@
         <meta name="description" content="Ateliers couture chez toi et avec tes amis. Découvre tous les thèmes, et choisis le projet que tu réaliseras pendant ton prochain atelier !"/> 
         <meta name="keywords" content="couture, cours, lecons, debuter, debutant, commencer, apprendre, facile, paris, region parisienne, 92, 95, 75, 78, 93, 91, 94, atelier, ateliers, domicile, particulier, inclus, lecon, formation, gratuit, amies, amis, debutante, made in chez toi, idf, made, in, chez, toi"/> 
         <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png" />
-        <link rel="stylesheet" href="assets/css/style_madeincheztoi.css" />
+        
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/js/made_in_chez_toi-min.js"></script>
         <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/css/style_madeincheztoi.css" />
         <link rel="author" href="http://www.madeincheztoi.com/index.php#faq11" />
         <link rel="canonical" href="http://www.madeincheztoi.com/ateliers_et_cours_de_couture_a_domicile.php" />
 

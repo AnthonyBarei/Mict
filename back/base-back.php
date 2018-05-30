@@ -34,9 +34,7 @@
             <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
             <li><a href="offre.php">Offre</a></li>
             <li><a href="photo.php">Photo</a></li>
-            <li><a href="livre.php">Livre d'or</a></li>
             <li><a href="partners.php">Partenaires</a></li>
-            <li><a href="contact.php">Contact</a></li>
             <li><a href="boutique.php">Boutique</a></li>
           </ul>
 
