@@ -56,38 +56,6 @@
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">Personnalisation</div>
-        <div class="panel-body">
-          <p>Images deroulantes</p>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="file" name="picture">
-          </div>
-          <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span>
-          <br/>
-          <hr>
-          <p>C'est quoi ?</p>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="text" class="form-control" placeholder="Descrition 1">
-          </div>
-          <div class="input-group" style="margin-bottom: 10px;">
-            <input type="text" class="form-control" placeholder="Descrition 2">
-          </div>
-          <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span>
-        </div>
-      </div>
-    </div>
-
 	    </div>
 
   </body>
