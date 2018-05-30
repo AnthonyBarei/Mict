@@ -52,13 +52,13 @@
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        <i class="more-less glyphicon glyphicon-minus"></i>
                         Nos Réalisations
                     </a>
                 </h4>
             </div>
 
-            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true">
                 <div class="panel-body">
                     <div class="tz-gallery">
                       <?php
@@ -91,9 +91,9 @@
                        <?php
                          if($dossier = opendir('./assets/images/album2')){
                            while(false !== ($fichier = readdir($dossier))){
-                             if ($Fichier != "." && $Fichier != ".." AND (stristr($fichier,'.gif') OR stristr($fichier,'.jpg') OR stristr($fichier,'.png'))){
+                             if ($fichier != "." && $fichier != ".." AND (stristr($fichier,'.gif') OR stristr($fichier,'.jpg') OR stristr($fichier,'.png'))){
                                echo "<a class='lightbox' href='assets/images/album2/" . $fichier ."'>";
-                               echo "<img style='height: 150px; width: 150px; ' src='assets/images/album2/". $fichier ."'>";
+                               echo "<img style='height: 150px; width: 150px; padding-right: 10px;' src='assets/images/album2/". $fichier ."'>";
                                echo "</a>";
                              }
                            }
@@ -119,9 +119,9 @@
                        <?php
                          if($dossier = opendir('./assets/images/album3')){
                            while(false !== ($fichier = readdir($dossier))){
-                             if ($Fichier != "." && $Fichier != ".." AND (stristr($fichier,'.gif') OR stristr($fichier,'.jpg') OR stristr($fichier,'.png'))){
+                             if ($fichier != "." && $fichier != ".." AND (stristr($fichier,'.gif') OR stristr($fichier,'.jpg') OR stristr($fichier,'.png'))){
                                echo "<a class='lightbox' href='assets/images/album3/" . $fichier ."'>";
-                               echo "<img style='height: 150px; width: 150px; ' src='assets/images/album3/". $fichier ."'>";
+                               echo "<img style='height: 150px; width: 150px; padding-right: 10px;' src='assets/images/album3/". $fichier ."'>";
                                echo "</a>";
                              }
                            }
