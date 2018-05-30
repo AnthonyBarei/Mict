@@ -37,9 +37,10 @@ class partnerModel extends DbConnect {
         $res = $dbh->prepare('
             INSERT INTO partners (
                 partner_name,
+                partner_image,
                 partner_description,
                 partner_link)
-            VALUES (:name, :description, :link)
+            VALUES (:name, :image, :description, :link)
         ');
 
         $result = $res->execute($params);

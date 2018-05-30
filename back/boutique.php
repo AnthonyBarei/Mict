@@ -7,7 +7,7 @@
         <div class="panel-body">
             <?php
 // Connexion à MySQL
-$base=mysqli_connect("localhost", "root", "root", "mict");
+$base=mysqli_connect("localhost", "root", "", "mict");
 
 if(isset($_POST['Bouton'])) {
    // Réecriture des variables

@@ -7,6 +7,7 @@ $pn = new Partner();
 if(isset($_POST['create'])) {
     $try = [
         "name" =>  $_POST['name'],
+        "image" => $_POST['image'],
         "description" => $_POST['desc'],
         "link" => $_POST['link'],
     ];
@@ -42,11 +43,43 @@ require_once('base-back.php');
 ?>
 
 <div class="container-fluid">
-
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading"><h1>Gestion des partenaires</h1></div>
         <div class="panel-body">
+
+          <div class="row">
+            <div class="col-md-6">
+              <form action="../controllers/uploadAlbum.php" method="post" enctype="multipart/form-data">
+                Ajouter une photo d'un partenaire:
+                <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                <input type="hidden" name="directorytarget" value="../assets/images/partners/">
+                <input type="hidden" name="redirect" value="../back/partners.php">
+                <input type="submit" value="Upload Image" name="submit">
+              </form>
+            </div>
+            <div class="col-md-6">
+              <?php if($dossier = opendir('../assets/images/partners')){ ?>
+                <form action="../controllers/deleteFile.php" method="post">
+                  <select class="form-control" name="todeletefile">
+                    <?php
+                      $fichier = readdir($dossier);
+                      $fichier = readdir($dossier);
+                      while(false !== ($fichier = readdir($dossier))){
+                        echo"<option value='../assets/images/partners/". $fichier ."'>". $fichier ." ";
+                      }
+                    ?>
+                  </select> <br>
+                  <input type="hidden" name="redirect" value="../back/partners.php">
+                  <input type="submit" value="Supprimer le fichier de l'album" name="submit">
+                </form>
+              <?php }else{ echo("L'album est vide"); } ?>
+            </div>
+          </div>
+
+
+
+
           <h3>Créer un partenaire</h3>
               <form class="" action="" method="post" id="createForm">
 
@@ -54,6 +87,19 @@ require_once('base-back.php');
                     <label for="name">Nom</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Entrer un nom">
                   </div>
+
+                  <label for="image">Photo du partenaire</label>
+                  <select class="form-control" name="image">
+                    <?php
+                    if($dossier = opendir('../assets/images/partners')){
+                      $fichier = readdir($dossier);
+                      $fichier = readdir($dossier);
+                      while(false !== ($fichier = readdir($dossier))){
+          							echo"<option value='assets/images/partners/". $fichier ."'>". $fichier ." ";
+          						}
+                    }
+                    ?>
+                  </select>
 
                   <div class="form-group">
                     <label for="desc">Description</label>
@@ -102,6 +148,19 @@ require_once('base-back.php');
                                         <label for="name">Nom</label>
                                         <input type="text" class="form-control" id="name_update" name="name<?= $pa['partners_id'] ?>" value="<?= $pa['partner_name'] ?>" placeholder="Entrer un nom">
                                     </div>
+
+                                    <label for="image">Photo du partenaire</label>
+                                    <select class="form-control" name="image<?= $pa['partners_id'] ?>">
+                                      <?php
+                                      if($dossier = opendir('../assets/images/partners')){
+                                        $fichier = readdir($dossier);
+                                        $fichier = readdir($dossier);
+                                        while(false !== ($fichier = readdir($dossier))){
+                                          echo"<option value='assets/images/partners/". $fichier ."'>". $fichier ." ";
+                                        }
+                                      }
+                                      ?>
+                                    </select>
 
                                     <div class="form-group" id="updateDescription<?= $pa['partners_id'] ?>">
                                       <label for="desc">Description</label>
