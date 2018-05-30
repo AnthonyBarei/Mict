@@ -1005,7 +1005,7 @@ Tous les patrons sont disponibles en Kit avec des tissus bio et exclusifs, pour 
 	</footer>
 
 
-	<script type="text/javascript" src="assets/js/madeincheztoi-min.js"></script>
+<!-- 	<script type="text/javascript" src="assets/js/madeincheztoi-min.js"></script> -->
 
 </body>
 </html>

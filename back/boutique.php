@@ -1,7 +1,7 @@
 <?php require_once('base-back.php'); ?>
 
     <div class="container-fluid">
-    <div class="col-md-6">
+    <div class="col-6">
       <div class="panel panel-default">
         <div class="panel-heading">Paramètres de connexion de la boutique</div>
         <div class="panel-body">
@@ -58,7 +58,7 @@ mysqli_close($base);
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-12">
       <div class="panel panel-default">
         <div class="panel-heading">Rendu</div>
         <div class="panel-body">
