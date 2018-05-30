@@ -65,11 +65,11 @@ require_once('base-back.php');
                     <input class="form-control" id="link" name="link" placeholder="Entrer le lien">
                   </div>
 
-              <button type="submit" class="btn btn-primary" name="create">Créer un atelier</button>
+              <button type="submit" class="btn btn-primary" name="create">Ajouter le partenaire</button>
           </form>
 
           <hr>
-          <h3>Modifier Partenaire</h3>
+          <h3>Modifier un Partenaire</h3>
 
                 <?php
                     $pn = new Partner();

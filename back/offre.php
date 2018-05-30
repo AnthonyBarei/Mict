@@ -13,7 +13,7 @@ foreach( $atelier as $at ) {
                 "name" =>  $_POST['name' . $at['workshop_id']],
                 "infos" => [],
                 "description" => [],
-                "price" => $_POST['prix' . $at['workshop_id']],
+                "price" => [],
                 "projects" => $_POST['project' . $at['workshop_id']]
             ];
 
@@ -39,6 +39,12 @@ foreach( $atelier as $at ) {
             for ($m = 0; $m <= 20; $m++) {
                 if(isset($_POST['desc' . $m])) {
                     array_push($try["description"], $_POST['desc' . $m]);
+                }
+            }
+
+            for ($o = 1; $o <= 4; $o++) {
+                if(isset($_POST['nbpers' . $o . '_' . $at['workshop_id']]) && isset($_POST['prix' . $o . '_' . $at['workshop_id']]) && isset($_POST['soit' . $o . '_' . $at['workshop_id']])) {
+                    array_push($try['price'], [$_POST['nbpers' . $o . '_' . $at['workshop_id']], $_POST['prix' . $o . '_' . $at['workshop_id']], $_POST['soit' . $o . '_' . $at['workshop_id']]]);
                 }
             }
 
@@ -146,10 +152,50 @@ require_once('base-back.php');
                                       <?php endif; ?>
                                     </div>
 
+                                    <style media="screen">
+                                        .myInputs {
+                                            padding: 6px 12px;
+                                            font-size: 14px;
+                                            line-height: 1.42857143;
+                                            color: #555555;
+                                            background-color: #ffffff;
+                                            border: 1px solid #cccccc;
+                                            border-radius: 4px;
+                                            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                                            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                                            -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                                            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                                            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                                        }
+                                    </style>
+
                                     <div class="form-group" id="updatePrice<?= $at['workshop_id'] ?>">
-                                      <label for="prix">Prix</label>
-                                      <input type="number" class="form-control" id="prix_update" name="prix<?= $at['workshop_id'] ?>" value="<?= $at['workshop_price'] ?>" placeholder="Entrer un prix">
-                                    </div>
+                                      <div>
+                                          <label>Prix</label>
+                                      </div>
+                                      <div class="col-md-12" style="margin-bottom: 10px;">
+                                          <?php $at['workshop_price'] = json_decode($at['workshop_price']); //die(var_dump((int)$at['workshop_price'][0][1])); ?>
+
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers1_<?= $at['workshop_id'] ?>" placeholder="nombre de personnes" style="margin-right: 10px;" value="<?php echo $nbpers = ($at['workshop_price'][0][0]) ?? (int)$at['workshop_price'][0][0];?>">
+                                          <input type="number" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix1_<?= $at['workshop_id'] ?>" value="" placeholder="Entrer un prix" value="<?php echo $prix = ($at['workshop_price'][0][1]) ?? (int)$at['workshop_price'][0][1];?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit1_<?= $at['workshop_id'] ?>" placeholder="prix par heure" value="<?php echo $soit = ($at['workshop_price'][0][2]) ?? $at['workshop_price'][0][2];?>">
+                                      </div>
+                                      <div class="col-md-12" style="margin-bottom: 10px;">
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers2_<?= $at['workshop_id'] ?>" placeholder="nombre de personnes" style="margin-right: 10px;" value="<?php echo $nbpers = ($at['workshop_price'][1][0]) ?? (int)$at['workshop_price'][1][0];?>">
+                                          <input type="number" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix2_<?= $at['workshop_id'] ?>" value="" placeholder="Entrer un prix" value="<?php echo $prix = ($at['workshop_price'][1][1]) ?? (int)$at['workshop_price'][1][1];?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit2_<?= $at['workshop_id'] ?>" placeholder="prix par heure" value="<?php echo $soit = ($at['workshop_price'][1][2]) ?? $at['workshop_price'][1][2];?>">
+                                      </div>
+                                      <div class="col-md-12" style="margin-bottom: 10px;">
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers3_<?= $at['workshop_id'] ?>" placeholder="nombre de personnes" style="margin-right: 10px;" value="<?php echo $nbpers = ($at['workshop_price'][2][0]) ?? (int)$at['workshop_price'][2][0];?>">
+                                          <input type="number" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix3_<?= $at['workshop_id'] ?>" value="" placeholder="Entrer un prix" value="<?php echo $prix = ($at['workshop_price'][2][1]) ?? (int)$at['workshop_price'][2][1];?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit3_<?= $at['workshop_id'] ?>" placeholder="prix par heure" value="<?php echo $soit = ($at['workshop_price'][2][2]) ?? $at['workshop_price'][2][2];?>">
+                                      </div>
+                                      <div class="col-md-12" style="margin-bottom: 10px;">
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers4_<?= $at['workshop_id'] ?>" placeholder="nombre de personnes" style="margin-right: 10px;" value="<?php echo $nbpers = ($at['workshop_price'][3][0]) ?? (int)$at['workshop_price'][3][0];?>">
+                                          <input type="number" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix4_<?= $at['workshop_id'] ?>" value="" placeholder="Entrer un prix" value="<?php echo $prix = ($at['workshop_price'][3][1]) ?? (int)$at['workshop_price'][3][1];?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit4_<?= $at['workshop_id'] ?>" placeholder="prix par heure" value="<?php echo $soit = ($at['workshop_price'][2][2]) ?? $at['workshop_price'][3][2];?>">
+                                      </div>
+                                  </div>
 
                                     <div class="form-group" id="updateProject<?= $at['workshop_id'] ?>">
                                       <label for="project">Projets</label>
