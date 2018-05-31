@@ -442,11 +442,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:3"/>
-	     <div class="c1">
-	      <div class="table"><div class="cell1">
-	       <img class="c2" src="assets/images/plus.png" alt="Photos de réalisations"/>
-	      </div></div>
-	     </div>
+
 	    </a>
 	   </div>
 	   <div class="photo">
@@ -454,11 +450,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:5"/>
-	     <div class="c1">
-	      <div class="table"><div class="cell1">
-	       <img class="c2" src="assets/images/plus.png" alt="Photos de réalisations"/>
-	      </div></div>
-	     </div>
+	     <
 	    </a>
 	   </div>
 	   <div class="photo">
@@ -466,11 +458,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:7"/>
-	     <div class="c1">
-	      <div class="table"><div class="cell1">
-	       <img class="c2" src="assets/images/plus.png" alt="Photos de réalisations"/>
-	      </div></div>
-	     </div>
+
 	    </a>
 	   </div>
 	   <div class="photo">
@@ -478,11 +466,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:9"/>
-	     <div class="c1">
-	      <div class="table"><div class="cell1">
-	       <img class="c2" src="assets/images/plus.png" alt="Photos de réalisations"/>
-	      </div></div>
-	     </div>
+
 	    </a>
 	   </div>
 	  </div>
