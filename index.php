@@ -111,7 +111,7 @@
 			</div>
 		</div>
 		</div>
-
+<marquee style="margin-top: 20px;">Le texte à faire défiler, On place la donnée de la base ici et ca defile </marquee>
 		<h1> Ateliers et cours de couture chez toi</h1>
 	 <a class="scrollTo" href="#quoi"><div class="suite_fleche"></div></a>
 	</section>
