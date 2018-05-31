@@ -30,6 +30,21 @@
 <meta name="twitter:image:src" content="http://www.madeincheztoi.com/assets/images/madeincheztoi-og_thumb.jpg"/>
 </head>
 
+<style media="screen">
+.clients { width:200px; height:450px; padding:30px 0 0; margin: 0 50px; position:relative;}
+.clients .image { width:180px; height:180px; border-radius:25px;}
+.clients .picto { position:absolute; top:30px; width:150px; height:150px; margin:35px 25px; }
+
+.n3-1 .image {background:url('../../assets/images/bg/atelier_madeincheztoi.jpg') no-repeat;}
+.n3-1 .picto {background:url('../../assets/images/bg/picto_client1.png') no-repeat;}
+.n3-2 .image {background:url('../../assets/images/bg/cours_particulier_madeincheztoi.jpg') no-repeat;}
+.n3-2 .picto {background:url('../../assets/images/bg/picto_client2.png') no-repeat;}
+.n3-3 .image {background:url('../../assets/images/bg/carte_cadeau_madeincheztoi.jpg') no-repeat;}
+.n3-3 .picto {background:url('../../assets/images/bg/picto_client3.png?v=2') no-repeat;}
+.n3-4 .image {background:url('../../assets/images/bg/offre_sur_mesure_madeincheztoi.jpg') no-repeat;}
+.n3-4 .picto {background:url('../../assets/images/bg/picto_client4.png') no-repeat;}
+</style>
+
 <body>
 
     <section id="offres">
@@ -56,6 +71,7 @@
     <div class="left clients">
         <div class="image"></div>
         <div class="picto"></div>
+        <img src="../../assets/images/bg/picto_client1.png" style="margin-top: 30px;">
     </div>
     <div class="texte">
         <h2><?= $offreList[0]['workshop_name'] ?></h2>
@@ -136,6 +152,7 @@
     <div class="right clients">
         <div class="image"></div>
         <div class="picto"></div>
+        <img src="../../assets/images/bg/picto_client2.png" style="margin-top: 30px;">
     </div>
     <div class="texte">
         <h2><?= $offreList[1]['workshop_name'] ?></h2>
@@ -203,6 +220,7 @@
         <div class="left clients">
             <div class="image"></div>
             <div class="picto"></div>
+            <img src="../../assets/images/bg/picto_client3.png?v=2" style="margin-top: 30px;">
         </div>
         <div class="texte">
        <h2>La carte cadeau Made in chez toi</h2>
@@ -233,6 +251,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
         <div class="right clients">
             <div class="image"></div>
             <div class="picto"></div>
+            <img src="../../assets/images/bg/picto_client4.png" style="margin-top: 30px;">
         </div>
         <div class="texte">
        <h2>Entreprises, CE et projets sur mesure</h2>

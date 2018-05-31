@@ -124,16 +124,16 @@ require_once('base-back.php');
                                     </div>
 
                                     <div class="form-group" id="updateInfos<?= $at['workshop_id'] ?>">
-                                      <label for="infos" style="margin-bottom: 15px;">Infos</label>
+                                      <label for="infos" style="margin-bottom: 25px;">Infos</label>
                                       <a href="#updateInfos<?= $at['workshop_id'] ?>" id="add_info" onclick="addInfo(<?= $at['workshop_id'] ?>, <?= $total_infos ?>)">
-                                          <i class="fas fa-plus fa-2x" style="float: right;"></i>
+                                          <i class="fas fa-plus fa-2x" style="float: right; font-size: 35px;"></i>
                                       </a>
                                     <?php if($at['workshop_infos'] !== null) : ?>
                                         <?php foreach ($at['workshop_infos'] as $key => $info) : ?>
                                             <div id="existsInfos_<?= $k ?>">
                                                 <input type="text" class="form-control" id="infos_update" name="exists_update_infos_<?= $k ?>" value="<?= $info ?>" placeholder="Entrer les infos" style="margin-bottom: 10px; width: 90%; display: inline;">
                                                 <a href="#updateInfos<?= $k ?>" id="remove_info" onclick="removeInfo(true, <?= $k ?>)">
-                                                    <i class="fas fa-times fa-2x" style="float: right; margin-top: 5px;"></i>
+                                                    <i class="fas fa-times fa-2x" style="float: right; margin-top: 5px; color: #cc0000;"></i>
                                                 </a>
                                             </div>
                                             <?php $k++ ?>
@@ -145,16 +145,16 @@ require_once('base-back.php');
                                     </div>
 
                                     <div class="form-group" id="updateDescription<?= $at['workshop_id'] ?>">
-                                      <label for="desc" style="margin-bottom: 15px;">Description par paragraphe</label>
+                                      <label for="desc" style="margin-bottom: 25px;">Description par paragraphe</label>
                                       <a href="#updateDescription<?= $at['workshop_id'] ?>" id="add_description" onclick="addDescription(<?= $at['workshop_id'] ?>, <?= $total_desc ?>)">
-                                          <i class="fas fa-plus fa-2x" style="float: right;"></i>
+                                          <i class="fas fa-plus fa-2x" style="float: right; font-size: 35px;"></i>
                                       </a>
                                       <?php if($at['workshop_description'] !== null) : ?>
                                           <?php foreach ($at['workshop_description'] as $key => $paragraphe) : ?>
                                               <div id="existsDescription_<?= $l ?>">
                                                   <textarea class="form-control" id="desc" name="exists_desc<?= $l ?>" rows="5" cols="30" placeholder="Entrer une description" value="<?= $paragraphe ?>" style="margin-bottom: 10px; width: 90%; display: inline;"><?= $paragraphe ?></textarea>
                                                   <a href="#updateDescription<?= $l ?>" id="remove_description" onclick="removeDescription(true, <?= $l ?>)">
-                                                      <i class="fas fa-times fa-2x" style="float: right; margin-top: 5px;"></i>
+                                                      <i class="fas fa-times fa-2x" style="float: right; margin-top: 5px; color: #cc0000;"></i>
                                                   </a>
                                               </div>
                                               <?php $l++ ?>
@@ -275,7 +275,7 @@ require_once('base-back.php');
             var row = `<div id="infos_${info_row}">
                             <input type="text" class="form-control" id="infos_update" name="update_infos_${info_row}" placeholder="Entrer l'info" style="margin-top: 10px; width: 90%; display: inline;">
                             <a href="#updateInfos${id}" id="remove_info" onclick="removeInfo(false, ${info_row})">
-                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px;"></i>
+                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px; color: #cc0000;"></i>
                             </a>
                         </div>`;
             $('#updateInfos' + id).append(row);
@@ -304,7 +304,7 @@ require_once('base-back.php');
             var row = `<div id="description_${description_row}">
                             <textarea class="form-control" id="desc" name="desc${description_row}" rows="5" cols="30" placeholder="Entrer un paragraphe" style="margin-top: 10px; width: 90%; display: inline;"></textarea>
                             <a href="#updateInfos${id}" id="remove_description" onclick="removeDescription(false, ${description_row})">
-                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px;"></i>
+                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px; color: #cc0000;"></i>
                             </a>
                         </div>`;
             $('#updateDescription' + id).append(row);
