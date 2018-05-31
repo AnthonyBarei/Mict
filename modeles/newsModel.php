@@ -1,20 +1,19 @@
 <?php
 require_once('connectionModel.php');
-require_once('functions.php');
 
 class newsModel extends DbConnect {
 
-    public function getOffers() {
+    public function getNews() {
 
         $dbh = $this->connect();
 
-        $res = $dbh->query('select * from offer');
+        $res = $dbh->query('select * from news');
         $result = $res->fetchAll();
 
         return $result;
     }
 
-    public function getOffersbyId($id) {
+    public function getNewsbyId($id) {
         $dbh = $this->connect();
 
         $res = $dbh->prepare('
@@ -36,8 +35,8 @@ class newsModel extends DbConnect {
       $dbh = $this->connect();
       $res = $dbh->prepare('
           SELECT *
-          FROM news WHERE
-          news_start < (SELECT NOW())
+          FROM news
+          WHERE news_start < (SELECT NOW())
           AND news_end > (SELECT NOW())
       ');
       $result = $res->fetchAll();
