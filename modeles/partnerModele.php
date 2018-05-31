@@ -19,7 +19,7 @@ class partnerModel extends DbConnect {
         $res = $dbh->prepare('
             SELECT *
             FROM partners
-            WHERE partner_id = :id
+            WHERE partners_id = :id
         ');
 
         $res->bindParam(':id', $id);
@@ -37,9 +37,10 @@ class partnerModel extends DbConnect {
         $res = $dbh->prepare('
             INSERT INTO partners (
                 partner_name,
+                partner_image,
                 partner_description,
                 partner_link)
-            VALUES (:name, :description, :link)
+            VALUES (:name, :image, :description, :link)
         ');
 
         $result = $res->execute($params);
@@ -54,13 +55,14 @@ class partnerModel extends DbConnect {
             UPDATE partners
             SET
                 partner_name = :name,
+                partner_image = :image,
                 partner_description = :description,
-                partner_link = :link,
-            WHERE partner_id = :id
+                partner_link = :link
+            WHERE partners_id = :id
         ');
 
-        $result = $res->execute($params);
 
+        $result = $res->execute($params);
         return $result;
     }
 
@@ -69,13 +71,12 @@ class partnerModel extends DbConnect {
 
         $res = $dbh->prepare('
             DELETE FROM partners
-            WHERE partner_id = :id
+            WHERE partners_id = :id
         ');
 
-        $res->bindParam('id', $id);
+        $res->bindValue(':id', $id, PDO::PARAM_INT);
 
         $result = $res->execute();
-
         return $result;
     }
 }

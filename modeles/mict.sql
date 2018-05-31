@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  lun. 30 avr. 2018 à 15:44
+-- Généré le :  jeu. 31 mai 2018 à 15:45
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.6
 
@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Base de données :  `Mict`
+-- Base de données :  `mict`
 --
 
 -- --------------------------------------------------------
@@ -28,6 +28,24 @@ CREATE TABLE `article` (
   `article_description` varchar(255) NOT NULL,
   `article_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `boutique`
+--
+
+CREATE TABLE `boutique` (
+  `id` int(11) NOT NULL,
+  `Lien` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `boutique`
+--
+
+INSERT INTO `boutique` (`id`, `Lien`) VALUES
+(1, 'http://www.bednspa.com/suites/suites.html');
 
 -- --------------------------------------------------------
 
@@ -53,31 +71,6 @@ CREATE TABLE `goldenbook` (
   `goldenbook_date` date NOT NULL,
   `goldenbook_commentary` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `news`
---
-
-CREATE TABLE `news` (
-  `id` int(11) NOT NULL,
-  `news_title` varchar(400) NOT NULL,
-  `news_body` varchar(1500) NOT NULL,
-  `news_link` varchar(600) NOT NULL,
-  `news_start` date NOT NULL,
-  `news_end` date NOT NULL,
-  `news_recurrence` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `news`
---
-
-INSERT INTO `news` (`id`, `news_title`, `news_body`, `news_link`, `news_start`, `news_end`, `news_recurrence`) VALUES
-(1, 'Passé', 'passé', '', '2017-01-01', '2017-12-31', 0),
-(2, 'présent', 'présent', 'présent', '2018-01-01', '2018-12-31', 0),
-(3, 'futur', 'futur', 'futur', '2019-01-01', '2019-12-31', 0);
 
 -- --------------------------------------------------------
 
@@ -217,10 +210,10 @@ INSERT INTO `user` (`user_id`, `user_firstname`, `user_lastname`, `user_password
 CREATE TABLE `workshop` (
   `workshop_id` int(11) NOT NULL,
   `workshop_name` varchar(255) NOT NULL,
-  `workshop_infos` varchar(10000) NOT NULL,
-  `workshop_description` varchar(10000) NOT NULL,
-  `workshop_price` int(11) NOT NULL,
-  `workshop_projects` varchar(255) NOT NULL
+  `workshop_infos` longtext,
+  `workshop_description` longtext NOT NULL,
+  `workshop_price` longtext NOT NULL,
+  `workshop_projects` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='projects is json list';
 
 --
@@ -228,8 +221,10 @@ CREATE TABLE `workshop` (
 --
 
 INSERT INTO `workshop` (`workshop_id`, `workshop_name`, `workshop_infos`, `workshop_description`, `workshop_price`, `workshop_projects`) VALUES
-(1, 'Les ateliers', '{\r\n  \"durée\": \"3 heures\",\r\n  \"capacité\": \"3 à 6 personnes\",\r\n  \"contexte\": \"chez toi ou tes amis\",\r\n  \"lieu\": \"Paris / région parisienne\",\r\n  \"complément\": \"tout inclus\"\r\n}', 'l\'essence même de Made in chez toi, c\'est de coudre ensemble, de partager de bons moments avec ses amis ou avec de nouvelles connaissances, le tout dans un environnement agréable et cosy.\r\n\r\nLes ateliers, c\'est l\'expression naturelle de ce concept. On se retrouve tous chez toi, ou lui, ou elle, dans un salon ou un séjour -- ce qui est beaucoup plus agréable que de se retrouver dans une salle de « cours » froide et impersonnelle !\r\n\r\nApprendre la couture doit pouvoir être universel : tout le monde est bienvenu, de la personne qui n\'a jamais touché une machine ou une bobine à celle qui a déjà de bonnes réalisations à son actif.\r\n\r\nC\'est pourquoi Made in chez toi s\'occupe de tout, et surtout de fournir tout le nécessaire au bon déroulement de l\'atelier : les machines -- une machine électronique haut de gamme par personne --, les tissus adaptés au thème de l\'atelier, le fil, le biais, le passe-poil, les fermetures, boutons, règles, ciseaux, découseurs... Tout ce qu\'il faut pour pouvoir coudre sans avoir à investir soi-même dans du matériel plus ou moins coûteux. D\'ailleurs, chaque atelier est l\'occasion de viser ou réviser les concepts de base de la couture, en fonction de votre niveau.\r\n\r\nQuand tu choisis un atelier, il faut choisir le thème qui sera abordé. Tu peux cliquer sur le bouton ci-dessous pour consulter les thèmes que Made in chez toi t\'a bichonnés. Une fois le thème sélectionné, et l\'atelier réservé, je t\'appelle pour te donner tous les détails. Chacun devra ensuite choisir son projet spécifique, parmi la liste de projets proposés dans le thème, afin que je puisse apporter le jour J le matériel nécessaire pour chacun (patrons, tissus...).\r\n\r\nPas de stress, je peux vous conseiller sur ce point, en fonction du niveau et des attentes de chacun. En effet, certains projets sont plus ou moins faciles. D\'autres sont plus ou moins longs. Dans tous les cas, même pour les projets les plus simples, il est possible d\'adapter le niveau de difficulté avec des options (doublures, passepoils, réversible...), pour que tout le monde se fasse plaisir !\r\n\r\nSi tes amis ne sont pas intéressés, si vous n\'avez jamais les mêmes créneaux, ou si tu veux rencontrer de nouvelles personnes, tu peux joindre un atelier déjà planifié et où il reste de la place. En effet, même quand tu organises un atelier chez toi, tu peux l\'« ouvrir au public » et proposer à d\'autres d\'y participer. Intéressant pour rencontrer du monde, intéressant aussi car plus vous êtes nombreux, plus le prix individuel diminue ! Clique sur le bouton « Les tarifs » ci-dessous pour en savoir plus.\r\n\r\nEnfin, pense à Made in chez toi pour tous tes événements festifs. Noël, Pâques, Halloween, anniversaires, EVJF, fête des mères (et des pères :) ), Made in chez toi a des ateliers spécifiques et sur-mesure prévus pour passer de bons moments avec tes amis et tes proches !', 30, ''),
-(2, 'Lorem Ipsum', '{\r\n  \"durée\": \"1 heures\",\r\n  \"capacité\": \"2 personnes\",\r\n  \"contexte\": \"ipsum\",\r\n  \"lieu\": \"Paris\",\r\n  \"complément\": \"rien inclus\"\r\n}', 'Verum ad istam omnem orationem brevis est defensio. Nam quoad aetas M. Caeli dare potuit isti suspicioni locum, fuit primum ipsius pudore, deinde etiam patris diligentia disciplinaque munita. Qui ut huic virilem togam deditšnihil dicam hoc loco de me; tantum sit, quantum vos existimatis; hoc dicam, hunc a patre continuo ad me esse deductum; nemo hunc M. Caelium in illo aetatis flore vidit nisi aut cum patre aut mecum aut in M. Crassi castissima domo, cum artibus honestissimis erudiretur.', 152, '');
+(66, 'Les ateliers', '[\"3 heures \",\"3 à 6 personnes\",\"chez toi ou tes amis\",\"Paris \\/ région parisienne\",\"tout inclus\"]', '[\"L\'essence même de Made in chez toi, c\'est de coudre ensemble, de partager de bons moments avec ses amis ou avec de nouvelles connaissances, le tout dans un environnement agréable et cosy.\",\"Les ateliers, c\'est l\'expression naturelle de ce concept. On se retrouve tous chez toi, ou lui, ou elle, dans un salon ou un séjour -- ce qui est beaucoup plus agréable que de se retrouver dans une salle de « cours » froide et impersonnelle !\",\"Apprendre la couture doit pouvoir être universel : tout le monde est bienvenu, de la personne qui n\'a jamais touché une machine ou une bobine à celle qui a déjà de bonnes réalisations à son actif.\",\"C\'est pourquoi Made in chez toi s\'occupe de tout, et surtout de fournir tout le nécessaire au bon déroulement de l\'atelier : les machines -- une machine électronique haut de gamme par personne --, les tissus adaptés au thème de l\'atelier, le fil, le biais, le passe-poil, les fermetures, boutons, règles, ciseaux, découseurs... Tout ce qu\'il faut pour pouvoir coudre sans avoir à investir soi-même dans du matériel plus ou moins coûteux. D\'ailleurs, chaque atelier est l\'occasion de viser ou réviser les concepts de base de la couture, en fonction de votre niveau.\",\"Quand tu choisis un atelier, il faut choisir le thème qui sera abordé. Tu peux cliquer sur le bouton ci-dessous pour consulter les thèmes que Made in chez toi t\'a bichonnés. Une fois le thème sélectionné, et l\'atelier réservé, je t\'appelle pour te donner tous les détails. Chacun devra ensuite choisir son projet spécifique, parmi la liste de projets proposés dans le thème, afin que je puisse apporter le jour J le matériel nécessaire pour chacun (patrons, tissus...).\",\"Pas de stress, je peux vous conseiller sur ce point, en fonction du niveau et des attentes de chacun. En effet, certains projets sont plus ou moins faciles. D\'autres sont plus ou moins longs. Dans tous les cas, même pour les projets les plus simples, il est possible d\'adapter le niveau de difficulté avec des options (doublures, passepoils, réversible...), pour que tout le monde se fasse plaisir !\",\"Si tes amis ne sont pas intéressés, si vous n\'avez jamais les mêmes créneaux, ou si tu veux rencontrer de nouvelles personnes, tu peux joindre un atelier déjà planifié et où il reste de la place. En effet, même quand tu organises un atelier chez toi, tu peux l\'« ouvrir au public » et proposer à d\'autres d\'y participer. Intéressant pour rencontrer du monde, intéressant aussi car plus vous êtes nombreux, plus le prix individuel diminue ! Clique sur le bouton « Les tarifs » ci-dessous pour en savoir plus.\",\"Enfin, pense à Made in chez toi pour tous tes événements festifs. Noël, Pâques, Halloween, anniversaires, EVJF, fête des mères (et des pères :) ), Made in chez toi a des ateliers spécifiques et sur-mesure prévus pour passer de bons moments avec tes amis et tes proches !\"]', '[[\"3\",\"90 €\",\"soit 30 € \\/ h\"],[\"4\",\"80 €\",\"soit 27 € \\/h\"],[\"5\",\"75 €\",\"soit 25 € \\/h\"],[\"6\",\"70 €\",\"soit 23 € \\/ h\"]]', '[\"Rappel : 1 atelier = 3 heures, chez toi, machine, tissus et fournitures compris\",\"\",\"\"]'),
+(70, 'Les cours particuliers', '[\"3 heures \",\"chez toi \",\"Paris \\/ région parisienne\",\"cours sur-mesure\"]', '[\"Tu te reconnais bien ci-dessus mais... pas de chance ! Toutes tes copines qui étaient partantes pour l\'atelier se laissent rattraper par... tu sais... les enfants... le boulot... les courses... la famille... Bref, difficile de trouver un créneau pour tout le monde !\",\"Tu décides de ne plus attendre pour sortir ton livre de couture de l\'étagère :) Made in chez toi pense aussi à toi ! La formule Cours Particuliers, c\'est le sur-mesure de l\'apprentissage de la couture !\",\"Tu débutes ? On commence pas à pas en détaillant chaque étape, et tu repars vite avec une de tes réalisations ; parce qu\'elle est importante, cette première...\",\"Tu t\'y connais déjà un peu ? Made in chez toi arrive là où ça coince ! Tu avances ton projet autant que tu peux\\/veux, et on se penche sur les difficultés en temps réel pour un temps d\'enseignement optimisé.\",\"Tu n\'as pas de machine à coudre ? Tu peux quand même suivre un cours particulier, Made in chez toi t\'en fournit une. Oui ! Il faut bien s\'y frotter pour s\'y piquer, à la couture ! En revanche, les fournitures, elles, ne sont pas fournies.\"]', '[[\"1\",\"90 €\",\"400 €\"],[\"2\",\"100 €\",\"450 €\"],[\"3\",\"sur devis\",\"sur devis\"],[\"\",\"\",\"\"]]', '[\"Les prix correspondent à des cours de 3 heures, chez toi. Tu peux aussi opter pour la carte de 5 cours, valable 1 an, pour économiser 10 € sur le prix de chaque atelier !\",\"Les tarifs dépendent de ta zone géographique :\",\"Zone 1 : Paris, 92, 93, 95<br\\/>Zone 2 : 77, 78, 91, 94<br\\/>Zone 3 : autres\"]'),
+(71, 'La carte cadeau Made in chez toi', '[\"85 € \",\"Valable un an\",\"Ateliers ou cours particuliers\",\"Paris \\/ région parisienne\",\"Son coupe-fil offert\"]', '[\"Tu es à la recherche d\'un cadeau original et personnalisé pour Noël ? Pour un anniversaire ? Une fête de famille ? Un départ en retraite ?\",\"Avec la carte cadeau Made in chez toi, tu peux offrir un cadeau inédit, convivial et, par dessus tout, utile !\",\"Pour toi, au même tarif qu\'un cours ou un atelier classique, c\'est la réception rapide (par lettre prioritaire) d\'une carte cadeau réelle, tangible, personnalisée et très originale (bien plus qu\'un simple code à taper dans un champ \\\"code promotionnel\\\"...) qui mettra très vite l\'eau à la bouche de son destinataire.\",\"Pour l\'heureux bénéficiaire, c\'est l\'assurance de pouvoir participer sous un an à un atelier ou un cours particulier de son choix, avec les mêmes avantages que les autres clients (ateliers collectifs tout inclus, cours particuliers sur-mesure...). Mais comme ce n\'est tout de même pas un client comme un autre, un accessoire indispensable lui sera offert le jour de la prestation !\",\"Alors n\'hésite plus et fais découvrir la passion de la couture à tes proches !\"]', '[[\"\",\"\",\"\"],[\"\",\"\",\"\"],[\"\",\"\",\"\"],[\"\",\"\",\"\"]]', ''),
+(72, 'Entreprises, CE et projets sur mesure', '[\"Plusieurs formules\",\"à domicile ou dans l\'entreprise\",\"ateliers ou stages\",\"tout inclus\"]', '[\"Made in chez toi n\'oublie pas le monde du travail ! Parce que ce que l\'on peut coudre entre amis, on peut le coudre entre collègues :)\",\"Plusieurs formules sont possibles : subvention de cours ou d\'ateliers chez les salariés sous forme de bons d\'achat, ateliers dans vos locaux ou à proximité, animation de stage de couture, pendant l\'année ou lors de vacances scolaires... Le tout avec des prix agressifs et dégressifs :) Votre devis et tous les détails sur demande, ici.\",\"Comme pour les ateliers, tout est inclus : une machine à coudre haut de gamme par personne, les tissus, fil, accessoires, outils... Rien à apporter, et à la fin de l\'atelier, une création à emporter !\",\"En plus des CE, Made in chez toi anime aussi des ateliers découverte de la couture par les enfants. Une offre complète est disponible, des goûters et animations d\'anniversaires (de 6 à 15 ans) jusqu\'aux animations scolaires (dès le CP), en passant par des stages ou par des ateliers 4 mains (mères \\/ filles) pour transmettre ensemble la passion de la couture à vos enfants.\",\"Quels qu\'ils soient, discutons de vos projets !\"]', '0', '');
 
 --
 -- Index pour les tables déchargées
@@ -240,6 +235,12 @@ INSERT INTO `workshop` (`workshop_id`, `workshop_name`, `workshop_infos`, `works
 --
 ALTER TABLE `article`
   ADD PRIMARY KEY (`article_id`);
+
+--
+-- Index pour la table `boutique`
+--
+ALTER TABLE `boutique`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `config`
@@ -253,12 +254,6 @@ ALTER TABLE `config`
 ALTER TABLE `goldenbook`
   ADD PRIMARY KEY (`goldenbook_id`),
   ADD KEY `goldenbook_user` (`goldenbook_user`);
-
---
--- Index pour la table `news`
---
-ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `offer`
@@ -300,6 +295,11 @@ ALTER TABLE `workshop`
 ALTER TABLE `article`
   MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT pour la table `boutique`
+--
+ALTER TABLE `boutique`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT pour la table `config`
 --
 ALTER TABLE `config`
@@ -309,11 +309,6 @@ ALTER TABLE `config`
 --
 ALTER TABLE `goldenbook`
   MODIFY `goldenbook_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `news`
---
-ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `offer`
 --
@@ -338,7 +333,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `workshop`
 --
 ALTER TABLE `workshop`
-  MODIFY `workshop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `workshop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 --
 -- Contraintes pour les tables déchargées
 --
@@ -348,5 +343,3 @@ ALTER TABLE `workshop`
 --
 ALTER TABLE `goldenbook`
   ADD CONSTRAINT `goldenbook_ibfk_1` FOREIGN KEY (`goldenbook_user`) REFERENCES `user` (`user_id`);
-
-ALTER TABLE `workshop` CHANGE `workshop_infos` `workshop_infos` VARCHAR(10000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL;

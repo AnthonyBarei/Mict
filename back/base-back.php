@@ -31,12 +31,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/back">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
             <li><a href="offre.php">Offre</a></li>
             <li><a href="photo.php">Photo</a></li>
-            <li><a href="livre.php">Livre d'or</a></li>
             <li><a href="partners.php">Partenaires</a></li>
-            <li><a href="contact.php">Contact</a></li>
             <li><a href="boutique.php">Boutique</a></li>
           </ul>
 

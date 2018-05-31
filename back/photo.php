@@ -11,6 +11,7 @@
             <p>Selectionner les images à télécharger :</p>
             <input type="file" name="fileToUpload" id="fileToUpload" multiple>
             <input type="hidden" name="directorytarget" value="../assets/images/album1/">
+            <input type="hidden" name="redirect" value="../back/photo.php">
             <input style="margin-top: 20px" type="submit" value="Upload Image" name="submit">
         </form>
         </div>
@@ -31,6 +32,7 @@
                   }
                 ?>
               </select> <br>
+              <input type="hidden" name="redirect" value="../back/photo.php">
               <input type="submit" value="Supprimer le fichier de l'album" name="submit">
             </form>
           <?php }else{ echo("L'album est vide"); } ?>
@@ -47,6 +49,7 @@
               <p>Selectionner les images à télécharger :</p>
               <input type="file" name="fileToUpload" id="fileToUpload" multiple>
               <input type="hidden" name="directorytarget" value="../assets/images/album2/">
+              <input type="hidden" name="redirect" value="../back/photo.php">
               <input style="margin-top: 20px" type="submit" value="Upload Image" name="submit">
             </form>
           </div>
@@ -67,6 +70,7 @@
                   }
                 ?>
               </select> <br>
+              <input type="hidden" name="redirect" value="../back/photo.php">
               <input type="submit" value="Supprimer le fichier de l'album" name="submit">
             </form>
           <?php }else{ echo("L'album est vide"); } ?>
@@ -83,6 +87,7 @@
               <p>Selectionner les images à télécharger :</p>
               <input type="file" name="fileToUpload" id="fileToUpload" multiple>
               <input type="hidden" name="directorytarget" value="../assets/images/album2/">
+              <input type="hidden" name="redirect" value="../back/photo.php">
               <input style="margin-top: 20px" type="submit" value="Upload Image" name="submit">
           </form>
           </div>
@@ -103,6 +108,7 @@
                   }
                 ?>
               </select> <br>
+              <input type="hidden" name="redirect" value="../back/photo.php">
               <input type="submit" value="Supprimer le fichier de l'album" name="submit">
             </form>
           <?php }else{ echo("L'album est vide"); } ?>
@@ -110,7 +116,7 @@
       </div>
     </div>
   </div>
-      <div class="col-md-6">
+      <div class="col-12">
         <div class="panel panel-default">
           <div class="panel-heading">Rendu</div>
           <div class="panel-body">

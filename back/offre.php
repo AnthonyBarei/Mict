@@ -3,18 +3,18 @@
 include_once('../controllers/workshop.php');
 
 $ws = new Workshop();
-$atelier = $ws->workshopList();
+$offres = $ws->workshopList();
 
 
-foreach( $atelier as $at ) {
+foreach( $offres as $at ) {
     if(isset($_POST['update' . $at['workshop_id']])) {
         $try = [
                 "id" => $_POST['secretid' . $at['workshop_id']],
                 "name" =>  $_POST['name' . $at['workshop_id']],
                 "infos" => [],
                 "description" => [],
-                "price" => $_POST['prix' . $at['workshop_id']],
-                "projects" => $_POST['project' . $at['workshop_id']]
+                "price" => [],
+                "projects" => []
             ];
 
             // nombre d'infos limitées à 10
@@ -42,6 +42,24 @@ foreach( $atelier as $at ) {
                 }
             }
 
+            for ($o = 1; $o <= 4; $o++) {
+                if(isset($_POST['nbpers' . $o . '_' . $at['workshop_id']]) && isset($_POST['prix' . $o . '_' . $at['workshop_id']]) && isset($_POST['soit' . $o . '_' . $at['workshop_id']])) {
+                    array_push($try['price'], [$_POST['nbpers' . $o . '_' . $at['workshop_id']], $_POST['prix' . $o . '_' . $at['workshop_id']], $_POST['soit' . $o . '_' . $at['workshop_id']]]);
+                }
+            }
+
+            for ($p = 1; $p <= 3; $p++) {
+                if (isset($_POST['project' . $p . '_' . $at['workshop_id']])) {
+                    if(strpos($_POST['project' . $p . '_' . $at['workshop_id']], "\n") !== FALSE) {
+                        $_POST['project' . $p . '_' . $at['workshop_id']] = preg_replace("/[\r\n]+/", "<br/>", $_POST['project' . $p . '_' . $at['workshop_id']]);
+                    }
+
+                    array_push($try['projects'], $_POST['project' . $p . '_' . $at['workshop_id']]);
+                } else { die('pas ok');
+                    array_push($try['projects'], "");
+                }
+            }
+
         $ws->updateWorkshop($try);
 
     }
@@ -54,13 +72,13 @@ require_once('base-back.php');
 
     <div class="col-md-6" style="padding: 10px;">
       <div class="panel panel-default">
-          <div class="panel-heading">Rendu</div>
+          <div class="panel-heading">Modification</div>
           <div class="panel-body">
-          <h3>Modifier Atelier</h3>
+          <h3>Modifier les offres</h3>
 
                 <?php
                     $ws = new Workshop();
-                    $atelier = $ws->workshopList();
+                    $offres = $ws->workshopList();
                     $i = 1;
                     $j = 1;
                 ?>
@@ -70,7 +88,7 @@ require_once('base-back.php');
                 </script>
 
                 <div class="row" style="padding-right: 30px; padding-left: 30px; margin-bottom: 10px; margin-top: 20px;">
-                    <?php foreach( $atelier as $at ) : ?>
+                    <?php foreach( $offres as $at ) : ?>
                         <button type="button" class="btn btn-primary" style="margin-bottom: 10px;" id="<?= $j ?>" onclick="echoData(this)">
                             <?= $at['workshop_name'] ?>
                         </button>
@@ -78,7 +96,7 @@ require_once('base-back.php');
                     <?php endforeach; ?>
                 </div>
 
-                    <?php foreach( $atelier as $at ) : ?>
+                    <?php foreach( $offres as $at ) : ?>
                         <?php
                             $k = 0;
                             $l = 0;
@@ -106,16 +124,16 @@ require_once('base-back.php');
                                     </div>
 
                                     <div class="form-group" id="updateInfos<?= $at['workshop_id'] ?>">
-                                      <label for="infos" style="margin-bottom: 15px;">Infos</label>
+                                      <label for="infos" style="margin-bottom: 25px;">Infos</label>
                                       <a href="#updateInfos<?= $at['workshop_id'] ?>" id="add_info" onclick="addInfo(<?= $at['workshop_id'] ?>, <?= $total_infos ?>)">
-                                          <i class="fas fa-plus fa-2x" style="float: right;"></i>
+                                          <i class="fas fa-plus fa-2x" style="float: right; font-size: 35px;"></i>
                                       </a>
                                     <?php if($at['workshop_infos'] !== null) : ?>
                                         <?php foreach ($at['workshop_infos'] as $key => $info) : ?>
                                             <div id="existsInfos_<?= $k ?>">
                                                 <input type="text" class="form-control" id="infos_update" name="exists_update_infos_<?= $k ?>" value="<?= $info ?>" placeholder="Entrer les infos" style="margin-bottom: 10px; width: 90%; display: inline;">
                                                 <a href="#updateInfos<?= $k ?>" id="remove_info" onclick="removeInfo(true, <?= $k ?>)">
-                                                    <i class="fas fa-times fa-2x" style="float: right; margin-top: 5px;"></i>
+                                                    <i class="fas fa-times fa-2x" style="float: right; margin-top: 5px; color: #cc0000;"></i>
                                                 </a>
                                             </div>
                                             <?php $k++ ?>
@@ -127,16 +145,16 @@ require_once('base-back.php');
                                     </div>
 
                                     <div class="form-group" id="updateDescription<?= $at['workshop_id'] ?>">
-                                      <label for="desc" style="margin-bottom: 15px;">Description par paragraphe</label>
+                                      <label for="desc" style="margin-bottom: 25px;">Description par paragraphe</label>
                                       <a href="#updateDescription<?= $at['workshop_id'] ?>" id="add_description" onclick="addDescription(<?= $at['workshop_id'] ?>, <?= $total_desc ?>)">
-                                          <i class="fas fa-plus fa-2x" style="float: right;"></i>
+                                          <i class="fas fa-plus fa-2x" style="float: right; font-size: 35px;"></i>
                                       </a>
                                       <?php if($at['workshop_description'] !== null) : ?>
                                           <?php foreach ($at['workshop_description'] as $key => $paragraphe) : ?>
                                               <div id="existsDescription_<?= $l ?>">
                                                   <textarea class="form-control" id="desc" name="exists_desc<?= $l ?>" rows="5" cols="30" placeholder="Entrer une description" value="<?= $paragraphe ?>" style="margin-bottom: 10px; width: 90%; display: inline;"><?= $paragraphe ?></textarea>
                                                   <a href="#updateDescription<?= $l ?>" id="remove_description" onclick="removeDescription(true, <?= $l ?>)">
-                                                      <i class="fas fa-times fa-2x" style="float: right; margin-top: 5px;"></i>
+                                                      <i class="fas fa-times fa-2x" style="float: right; margin-top: 5px; color: #cc0000;"></i>
                                                   </a>
                                               </div>
                                               <?php $l++ ?>
@@ -146,19 +164,62 @@ require_once('base-back.php');
                                       <?php endif; ?>
                                     </div>
 
+                                    <style media="screen">
+                                        .myInputs {
+                                            padding: 6px 12px;
+                                            font-size: 14px;
+                                            line-height: 1.42857143;
+                                            color: #555555;
+                                            background-color: #ffffff;
+                                            border: 1px solid #cccccc;
+                                            border-radius: 4px;
+                                            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                                            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                                            -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                                            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                                            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                                        }
+                                    </style>
+
                                     <div class="form-group" id="updatePrice<?= $at['workshop_id'] ?>">
-                                      <label for="prix">Prix</label>
-                                      <input type="number" class="form-control" id="prix_update" name="prix<?= $at['workshop_id'] ?>" value="<?= $at['workshop_price'] ?>" placeholder="Entrer un prix">
-                                    </div>
+                                      <div>
+                                          <label>Prix</label>
+                                      </div>
+                                      <div class="col-md-12" style="margin-bottom: 10px;">
+                                          <?php $at['workshop_price'] = json_decode($at['workshop_price']); ?>
+
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers1_<?= $at['workshop_id'] ?>" placeholder="Nombre de personnes / zone" style="margin-right: 10px;" value="<?= $at['workshop_price'][0][0] ?>">
+                                          <input type="text" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix1_<?= $at['workshop_id'] ?>" placeholder="Entrer un prix | exemple : 90 €" value="<?= $at['workshop_price'][0][1] ?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit1_<?= $at['workshop_id'] ?>" placeholder="Prix par heure | exemple : soit 30 € / h" value="<?= $at['workshop_price'][0][2] ?>">
+                                      </div>
+                                      <div class="col-md-12" style="margin-bottom: 10px;">
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers2_<?= $at['workshop_id'] ?>" placeholder="Nombre de personnes / zone" style="margin-right: 10px;" value="<?= $at['workshop_price'][1][0] ?>">
+                                          <input type="text" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix2_<?= $at['workshop_id'] ?>" placeholder="Entrer un prix | exemple : 90 €" value="<?= $at['workshop_price'][1][1] ?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit2_<?= $at['workshop_id'] ?>" placeholder="Prix par heure | exemple : soit 30 € / h" value="<?= $at['workshop_price'][1][2] ?>">
+                                      </div>
+                                      <div class="col-md-12" style="margin-bottom: 10px;">
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers3_<?= $at['workshop_id'] ?>" placeholder="Nombre de personnes / zone" style="margin-right: 10px;" value="<?= $at['workshop_price'][2][0] ?>">
+                                          <input type="text" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix3_<?= $at['workshop_id'] ?>" placeholder="Entrer un prix | exemple : 90 €" value="<?= $at['workshop_price'][2][1] ?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit3_<?= $at['workshop_id'] ?>" placeholder="Prix par heure | exemple : soit 30 € / h" value="<?= $at['workshop_price'][2][2] ?>">
+                                      </div>
+                                      <div class="col-md-12" style="margin-bottom: 30px;">
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers4_<?= $at['workshop_id'] ?>" placeholder="Nombre de personnes / zone" style="margin-right: 10px;" value="<?= $at['workshop_price'][3][0] ?>">
+                                          <input type="text" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix4_<?= $at['workshop_id'] ?>" placeholder="Entrer un prix | exemple : 90 €" value="<?= $at['workshop_price'][3][1] ?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit4_<?= $at['workshop_id'] ?>" placeholder="Prix par heure | exemple : soit 30 € / h" value="<?= $at['workshop_price'][3][2] ?>">
+                                      </div>
+                                  </div>
 
                                     <div class="form-group" id="updateProject<?= $at['workshop_id'] ?>">
-                                      <label for="project">Projets</label>
-                                      <textarea class="form-control" id="project_update" name="project<?= $at['workshop_id'] ?>" rows="5" cols="30" placeholder="Entrer vos projets"><?= $at['workshop_projects'] ?></textarea>
+                                        <?php $at['workshop_projects'] = json_decode($at['workshop_projects']); //ie(var_dump($at['workshop_projects']));?>
+                                      <label for="project">Commentaires sur 3 paragraphes maximum</label>
+                                      <textarea class="form-control" id="project_update" name="project1_<?= $at['workshop_id'] ?>" rows="5" cols="30" placeholder="Exemple : Rappel : 1 atelier = 3 heures, chez toi, machine, tissus et fournitures compris" style="margin-bottom: 15px;"><?= $at['workshop_projects'][0] ?></textarea>
+                                      <textarea class="form-control" id="project_update" name="project2_<?= $at['workshop_id'] ?>" rows="5" cols="30" placeholder="Exemple : Les tarifs dépendent de ta zone géographique :" style="margin-bottom: 15px;"><?= $at['workshop_projects'][1] ?></textarea>
+                                      <textarea class="form-control" id="project_update" name="project3_<?= $at['workshop_id'] ?>" rows="5" cols="30" placeholder="Exemple : Zone 1 : Paris, 92, 93, 95 Zone 2 : 77, 78, 91, 94 Zone 3 : autres" style="margin-bottom: 15px;"><?= $at['workshop_projects'][2] ?></textarea>
                                     </div>
 
                                     <input type="hidden" name="secretid<?= $at['workshop_id'] ?>" value="<?= $at['workshop_id'] ?>">
 
-                                    <button id="updateButton<?= $at['workshop_id'] ?>" type="submit" class="btn btn-primary" name="update<?= $at['workshop_id'] ?>">Modifier l'atelier</button>
+                                    <button id="updateButton<?= $at['workshop_id'] ?>" type="submit" class="btn btn-primary" name="update<?= $at['workshop_id'] ?>">Modifier l'offre</button>
 
                                 </form>
                             </div>
@@ -176,8 +237,7 @@ require_once('base-back.php');
           <div class="panel panel-default">
             <div class="panel-heading">Rendu</div>
             <div class="panel-body">
-              <iframe src="../index.php#offres" width="100%" height="500" sandbox>
-              </iframe>
+              <iframe src="iframes/offre.php" width="100%" height="800" sandbox></iframe>
             </div>
           </div>
         </div>
@@ -215,7 +275,7 @@ require_once('base-back.php');
             var row = `<div id="infos_${info_row}">
                             <input type="text" class="form-control" id="infos_update" name="update_infos_${info_row}" placeholder="Entrer l'info" style="margin-top: 10px; width: 90%; display: inline;">
                             <a href="#updateInfos${id}" id="remove_info" onclick="removeInfo(false, ${info_row})">
-                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px;"></i>
+                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px; color: #cc0000;"></i>
                             </a>
                         </div>`;
             $('#updateInfos' + id).append(row);
@@ -244,7 +304,7 @@ require_once('base-back.php');
             var row = `<div id="description_${description_row}">
                             <textarea class="form-control" id="desc" name="desc${description_row}" rows="5" cols="30" placeholder="Entrer un paragraphe" style="margin-top: 10px; width: 90%; display: inline;"></textarea>
                             <a href="#updateInfos${id}" id="remove_description" onclick="removeDescription(false, ${description_row})">
-                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px;"></i>
+                                <i class="fas fa-times fa-2x" style="float: right; margin-top: 13px; color: #cc0000;"></i>
                             </a>
                         </div>`;
             $('#updateDescription' + id).append(row);

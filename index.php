@@ -111,7 +111,7 @@
 			</div>
 		</div>
 		</div>
-
+<marquee style="margin-top: 20px;">Le texte à faire défiler, On place la donnée de la base ici et ca defile </marquee>
 		<h1> Ateliers et cours de couture chez toi</h1>
 	 <a class="scrollTo" href="#quoi"><div class="suite_fleche"></div></a>
 	</section>
@@ -219,6 +219,7 @@
             $end_infos = end($offreList[0]['workshop_infos']);
 
             $offreList[0]['workshop_description'] = json_decode($offreList[0]['workshop_description']);
+            $offreList[0]['workshop_projects'] = json_decode($offreList[0]['workshop_projects']);
         ?>
 
 
@@ -257,7 +258,7 @@
             <a href="reserver_atelier_ou_cours_de_couture.php" Title="Réserver">Je réserve !</a>
         </div>
     </div>
-
+<?php $offreList[0]['workshop_price'] = json_decode($offreList[0]['workshop_price']); ?>
     <div class="show_tarifs">
         <div class="tarifs">
             <div class="table">
@@ -267,28 +268,30 @@
                     <div class="tcell"></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">3</div>
-                    <div class="tcell">90 €</div>
-                    <div class="tcell">soit 30 € / h</div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][0][0] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][0][1] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][0][2] ?></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">4</div>
-                    <div class="tcell">80 €</div>
-                    <div class="tcell">soit 27 € / h</div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][1][0] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][1][1] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][1][2] ?></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">5</div>
-                    <div class="tcell">75 €</div>
-                    <div class="tcell">soit 25 € / h</div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][2][0] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][2][1] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][2][2] ?></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">6</div>
-                    <div class="tcell">70 €</div>
-                    <div class="tcell">soit 23 € / h</div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][3][0] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][3][1] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][3][2] ?></div>
                 </div>
             </div>
         </div>
-        <div class="caption">Rappel : 1 atelier = 3 heures, chez toi, machine, tissus et fournitures compris</div>
+        <div class="caption"><?= $offreList[0]['workshop_projects'][0] ?></div>
+        <div class="caption"><?= $offreList[0]['workshop_projects'][1] ?></div>
+        <div class="caption"><?= $offreList[0]['workshop_projects'][2] ?></div>
     </div>
 </div>
 
@@ -299,7 +302,8 @@
     $end_infos = end($offreList[1]['workshop_infos']);
 
     $offreList[1]['workshop_description'] = json_decode($offreList[1]['workshop_description']);
-     ?>
+    $offreList[1]['workshop_projects'] = json_decode($offreList[1]['workshop_projects']);
+    ?>
 
 <div class="n3-2">
     <div class="right clients">
@@ -331,16 +335,12 @@
             <a href="reserver_atelier_ou_cours_de_couture.php?q=cp" Title="Réserver">Je réserve un cours</a>
         </div>
     </div>
-
+<?php $offreList[1]['workshop_price'] = json_decode($offreList[1]['workshop_price']); ?>
     <div class="show_tarifs_cp">
         <div class="introbox">
-            <p>Les prix correspondent à des cours de 3 heures, chez toi. Tu peux aussi opter pour la carte de 5 cours, valable 1 an, pour économiser 10 € sur le prix de chaque atelier !</p>
-            <p>Les tarifs dépendent de ta zone géographique :</p>
-            <ul>
-                <li>Zone 1 : Paris, 92, 93, 95</li>
-                <li>Zone 2 : 77, 78, 91, 94</li>
-                <li>Zone 3 : autres</li>
-            </ul>
+            <p><?= $offreList[1]['workshop_projects'][0] ?></p>
+            <p><?= $offreList[1]['workshop_projects'][1] ?></p>
+            <ul><?= $offreList[1]['workshop_projects'][2] ?></ul>
         </div>
         <div class="tarifs">
             <div class="table">
@@ -350,19 +350,19 @@
                     <div class="tcell">Carte 5 cours</div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">1</div>
-                    <div class="tcell">90 €</div>
-                    <div class="tcell">400 €</div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][0][0] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][0][1] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][0][2] ?></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">2</div>
-                    <div class="tcell">100 €</div>
-                    <div class="tcell">450 €</div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][1][0] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][1][1] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][1][2] ?></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">3</div>
-                    <div class="tcell">sur devis</div>
-                    <div class="tcell">sur devis</div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][2][0] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][2][1] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][2][2] ?></div>
                 </div>
             </div>
         </div>
@@ -442,11 +442,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:3"/>
-	     <div class="c1">
-	      <div class="table"><div class="cell1">
-	       <img class="c2" src="assets/images/plus.png" alt="Photos de réalisations"/>
-	      </div></div>
-	     </div>
+
 	    </a>
 	   </div>
 	   <div class="photo">
@@ -454,11 +450,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:5"/>
-	     <div class="c1">
-	      <div class="table"><div class="cell1">
-	       <img class="c2" src="assets/images/plus.png" alt="Photos de réalisations"/>
-	      </div></div>
-	     </div>
+	     <
 	    </a>
 	   </div>
 	   <div class="photo">
@@ -466,11 +458,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:7"/>
-	     <div class="c1">
-	      <div class="table"><div class="cell1">
-	       <img class="c2" src="assets/images/plus.png" alt="Photos de réalisations"/>
-	      </div></div>
-	     </div>
+
 	    </a>
 	   </div>
 	   <div class="photo">
@@ -478,11 +466,7 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 	     <img src="assets/images/px.png" alt=""/>
 	     <img class="imgphoto" src="assets/images/px.png" alt=""/>
 	     <img class="imgactive imgphoto" src="assets/images/px.png" alt="" style="z-index:9"/>
-	     <div class="c1">
-	      <div class="table"><div class="cell1">
-	       <img class="c2" src="assets/images/plus.png" alt="Photos de réalisations"/>
-	      </div></div>
-	     </div>
+
 	    </a>
 	   </div>
 	  </div>
@@ -876,81 +860,35 @@ Conquérir le Monde, MouahahahAHAHAHAHAH !
 	 </div>
 	</section>
 
-
+	<?php
+	include_once('modeles/partnerModele.php');
+	$pa = new partnerModel();
+	$partnerlist = $pa->getPartners();
+	?>
 
 	<section id="partenaires">
 	 <div class="cell1">
 	  <div class="contenu">
 		  <h1>Les amis de Made in chez toi</h1>
 		  <p id="la_modette">... parce que ce serait dommage de ne pas profiter de leur savoir-faire<br />et des bons plans que Made in chez toi t'a dénichés !</p>
-
-	   <div class="partner_a impair">
-		   <div class="partner">
-		     <a href="http://www.lamodette.fr/" target="_blank">
-		   <img src="assets/images/partenaire1.png" alt="" />
-		     </a>
-		   <div class="desc">
-		     <a href="http://www.lamodette.fr/" target="_blank">
-		     <h2>La Modette</h2>
-		     </a>
-		     <p>Sandrine alias La Modette est designer textile et propose des motifs exclusifs pour des créations originales. L'originalité du concept tient dans la diversité des motifs et leur déclinaison par tailles et par couleurs.</p>
-	 	     <p>Un grand choix de coordonnés et de combinaisons variées s'offre ainsi aux couturières tant débutantes qu'expérimentées. Avec 2 collections par an, le catalogue des matières est large, de la popeline au polyamide, et s'achète au rythme des saisons par périodes de pré-ventes sur le site. Les stocks limités sont la garantie d'une semi-personnalisation des motifs et de l'originalité de votre création.</p>
-		     <p>La Modette, c'est également un service aux créateurs, entreprises, avec la création de motifs à la demande, la possibilité de développer une collection ou d'imprimer votre tissu avec vos propres dessins ou logo.</p>
-		     <aside id="gasparine">Découvres-en plus : <a href="http://www.lamodette.fr/" target="_blank">http://www.lamodette.fr/</a></aside>
-		   </div>
-		   </div>
-	   </div>
-
-	   <div class="partner_a pair">
-		   <div class="partner">
-		     <a href="http://www.gasparine.fr/" target="_blank">
-		   <img src="assets/images/partenaire2.png" alt="" />
-		     </a>
-		   <div class="desc">
-		     <a href="http://www.gasparine.fr/" target="_blank">
-		     <h2>Gasparine</h2>
-		     </a>
-		     <p>Gasparine propose des patrons de couture pour enfants et pour femmes. Accessibles aux débutantes grâce à leurs fiches de montage détaillées et illustrées, ils éveillent la créativité de toutes en proposant plusieurs versions par modèle et différents niveaux de difficulté.</p>
-		     <p>La marque s’attache également à développer des modèles mixtes ou masculins, et des patrons de déguisements originaux.</p>
-		     <aside id="sewing_colors">Découvres-en plus : <a href="http://www.gasparine.fr/" target="_blank">http://www.gasparine.fr/</a></aside>
-		   </div>
-		   </div>
-	   </div>
-
-	   <div class="partner_a impair">
-		   <div class="partner">
-		     <a href="http://www.sewingcolors.com/" target="_blank">
-		   <img src="assets/images/partenaire4.png" alt="" />
-		     </a>
-		   <div class="desc">
-		     <a href="http://www.sewingcolors.com/" target="_blank">
-		     <h2>Sewing Colors</h2>
-		     </a>
-		     <p>Sewing Colors est une marque de patrons de couture de vêtements pour enfants au format PDF. Chaque modèle propose plusieurs déclinaisons afin que d’un patron naissent une infinité de créations.</p>
-<p>Débutant ou expérimenté ? La créatrice a pensé à vous tous, en intégrant pour chaque patron un didacticiel décrivant toutes les étapes du montage illustré de nombreux schémas et en créant une chaine Youtube où elle montre comment coudre ses modèles de A à Z.</p>
-		     <aside id="multilili">Découvres-en plus : <a href="http://www.sewingcolors.com/" target="_blank">http://www.sewingcolors.com/</a></aside>
-		   </div>
-		   </div>
-	   </div>
-
-	   <div class="partner_a pair">
-		   <div class="partner">
-		     <a href="http://www.multilili.com/" target="_blank">
-		   <img src="assets/images/partenaire3.png" alt="" />
-		     </a>
-		   <div class="desc">
-		     <a href="http://www.multilili.com/" target="_blank">
-		     <h2>MultiLiLi</h2>
-		     </a>
-		     <p>MultiLiLi revisite les patrons de couture et propose des modèles modernes et originaux pour les bébés et les enfants.
-Tous les patrons sont disponibles en Kit avec des tissus bio et exclusifs, pour des créations originales, confortables et de qualité.</p>
-			<p>Un peu d’humour, de la couleur, des explications claires et détaillées, pour rendre la couture amusante et accessible !</p>
-			<p>MultiLiLi vous propose également des tissus 100% biologiques au détail. Tout doux et agréables à porter, ils ont été sélectionnés spécifiquement par la créatrice pour le confort des bébés et des jeunes enfants.</p>
-		     <aside>Découvres-en plus : <a href="http://www.multilili.com/" target="_blank">http://www.multilili.com/</a></aside>
-		   </div>
-		   </div>
-	   </div>
-
+			<?php
+				for($i = 0; $i < count($partnerlist); $i++){
+					echo"<div class='partner_a "; if ($i % 2 == 0 || $i % 2 == 0 ){ echo "impair";}else {echo "pair";} echo"'>";
+						echo"<div class='partner'>";
+							echo"<a href='". $partnerlist[$i]['partner_link']."' target='_blank'>";
+						 		echo"<img src='". $partnerlist[$i]['partner_image']."' alt='' />";
+							echo"</a>";
+							echo"<div class='desc'>";
+								echo"<a href='". $partnerlist[$i]['partner_link']."' target='_blank'>";
+							 		echo"<h2>".$partnerlist[$i]['partner_name'] ."</h2>";
+								echo"</a>";
+								echo"<p>".$partnerlist[$i]['partner_description']."</p>";
+								echo"<aside>Découvres-en plus : <a href='". $partnerlist[$i]['partner_link']."' target='_blank'>". $partnerlist[$i]['partner_link']."</a></aside>";
+							echo"</div>";
+					 	echo"</div>";
+		 	   	echo"</div>";
+				}
+			?>
 	  </div>
 	 </div>
 	</section>
@@ -987,9 +925,7 @@ Tous les patrons sont disponibles en Kit avec des tissus bio et exclusifs, pour 
 		</div>
     		<div id="fade" class="black_overlay"></div>
 	</footer>
-
-
-	<script type="text/javascript" src="assets/js/madeincheztoi-min.js"></script>
+<!-- 	<script type="text/javascript" src="assets/js/madeincheztoi-min.js"></script> -->
 
 </body>
 </html>

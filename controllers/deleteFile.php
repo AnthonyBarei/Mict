@@ -2,5 +2,5 @@
 if($_POST["todeletefile"]){
   unlink($_POST["todeletefile"]);
 }
-header('Location: ../back/photo.php');
+header("Location:".$_POST['redirect']);
 ?>

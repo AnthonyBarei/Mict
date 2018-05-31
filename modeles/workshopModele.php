@@ -78,6 +78,19 @@ class workshopModel extends DbConnect {
             $params["description"] = null;
         }
 
+        //die(var_dump($params['price']));
+        if($params["price"][0] !== "") {
+            $params["price"] = json_encode($params["price"], JSON_UNESCAPED_UNICODE);
+        } else {
+            $params["price"] = null;
+        }
+
+        if($params["projects"][0] !== "" || $params["projects"][1] !== "" || $params["projects"][2] !== "") {
+            $params["projects"] = json_encode($params["projects"], JSON_UNESCAPED_UNICODE);
+        } else {
+            $params["projects"] = null;
+        }
+
         $res = $dbh->prepare('
             UPDATE workshop
             SET

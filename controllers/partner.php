@@ -44,7 +44,6 @@ class Partner {
 
     public function deletePartner($id) {
         $id = (integer) $id;
-
         $partner = new partnerModel();
         $result = $partner->deletePartner($id);
 
