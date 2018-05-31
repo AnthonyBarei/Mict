@@ -1,9 +1,15 @@
-<?php require_once('base-back.php'); ?>
 <?php
-
 include_once('../controllers/partner.php');
 
 $pn = new Partner();
+
+if(isset($_GET['delete'])) {
+  $try = $pn->deletePartner($_GET['delete']);
+  header("Location: partners.php");
+  exit();
+  //die();
+}
+
 if(isset($_POST['create'])) {
     $try = [
         "name" =>  $_POST['name'],
@@ -11,8 +17,8 @@ if(isset($_POST['create'])) {
         "description" => $_POST['desc'],
         "link" => $_POST['link'],
     ];
-        $pn->createPartner($try);
-    header("Location: /Mict/back/partners.php");
+    $pn->createPartner($try);
+    header('Location: partners.php');
     die();
 }
 
@@ -23,20 +29,15 @@ foreach( $partenaire as $par ) {
     if(isset($_POST['update' . $par['partners_id']])) {
         $try = [
                 "id" => $_POST['secretid' . $par['partners_id']],
+                "image" => $_POST['image' . $par['partners_id']],
                 "name" =>  $_POST['name' . $par['partners_id']],
                 "description" => $_POST['desc' . $par['partners_id']],
-                "link" => $_POST['link' . $par['partners_id']],
+                "link" => $_POST['link' . $par['partners_id']]
             ];
 
         $pn->updatePartner($try);
 
     }
-}
-
-if(isset($_GET['delete'])) {
-  $try = $pn->deletePartner($_GET['delete']);
-  header("Location: /Mict/back/partners.php");
-  die();
 }
 
 require_once('base-back.php');
