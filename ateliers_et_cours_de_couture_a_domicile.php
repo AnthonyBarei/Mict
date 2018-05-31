@@ -2,13 +2,13 @@
 <html lang="fr-FR" prefix="og: http://ogp.me/ns#">
 <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
-        <meta name="rights" content="Copyright 2014/2016 - Made in chez toi (FR)"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="rights" content="Copyright 2014/2016 - Made in chez toi (FR)"/>
         <title>Ateliers et cours de couture • Made in chez toi • Les thèmes des ateliers</title>
-        <meta name="description" content="Ateliers couture chez toi et avec tes amis. Découvre tous les thèmes, et choisis le projet que tu réaliseras pendant ton prochain atelier !"/> 
-        <meta name="keywords" content="couture, cours, lecons, debuter, debutant, commencer, apprendre, facile, paris, region parisienne, 92, 95, 75, 78, 93, 91, 94, atelier, ateliers, domicile, particulier, inclus, lecon, formation, gratuit, amies, amis, debutante, made in chez toi, idf, made, in, chez, toi"/> 
+        <meta name="description" content="Ateliers couture chez toi et avec tes amis. Découvre tous les thèmes, et choisis le projet que tu réaliseras pendant ton prochain atelier !"/>
+        <meta name="keywords" content="couture, cours, lecons, debuter, debutant, commencer, apprendre, facile, paris, region parisienne, 92, 95, 75, 78, 93, 91, 94, atelier, ateliers, domicile, particulier, inclus, lecon, formation, gratuit, amies, amis, debutante, made in chez toi, idf, made, in, chez, toi"/>
         <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png" />
-        
+
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
         <script type="text/javascript" src="assets/js/made_in_chez_toi-min.js"></script>
@@ -34,17 +34,17 @@
 <body>
 
         <nav class="navbar navbar-inverse navbar-center navbar-fixed-top" role="navigation">
-       
+
            <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span>Menu</span>
-                
+
               </button>
             </div>
                         <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">       
-                <li><a class="scrollTo" href="index.php#home" title="Début">HOME</a></li>  
-                <li><a class="scrollTo" href="index.php#quoi" title="C'est quoi ?">C'EST QUOI ?</a></li> 
+              <ul class="nav navbar-nav">
+                <li><a class="scrollTo" href="index.php#home" title="Début">HOME</a></li>
+                <li><a class="scrollTo" href="index.php#quoi" title="C'est quoi ?">C'EST QUOI ?</a></li>
                 <li><a class="scrollTo" href="index.php#offres" title="Les offres Made in chez toi">OFFRES</a></li>
                 <li><a href="ateliers_et_cours_de_couture_a_domicile.php" title="Le détail des ateliers">ATELIERS</a></li>
                 <li><a class="scrollTo" href="index.php#contact" title="Je veux contacter Made in chez toi">CONTACT</a></li>
@@ -55,7 +55,7 @@
                 <li><a href="http://blog.madeincheztoi.com/" title="Les actus en temps réel !">BLOG</a></li>
               </ul>
             </div>
-        
+
         </nav>
 
 <!--
@@ -822,7 +822,7 @@
 			<p>Alors rejoins un atelier déjà planifié, s'il est ouvert au public et s'il y reste des places !</p>
 			<hr />
 			<div class="coming_next nodisp">
-			Tous les ateliers planifiés à ce jour sont complets, ou leurs hôtes ne souhaitent pas les ouvrir au public... Reviens dans quelques jours pour voir si de nouveaux ateliers se sont ajoutés<span class="nodisp">, ou clique ici pour être averti des prochains ateliers ouverts au public</span> !	
+			Tous les ateliers planifiés à ce jour sont complets, ou leurs hôtes ne souhaitent pas les ouvrir au public... Reviens dans quelques jours pour voir si de nouveaux ateliers se sont ajoutés<span class="nodisp">, ou clique ici pour être averti des prochains ateliers ouverts au public</span> !
 			</div>
 			<div class="coming_next">
 				Les prochains ateliers couture Made in chez toi pour lesquels il reste des places :
@@ -836,7 +836,7 @@
 				</li>
 				</ul>
 			</div>
-			
+
 		</div>
 
 		<div class="side_item">
@@ -846,7 +846,7 @@
 			<p>À très bientôt, chez toi !</p>
 			<div class="bouton"><a href="reserver_atelier_ou_cours_de_couture.php?q=heberger">Je réserve !</a></div>
 		</div>
-	
+
 		<div class="side_item">
 			<h6>... en ville !</h6>
 			<p>Retrouve Made in chez toi lors de ses prochains événements !<p>
@@ -894,16 +894,15 @@
 				</ul>
 			</div>
 		</div>
-	
+
 	    </aside>
 
 
 	  </div>
 	 </div>
 	</div>
-	
+
 <!--         <script type="text/javascript" src="assets/js/madeincheztoi-min.js"></script> -->
 
 </body>
 </html>
-
