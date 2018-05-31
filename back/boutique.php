@@ -7,7 +7,7 @@
         <div class="panel-body">
             <?php
 // Connexion à MySQL
-$base=mysqli_connect("localhost", "root", "root", "mict");
+$base=mysqli_connect("db727863824.db.1and1.com", "dbo727863824", "LPDW-mict2018", "db727863824");
 
 if(isset($_POST['Bouton'])) {
    // Réecriture des variables
