@@ -43,23 +43,24 @@ foreach( $partenaire as $par ) {
 require_once('base-back.php');
 ?>
 
-<div class="container-fluid">
-    <div class="col-md-6">
+<div class="container-fluid col-md-12">
+  <div class="col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading"><h1>Gestion des partenaires</h1></div>
+        <div class="panel-heading"><h1>Gestion des images partenaires</h1></div>
         <div class="panel-body">
 
           <div class="row">
             <div class="col-md-6">
               <form action="../controllers/uploadAlbum.php" method="post" enctype="multipart/form-data">
-                Ajouter une photo d'un partenaire:
+                <h4>Ajouter la photo d'un partenaire :</h4>
                 <input type="file" name="fileToUpload" id="fileToUpload"><br>
                 <input type="hidden" name="directorytarget" value="../assets/images/partners/">
                 <input type="hidden" name="redirect" value="../back/partners.php">
-                <input type="submit" value="Upload Image" name="submit">
+                <input type="submit" value="Enregistrer l'image" name="submit">
               </form>
-            </div>
+            </div><br>
             <div class="col-md-6">
+              <h4>Supprimer la photo d'un partenaire :</h4>
               <?php if($dossier = opendir('../assets/images/partners')){ ?>
                 <form action="../controllers/deleteFile.php" method="post">
                   <select class="form-control" name="todeletefile">
@@ -72,23 +73,22 @@ require_once('base-back.php');
                     ?>
                   </select> <br>
                   <input type="hidden" name="redirect" value="../back/partners.php">
-                  <input type="submit" value="Supprimer le fichier de l'album" name="submit">
+                  <input type="submit" value="Supprimer l'image de l'album" name="submit">
                 </form>
               <?php }else{ echo("L'album est vide"); } ?>
             </div>
           </div>
+           </div>
+        </div>
 
-
-
-
-          <h3>Créer un partenaire</h3>
+      <div class="panel panel-default">
+        <div class="panel-heading"><h1>Ajout d'un partenaire</h1></div>
+        <div class="panel-body">
               <form class="" action="" method="post" id="createForm">
-
                   <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Entrer un nom">
                   </div>
-
                   <label for="image">Photo du partenaire</label>
                   <select class="form-control" name="image">
                     <?php
@@ -96,8 +96,8 @@ require_once('base-back.php');
                       $fichier = readdir($dossier);
                       $fichier = readdir($dossier);
                       while(false !== ($fichier = readdir($dossier))){
-          							echo"<option value='assets/images/partners/". $fichier ."'>". $fichier ." ";
-          						}
+                        echo"<option value='assets/images/partners/". $fichier ."'>". $fichier ." ";
+                      }
                     }
                     ?>
                   </select>
@@ -114,9 +114,14 @@ require_once('base-back.php');
 
               <button type="submit" class="btn btn-primary" name="create">Ajouter le partenaire</button>
           </form>
-
-          <hr>
-          <h3>Modifier un Partenaire</h3>
+            </div>
+        </div>
+    </div>    
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h1>Modification des partenaires</h1></div>
+        <div class="panel-body">
+          <h3>Choisir le partenaire à modifier :</h3>
 
                 <?php
                     $pn = new Partner();
@@ -175,7 +180,7 @@ require_once('base-back.php');
 
                                     <input type="hidden" name="secretid<?= $pa['partners_id'] ?>" value="<?= $pa['partners_id'] ?>">
 
-                                    <button id="updateButton<?= $pa['partners_id'] ?>" type="submit" class="btn btn-primary" name="update<?= $pa['partners_id'] ?>">Modifier l'atelier</button>
+                                    <button id="updateButton<?= $pa['partners_id'] ?>" type="submit" class="btn btn-primary" name="update<?= $pa['partners_id'] ?>">Sauvegarder les modifications</button>
                                     <a href="/Mict/back/partners.php?delete=<?= $pa['partners_id'] ?>" onclick="return confirm('êtes vous sûr de vouloir supprimer ce partenaire?');"><i class="fas fa-times fa-2x" style="float: right; margin-top: 5px;"></i></a>
                                 </form>
                             </div>
