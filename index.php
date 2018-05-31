@@ -219,6 +219,7 @@
             $end_infos = end($offreList[0]['workshop_infos']);
 
             $offreList[0]['workshop_description'] = json_decode($offreList[0]['workshop_description']);
+            $offreList[0]['workshop_projects'] = json_decode($offreList[0]['workshop_projects']);
         ?>
 
 
@@ -257,7 +258,7 @@
             <a href="reserver_atelier_ou_cours_de_couture.php" Title="Réserver">Je réserve !</a>
         </div>
     </div>
-
+<?php $offreList[0]['workshop_price'] = json_decode($offreList[0]['workshop_price']); ?>
     <div class="show_tarifs">
         <div class="tarifs">
             <div class="table">
@@ -267,28 +268,30 @@
                     <div class="tcell"></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">3</div>
-                    <div class="tcell">90 €</div>
-                    <div class="tcell">soit 30 € / h</div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][0][0] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][0][1] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][0][2] ?></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">4</div>
-                    <div class="tcell">80 €</div>
-                    <div class="tcell">soit 27 € / h</div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][1][0] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][1][1] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][1][2] ?></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">5</div>
-                    <div class="tcell">75 €</div>
-                    <div class="tcell">soit 25 € / h</div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][2][0] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][2][1] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][2][2] ?></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">6</div>
-                    <div class="tcell">70 €</div>
-                    <div class="tcell">soit 23 € / h</div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][3][0] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][3][1] ?></div>
+                    <div class="tcell"><?= $offreList[0]['workshop_price'][3][2] ?></div>
                 </div>
             </div>
         </div>
-        <div class="caption">Rappel : 1 atelier = 3 heures, chez toi, machine, tissus et fournitures compris</div>
+        <div class="caption"><?= $offreList[0]['workshop_projects'][0] ?></div>
+        <div class="caption"><?= $offreList[0]['workshop_projects'][1] ?></div>
+        <div class="caption"><?= $offreList[0]['workshop_projects'][2] ?></div>
     </div>
 </div>
 
@@ -299,7 +302,8 @@
     $end_infos = end($offreList[1]['workshop_infos']);
 
     $offreList[1]['workshop_description'] = json_decode($offreList[1]['workshop_description']);
-     ?>
+    $offreList[1]['workshop_projects'] = json_decode($offreList[1]['workshop_projects']);
+    ?>
 
 <div class="n3-2">
     <div class="right clients">
@@ -331,16 +335,12 @@
             <a href="reserver_atelier_ou_cours_de_couture.php?q=cp" Title="Réserver">Je réserve un cours</a>
         </div>
     </div>
-
+<?php $offreList[1]['workshop_price'] = json_decode($offreList[1]['workshop_price']); ?>
     <div class="show_tarifs_cp">
         <div class="introbox">
-            <p>Les prix correspondent à des cours de 3 heures, chez toi. Tu peux aussi opter pour la carte de 5 cours, valable 1 an, pour économiser 10 € sur le prix de chaque atelier !</p>
-            <p>Les tarifs dépendent de ta zone géographique :</p>
-            <ul>
-                <li>Zone 1 : Paris, 92, 93, 95</li>
-                <li>Zone 2 : 77, 78, 91, 94</li>
-                <li>Zone 3 : autres</li>
-            </ul>
+            <p><?= $offreList[1]['workshop_projects'][0] ?></p>
+            <p><?= $offreList[1]['workshop_projects'][1] ?></p>
+            <ul><?= $offreList[1]['workshop_projects'][2] ?></ul>
         </div>
         <div class="tarifs">
             <div class="table">
@@ -350,19 +350,19 @@
                     <div class="tcell">Carte 5 cours</div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">1</div>
-                    <div class="tcell">90 €</div>
-                    <div class="tcell">400 €</div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][0][0] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][0][1] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][0][2] ?></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">2</div>
-                    <div class="tcell">100 €</div>
-                    <div class="tcell">450 €</div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][1][0] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][1][1] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][1][2] ?></div>
                 </div>
                 <div class="tligne">
-                    <div class="tcell">3</div>
-                    <div class="tcell">sur devis</div>
-                    <div class="tcell">sur devis</div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][2][0] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][2][1] ?></div>
+                    <div class="tcell"><?= $offreList[1]['workshop_price'][2][2] ?></div>
                 </div>
             </div>
         </div>

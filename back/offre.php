@@ -3,10 +3,10 @@
 include_once('../controllers/workshop.php');
 
 $ws = new Workshop();
-$atelier = $ws->workshopList();
+$offres = $ws->workshopList();
 
 
-foreach( $atelier as $at ) {
+foreach( $offres as $at ) {
     if(isset($_POST['update' . $at['workshop_id']])) {
         $try = [
                 "id" => $_POST['secretid' . $at['workshop_id']],
@@ -14,7 +14,7 @@ foreach( $atelier as $at ) {
                 "infos" => [],
                 "description" => [],
                 "price" => [],
-                "projects" => $_POST['project' . $at['workshop_id']]
+                "projects" => []
             ];
 
             // nombre d'infos limitées à 10
@@ -48,6 +48,18 @@ foreach( $atelier as $at ) {
                 }
             }
 
+            for ($p = 1; $p <= 3; $p++) {
+                if (isset($_POST['project' . $p . '_' . $at['workshop_id']])) {
+                    if(strpos($_POST['project' . $p . '_' . $at['workshop_id']], "\n") !== FALSE) {
+                        $_POST['project' . $p . '_' . $at['workshop_id']] = preg_replace("/[\r\n]+/", "<br/>", $_POST['project' . $p . '_' . $at['workshop_id']]);
+                    }
+
+                    array_push($try['projects'], $_POST['project' . $p . '_' . $at['workshop_id']]);
+                } else { die('pas ok');
+                    array_push($try['projects'], "");
+                }
+            }
+
         $ws->updateWorkshop($try);
 
     }
@@ -60,13 +72,13 @@ require_once('base-back.php');
 
     <div class="col-md-6" style="padding: 10px;">
       <div class="panel panel-default">
-          <div class="panel-heading">Rendu</div>
+          <div class="panel-heading">Modification</div>
           <div class="panel-body">
-          <h3>Modifier Atelier</h3>
+          <h3>Modifier les offres</h3>
 
                 <?php
                     $ws = new Workshop();
-                    $atelier = $ws->workshopList();
+                    $offres = $ws->workshopList();
                     $i = 1;
                     $j = 1;
                 ?>
@@ -76,7 +88,7 @@ require_once('base-back.php');
                 </script>
 
                 <div class="row" style="padding-right: 30px; padding-left: 30px; margin-bottom: 10px; margin-top: 20px;">
-                    <?php foreach( $atelier as $at ) : ?>
+                    <?php foreach( $offres as $at ) : ?>
                         <button type="button" class="btn btn-primary" style="margin-bottom: 10px;" id="<?= $j ?>" onclick="echoData(this)">
                             <?= $at['workshop_name'] ?>
                         </button>
@@ -84,7 +96,7 @@ require_once('base-back.php');
                     <?php endforeach; ?>
                 </div>
 
-                    <?php foreach( $atelier as $at ) : ?>
+                    <?php foreach( $offres as $at ) : ?>
                         <?php
                             $k = 0;
                             $l = 0;
@@ -174,37 +186,40 @@ require_once('base-back.php');
                                           <label>Prix</label>
                                       </div>
                                       <div class="col-md-12" style="margin-bottom: 10px;">
-                                          <?php $at['workshop_price'] = json_decode($at['workshop_price']); //die(var_dump((int)$at['workshop_price'][0][1])); ?>
+                                          <?php $at['workshop_price'] = json_decode($at['workshop_price']); ?>
 
-                                          <input class="col-md-2 myInputs" type="number" name="nbpers1_<?= $at['workshop_id'] ?>" placeholder="nombre de personnes" style="margin-right: 10px;" value="<?php echo $nbpers = ($at['workshop_price'][0][0]) ?? (int)$at['workshop_price'][0][0];?>">
-                                          <input type="number" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix1_<?= $at['workshop_id'] ?>" value="" placeholder="Entrer un prix" value="<?php echo $prix = ($at['workshop_price'][0][1]) ?? (int)$at['workshop_price'][0][1];?>">
-                                          <input class="col-md-2 myInputs" type="text" name="soit1_<?= $at['workshop_id'] ?>" placeholder="prix par heure" value="<?php echo $soit = ($at['workshop_price'][0][2]) ?? $at['workshop_price'][0][2];?>">
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers1_<?= $at['workshop_id'] ?>" placeholder="Nombre de personnes / zone" style="margin-right: 10px;" value="<?= $at['workshop_price'][0][0] ?>">
+                                          <input type="text" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix1_<?= $at['workshop_id'] ?>" placeholder="Entrer un prix | exemple : 90 €" value="<?= $at['workshop_price'][0][1] ?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit1_<?= $at['workshop_id'] ?>" placeholder="Prix par heure | exemple : soit 30 € / h" value="<?= $at['workshop_price'][0][2] ?>">
                                       </div>
                                       <div class="col-md-12" style="margin-bottom: 10px;">
-                                          <input class="col-md-2 myInputs" type="number" name="nbpers2_<?= $at['workshop_id'] ?>" placeholder="nombre de personnes" style="margin-right: 10px;" value="<?php echo $nbpers = ($at['workshop_price'][1][0]) ?? (int)$at['workshop_price'][1][0];?>">
-                                          <input type="number" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix2_<?= $at['workshop_id'] ?>" value="" placeholder="Entrer un prix" value="<?php echo $prix = ($at['workshop_price'][1][1]) ?? (int)$at['workshop_price'][1][1];?>">
-                                          <input class="col-md-2 myInputs" type="text" name="soit2_<?= $at['workshop_id'] ?>" placeholder="prix par heure" value="<?php echo $soit = ($at['workshop_price'][1][2]) ?? $at['workshop_price'][1][2];?>">
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers2_<?= $at['workshop_id'] ?>" placeholder="Nombre de personnes / zone" style="margin-right: 10px;" value="<?= $at['workshop_price'][1][0] ?>">
+                                          <input type="text" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix2_<?= $at['workshop_id'] ?>" placeholder="Entrer un prix | exemple : 90 €" value="<?= $at['workshop_price'][1][1] ?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit2_<?= $at['workshop_id'] ?>" placeholder="Prix par heure | exemple : soit 30 € / h" value="<?= $at['workshop_price'][1][2] ?>">
                                       </div>
                                       <div class="col-md-12" style="margin-bottom: 10px;">
-                                          <input class="col-md-2 myInputs" type="number" name="nbpers3_<?= $at['workshop_id'] ?>" placeholder="nombre de personnes" style="margin-right: 10px;" value="<?php echo $nbpers = ($at['workshop_price'][2][0]) ?? (int)$at['workshop_price'][2][0];?>">
-                                          <input type="number" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix3_<?= $at['workshop_id'] ?>" value="" placeholder="Entrer un prix" value="<?php echo $prix = ($at['workshop_price'][2][1]) ?? (int)$at['workshop_price'][2][1];?>">
-                                          <input class="col-md-2 myInputs" type="text" name="soit3_<?= $at['workshop_id'] ?>" placeholder="prix par heure" value="<?php echo $soit = ($at['workshop_price'][2][2]) ?? $at['workshop_price'][2][2];?>">
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers3_<?= $at['workshop_id'] ?>" placeholder="Nombre de personnes / zone" style="margin-right: 10px;" value="<?= $at['workshop_price'][2][0] ?>">
+                                          <input type="text" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix3_<?= $at['workshop_id'] ?>" placeholder="Entrer un prix | exemple : 90 €" value="<?= $at['workshop_price'][2][1] ?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit3_<?= $at['workshop_id'] ?>" placeholder="Prix par heure | exemple : soit 30 € / h" value="<?= $at['workshop_price'][2][2] ?>">
                                       </div>
-                                      <div class="col-md-12" style="margin-bottom: 10px;">
-                                          <input class="col-md-2 myInputs" type="number" name="nbpers4_<?= $at['workshop_id'] ?>" placeholder="nombre de personnes" style="margin-right: 10px;" value="<?php echo $nbpers = ($at['workshop_price'][3][0]) ?? (int)$at['workshop_price'][3][0];?>">
-                                          <input type="number" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix4_<?= $at['workshop_id'] ?>" value="" placeholder="Entrer un prix" value="<?php echo $prix = ($at['workshop_price'][3][1]) ?? (int)$at['workshop_price'][3][1];?>">
-                                          <input class="col-md-2 myInputs" type="text" name="soit4_<?= $at['workshop_id'] ?>" placeholder="prix par heure" value="<?php echo $soit = ($at['workshop_price'][2][2]) ?? $at['workshop_price'][3][2];?>">
+                                      <div class="col-md-12" style="margin-bottom: 30px;">
+                                          <input class="col-md-2 myInputs" type="number" name="nbpers4_<?= $at['workshop_id'] ?>" placeholder="Nombre de personnes / zone" style="margin-right: 10px;" value="<?= $at['workshop_price'][3][0] ?>">
+                                          <input type="text" class="col-md-7 myInputs" style="margin-right: 10px;" name="prix4_<?= $at['workshop_id'] ?>" placeholder="Entrer un prix | exemple : 90 €" value="<?= $at['workshop_price'][3][1] ?>">
+                                          <input class="col-md-2 myInputs" type="text" name="soit4_<?= $at['workshop_id'] ?>" placeholder="Prix par heure | exemple : soit 30 € / h" value="<?= $at['workshop_price'][3][2] ?>">
                                       </div>
                                   </div>
 
                                     <div class="form-group" id="updateProject<?= $at['workshop_id'] ?>">
-                                      <label for="project">Projets</label>
-                                      <textarea class="form-control" id="project_update" name="project<?= $at['workshop_id'] ?>" rows="5" cols="30" placeholder="Entrer vos projets"><?= $at['workshop_projects'] ?></textarea>
+                                        <?php $at['workshop_projects'] = json_decode($at['workshop_projects']); //ie(var_dump($at['workshop_projects']));?>
+                                      <label for="project">Commentaires sur 3 paragraphes maximum</label>
+                                      <textarea class="form-control" id="project_update" name="project1_<?= $at['workshop_id'] ?>" rows="5" cols="30" placeholder="Exemple : Rappel : 1 atelier = 3 heures, chez toi, machine, tissus et fournitures compris" style="margin-bottom: 15px;"><?= $at['workshop_projects'][0] ?></textarea>
+                                      <textarea class="form-control" id="project_update" name="project2_<?= $at['workshop_id'] ?>" rows="5" cols="30" placeholder="Exemple : Les tarifs dépendent de ta zone géographique :" style="margin-bottom: 15px;"><?= $at['workshop_projects'][1] ?></textarea>
+                                      <textarea class="form-control" id="project_update" name="project3_<?= $at['workshop_id'] ?>" rows="5" cols="30" placeholder="Exemple : Zone 1 : Paris, 92, 93, 95 Zone 2 : 77, 78, 91, 94 Zone 3 : autres" style="margin-bottom: 15px;"><?= $at['workshop_projects'][2] ?></textarea>
                                     </div>
 
                                     <input type="hidden" name="secretid<?= $at['workshop_id'] ?>" value="<?= $at['workshop_id'] ?>">
 
-                                    <button id="updateButton<?= $at['workshop_id'] ?>" type="submit" class="btn btn-primary" name="update<?= $at['workshop_id'] ?>">Modifier l'atelier</button>
+                                    <button id="updateButton<?= $at['workshop_id'] ?>" type="submit" class="btn btn-primary" name="update<?= $at['workshop_id'] ?>">Modifier l'offre</button>
 
                                 </form>
                             </div>
@@ -222,8 +237,7 @@ require_once('base-back.php');
           <div class="panel panel-default">
             <div class="panel-heading">Rendu</div>
             <div class="panel-body">
-              <iframe src="../index.php#offres" width="100%" height="500" sandbox>
-              </iframe>
+              <iframe src="iframes/offre.php" width="100%" height="800" sandbox></iframe>
             </div>
           </div>
         </div>
