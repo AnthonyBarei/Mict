@@ -941,8 +941,6 @@ Conquérir le Monde, MouahahahAHAHAHAHAH !
 		</div>
     		<div id="fade" class="black_overlay"></div>
 	</footer>
-
-
 <!-- 	<script type="text/javascript" src="assets/js/madeincheztoi-min.js"></script> -->
 
 </body>

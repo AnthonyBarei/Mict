@@ -711,8 +711,8 @@ section, #ateliers, footer {padding:0 0 30px;}
 #offres .contenu { width:100%;}
 .clients { width:100px; height:150px; padding:0px 0px 0; margin:0 auto; position:relative;}
 .clients .image { width:100px; height:100px; border-radius:15px; position:absolute; top:25px;}
-.clients .picto { position:absolute; top:35px; width:80px; height:80px;}
-.left, .right {float:none;}
+/*.clients .picto { position:absolute; top:35px; width:80px; height:80px;}
+*/.left, .right {float:none;}
 #offres .a_suivre {padding:10px 0; }
 hr {margin:20px 0;}
 
