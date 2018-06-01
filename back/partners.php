@@ -183,7 +183,7 @@ require_once('base-back.php');
                                     <input type="hidden" name="secretid<?= $pa['partners_id'] ?>" value="<?= $pa['partners_id'] ?>">
 
                                     <button id="updateButton<?= $pa['partners_id'] ?>" type="submit" class="btn btn-primary" name="update<?= $pa['partners_id'] ?>">Sauvegarder les modifications</button>
-                                    <a href="/Mict/back/partners.php?delete=<?= $pa['partners_id'] ?>" onclick="return confirm('êtes vous sûr de vouloir supprimer ce partenaire?');"><i class="fas fa-times fa-2x" style="float: right; margin-top: 5px;"></i></a>
+                                    <a href="partners.php?delete=<?= $pa['partners_id'] ?>" onclick="return confirm('êtes vous sûr de vouloir supprimer ce partenaire?');"><i class="fas fa-times fa-2x" style="float: right; margin-top: 5px;"></i></a>
                                 </form>
                             </div>
 
