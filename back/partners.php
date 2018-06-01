@@ -11,7 +11,7 @@ if(isset($_GET['delete'])) {
 }
 
 if(isset($_POST['create'])) {
-    $_POST['desc' . $par['partners_id']] = preg_replace("/[\r\n]+/", "<br/>", $_POST['desc' . $par['partners_id']]);
+    $_POST['desc'] = preg_replace("/[\r\n]+/", "<br/>", $_POST['desc']);
     $try = [
         "name" =>  $_POST['name'],
         "image" => $_POST['image'],
