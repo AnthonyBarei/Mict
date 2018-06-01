@@ -379,27 +379,34 @@
 
 	<hr id="carte_cadeau">
 
-		<div class="n3-3">
-		<div class="left clients">
+	<?php
+	$offreList[2]['workshop_infos'] = json_decode($offreList[2]['workshop_infos']);
+	$end_infos = end($offreList[2]['workshop_infos']);
+
+	$offreList[2]['workshop_description'] = json_decode($offreList[2]['workshop_description']);
+	 ?>
+
+<div class="n3-3">
+	<div class="left clients">
 			<div class="image"></div>
 			<div class="picto"></div>
-		</div>
-		<div class="texte">
-	   <h2>La carte cadeau Made in chez toi</h2>
-	<div class="acc2">90 €&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Valable un an&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Ateliers ou cours particuliers&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Paris / région parisienne&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;Son coupe-fil offert</div>
-<p>
-Tu es à la recherche d'un cadeau original et personnalisé pour Noël ? Pour un anniversaire ? Une fête de famille ? Un départ en retraite ?
-</p><p>
-Avec la carte cadeau Made in chez toi, tu peux offrir un cadeau inédit, convivial et, par dessus tout, utile !
-</p><p>
-Pour toi, au même tarif qu'un cours ou un atelier classique, c'est la réception rapide (par lettre prioritaire) d'une carte cadeau réelle, tangible, personnalisée et très originale (bien plus qu'un simple code à taper dans un champ "code promotionnel"...) qui mettra très vite l'eau à la bouche de son destinataire.
-</p><p>
-Pour l'heureux bénéficiaire, c'est l'assurance de pouvoir participer sous un an à un atelier ou un cours particulier de son choix, avec les mêmes avantages que les autres clients (ateliers collectifs tout inclus, cours particuliers sur-mesure...). Mais comme ce n'est tout de même pas un client comme un autre, un accessoire indispensable lui sera offert le jour de la prestation !
-</p><p>
-Alors n'hésite plus et fais découvrir la passion de la couture à tes proches !
-</p>
-                </div>
-           </div>
+	</div>
+	<div class="texte">
+			<h2><?= $offreList[2]['workshop_name'] ?></h2>
+			<div class="acc2">
+					<?php foreach ($offreList[2]['workshop_infos'] as $key => $info) : ?>
+							<?php if ($info === $end_infos) : ?>
+									<?= $info ?>
+							<?php else : ?>
+									<?= $info ?>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+							<?php endif; ?>
+					<?php endforeach; ?>
+			</div>
+			<?php foreach ($offreList[2]['workshop_description'] as $key => $paragraphe) : ?>
+					<p><?= $paragraphe ?></p>
+			<?php endforeach; ?>
+	</div>
+</div>
 
 	   <div class="a_suivre">
             <div class="bouton entier">
@@ -409,23 +416,32 @@ Alors n'hésite plus et fais découvrir la passion de la couture à tes proches 
 
 	<hr id="CE">
 
+	    <?php
+    $offreList[3]['workshop_infos'] = json_decode($offreList[3]['workshop_infos']);
+    $end_infos = end($offreList[3]['workshop_infos']);
+
+    $offreList[3]['workshop_description'] = json_decode($offreList[3]['workshop_description']);
+     ?>
+
 		<div class="n3-4">
 		<div class="right clients">
 			<div class="image"></div>
 			<div class="picto"></div>
 		</div>
 		<div class="texte">
-	   <h2>Entreprises, CE et projets sur mesure</h2>
-	<div class="acc2">Plusieurs formules&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;à domicile ou dans l'entreprise&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;ateliers ou stages&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;tout inclus</div>
-		<p>Made in chez toi n'oublie pas le monde du travail ! Parce que ce que l'on peut coudre entre amis, on peut le coudre entre collègues :)</p>
-
-		<p>Plusieurs formules sont possibles : subvention de cours ou d'ateliers chez les salariés sous forme de bons d'achat, ateliers dans vos locaux ou à proximité, animation de stage de couture, pendant l'année ou lors de vacances scolaires... Le tout avec des prix agressifs et dégressifs :) Votre devis et tous les détails sur demande, <a class="scrollTo" href="#contact" Title="Contact">ici.</a></p>
-
-		<p>Comme pour les ateliers, tout est inclus : une machine à coudre haut de gamme par personne, les tissus, fil, accessoires, outils... Rien à apporter, et à la fin de l'atelier, une création à emporter !</p>
-
-		<p>En plus des CE, Made in chez toi anime aussi des <a href="http://blog.madeincheztoi.com/la-couture-prend-le-chemin-de-lecole/" target="_blank">ateliers découverte de la couture par les enfants</a>. Une offre complète est disponible, des goûters et animations d'anniversaires (de 6 à 15 ans) jusqu'aux animations scolaires (dès le CP), en passant par des stages ou par des ateliers 4 mains (mères / filles) pour transmettre ensemble la passion de la couture à vos enfants.</p>
-
-		<p>Quels qu'ils soient, discutons de vos projets !</p>
+			<h2><?= $offreList[3]['workshop_name'] ?></h2>
+				<div class="acc2">
+			        <?php foreach ($offreList[3]['workshop_infos'] as $key => $info) : ?>
+			            <?php if ($info === $end_infos) : ?>
+			                <?= $info ?>
+			            <?php else : ?>
+			                <?= $info ?>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+			            <?php endif; ?>
+			        <?php endforeach; ?>
+			    </div>
+						    <?php foreach ($offreList[3]['workshop_description'] as $key => $paragraphe) : ?>
+			        <p><?= $paragraphe ?></p>
+			    <?php endforeach; ?>
 
 		</div>
 	   <div class="a_suivre">

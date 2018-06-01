@@ -11,13 +11,13 @@ if (isset($_GET['q'])) {$requete = $_GET['q']; }
         <meta name="description" content="Ateliers couture collectifs ou cours particuliers, dans ton salon ou chez tes amis • Offre un moment couture sympa à tes amis !"/> 
         <meta name="keywords" content="couture, cours, lecons, reservation, reserver, debuter, debutant, commencer, apprendre, facile, paris, region parisienne, atelier, ateliers, domicile, particulier, inclus, lecon, formation, gratuit, amies, amis, debutante, made in chez toi, idf, made, in, chez, toi"/> 
         <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png" />
-        <link rel="stylesheet" href="assets/css/style_madeincheztoi.css" />
-         <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/js/made_in_chez_toi-min.js"></script>
         <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/css/style_madeincheztoi.css" />
         <link rel="author" href="http://www.madeincheztoi.com/index.html#faq11" />
         <link rel="canonical" href="http://www.madeincheztoi.com/commander_carte_cadeau_couture_madeincheztoi.php" />
-
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Ateliers et cours de couture Made in chez toi • Carte cadeau" />
