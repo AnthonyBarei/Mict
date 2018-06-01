@@ -118,7 +118,7 @@
 
             //die(var_dump($current));
         ?>
-<marquee style="margin-top: 20px;"><?= $current['news_body'] ?> <?php if($current['news_link'] !== "") { echo '<a href="'.$current['news_link'].'" style="color: blue;" target="_blank">'.$current['news_title'].'</a>'; } else { die(); } ?></marquee>
+<marquee style="margin-top: 20px;"><?= $current['news_body'] ?> <?php if($current['news_link'] !== "") { echo '<a href="'.$current['news_link'].'" style="color: blue;" target="_blank">'.$current['news_title'].'</a>'; } ?></marquee>
 		<h1> Ateliers et cours de couture chez toi</h1>
 	 <a class="scrollTo" href="#quoi"><div class="suite_fleche"></div></a>
 	</section>
