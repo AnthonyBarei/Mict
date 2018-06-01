@@ -11,6 +11,7 @@ if(isset($_GET['delete'])) {
 }
 
 if(isset($_POST['create'])) {
+    $_POST['desc' . $par['partners_id']] = preg_replace("/[\r\n]+/", "<br/>", $_POST['desc' . $par['partners_id']]);
     $try = [
         "name" =>  $_POST['name'],
         "image" => $_POST['image'],
@@ -27,6 +28,7 @@ $partenaire = $pn->partnerList();
 
 foreach( $partenaire as $par ) {
     if(isset($_POST['update' . $par['partners_id']])) {
+      $_POST['desc' . $par['partners_id']] = preg_replace("/[\r\n]+/", "<br/>", $_POST['desc' . $par['partners_id']]);
         $try = [
                 "id" => $_POST['secretid' . $par['partners_id']],
                 "image" => $_POST['image' . $par['partners_id']],
@@ -116,7 +118,7 @@ require_once('base-back.php');
           </form>
             </div>
         </div>
-    </div>    
+    </div>
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading"><h1>Modification des partenaires</h1></div>
