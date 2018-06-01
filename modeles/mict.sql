@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  jeu. 31 mai 2018 à 15:45
+-- Généré le :  ven. 01 juin 2018 à 10:57
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.6
 
@@ -71,6 +71,31 @@ CREATE TABLE `goldenbook` (
   `goldenbook_date` date NOT NULL,
   `goldenbook_commentary` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `news_title` varchar(400) NOT NULL,
+  `news_body` varchar(1500) NOT NULL,
+  `news_link` varchar(600) NOT NULL,
+  `news_start` date NOT NULL,
+  `news_end` date NOT NULL,
+  `news_recurrence` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `news`
+--
+
+INSERT INTO `news` (`id`, `news_title`, `news_body`, `news_link`, `news_start`, `news_end`, `news_recurrence`) VALUES
+(13, 'Testdqfddsfsqfqsdf5646548784', 'tesetestetsetsetsetsetestestestsetestestsetestestokokokokkokook ko ok ok ok ok okok ok ok', 'http://google.fr', '2018-06-01', '2018-06-02', 1),
+(24, 'TEST2', 'TESETESTSETSETSETSETSEt', 'http://test.fr', '2018-06-08', '2018-06-30', 1),
+(25, 'test4', 'gdsgsdfgsgsdgsdfgsdfg', 'sfdgsdfgsd', '2018-06-09', '2018-06-16', 1);
 
 -- --------------------------------------------------------
 
@@ -256,6 +281,12 @@ ALTER TABLE `goldenbook`
   ADD KEY `goldenbook_user` (`goldenbook_user`);
 
 --
+-- Index pour la table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `offer`
 --
 ALTER TABLE `offer`
@@ -309,6 +340,11 @@ ALTER TABLE `config`
 --
 ALTER TABLE `goldenbook`
   MODIFY `goldenbook_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT pour la table `offer`
 --

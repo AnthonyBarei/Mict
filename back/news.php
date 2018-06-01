@@ -24,15 +24,17 @@ include_once('../controllers/news.php');
  if(isset($_POST['update'])) {
      $try = $ws->updateNews(
          array(
-             "id" => $_POST['id'],
-             "name" =>  $_POST['name'],
-             "infos" => $_POST['infos'],
-             "description" => $_POST['desc'],
-             "price" => $_POST['prix'],
-             "projects" => $_POST['project']
+             "id" => $_POST['update_id'],
+             "title" =>  $_POST['update_title'],
+             "body" => $_POST['update_body'],
+             "link" => $_POST['update_link'],
+             "start" => $_POST['update_datedebut'],
+             "end" => $_POST['update_datefin'],
+             "rec" => $_POST['update_rec']
         )
     );
  }
+
  if(isset($_POST['delete'])) {
      $try = $ws->deleteNews($_POST['id']);
  }
@@ -48,6 +50,7 @@ include_once('../controllers/news.php');
             <div class="panel-body">
 
                 <form class="" action="" method="post">
+
                     <div class="form-group">
                         <label for="title">Nom</label>
                         <input type="text" class="form-control" name="title" id="title" value="">
@@ -75,10 +78,12 @@ include_once('../controllers/news.php');
 
                     <div class="form-group">
                         <label for="reccurrence" style="margin-right: 20px;">Tout les ans ?</label>
-                        <input type="checkbox" class="form-check-input" name="reccurrence" id="reccurrence" value="1">
+                        <input type="radio" class="form-check-input" name="rec" id="recOui" value="1"> Oui
+                        <input type="radio" class="form-check-input" name="rec" id="recNon" style="margin-left: 10px;" value="0"> Non
                     </div>
 
                     <button id="create" type="submit" class="btn btn-primary" name="create">Créer News</button>
+
                 </form>
             </div>
         </div>
@@ -89,9 +94,9 @@ include_once('../controllers/news.php');
             <div class="panel-heading">Modifier une news</div>
             <div class="panel-body">
 
-                <?php $newsList = $ws->NewsList(); //die(var_dump($newsList)); ?>
-
-
+                <?php $newsList = $ws->NewsList(); //print_r($newsList);
+                        $jsarray = json_encode($newsList);
+                ?>
 
                 <div class="form-group">
                     <label for="list">Liste des news</label>
@@ -103,6 +108,9 @@ include_once('../controllers/news.php');
                 </div>
 
                 <form class="" action="" method="post">
+
+                    <input type="hidden" name="update_id" id="update_id" value="">
+
                     <div class="form-group">
                         <label for="update_title">Nom</label>
                         <input type="text" class="form-control" name="update_title" id="update_title" value="">
@@ -129,23 +137,62 @@ include_once('../controllers/news.php');
                     </div>
 
                     <div class="form-group">
-                        <label for="update_reccurrence" style="margin-right: 20px;">Tout les ans ?</label>
-                        <input type="checkbox" class="form-check-input" name="update_reccurrence" id="update_reccurrence" value="1">
+                        <label for="update_rec" style="margin-right: 20px;">Tout les ans ?</label>
+                        <input type="radio" class="form-check-input" name="update_rec" id="update_recOui" value="1"> Oui
+                        <input type="radio" class="form-check-input" name="update_rec" id="update_recNon" style="margin-left: 10px;" value="0"> Non
                     </div>
 
                     <button id="update" type="submit" class="btn btn-primary" name="update">Modifier News</button>
+
+                    <a href="" id="delete" onclick="confirm(Êtes vous sûr de vouloir supprimer cette news ?);">
+                        <i class="fas fa-times fa-2x" style="float: right; font-size: 35px;"></i>
+                    </a>
+
                 </form>
             </div>
         </div>
     </div>
 
 <script type="text/javascript">
-    var selected = $('#list').find(":selected").text(); console.log(selected);
+
+    $('#recNon').prop('checked', true);
+
+    values = <?= $jsarray ?>;
+
+    $('#delete').attr('href', 'news.php?delete=' + values[0][0]);
+    $('#update_id').val(values[0][0]);
+    $('#update_title').val(values[0][1]);
+    $('#update_body').val(values[0][2]);
+    $('#update_link').val(values[0][3]);
+    $('#update_datedebut').val(values[0][4]);
+    $('#update_datefin').val(values[0][5]);
+
+    if(values[0][6] == 1) {
+        $('#update_recOui').prop('checked', true);
+    } else {
+        $('#update_recNon').prop('checked', true);
+    }
 
     function changeUpdate() {
-        var selected = $('#list').find(":selected"); console.log(selected);
+        var selected = $('#list').find(":selected");
+        var id = selected.attr("name");
 
-        $('#update_title').val();
+        // console.log(id);
+        //
+        // console.log(values[id][1]);
+        $('#update_id').val(values[id][0]);
+        $('#update_title').val(values[id][1]);
+        $('#update_body').val(values[id][2]);
+        $('#update_link').val(values[id][3]);
+        $('#update_datedebut').val(values[id][4]);
+        $('#update_datefin').val(values[id][5]);
+
+        if(values[id][6] == 1) {
+            $('#update_recOui').prop('checked', true);
+        } else {
+            $('#update_recNon').prop('checked', true);
+        }
+
     }
 </script>
 

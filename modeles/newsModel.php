@@ -63,28 +63,36 @@ class newsModel extends DbConnect {
       return $result;
     }
 
-    public function updateOffers($params) {
+    public function updateNews($params) {
         $dbh = $this->connect();
 
         $res = $dbh->prepare('
-            UPDATE offer
+            UPDATE news
             SET
-                offer_name = :name,
-                offer_date = :date
-            WHERE offer_id = :id
+                news_title = :title,
+                news_body = :body,
+                news_link = :link,
+                news_start = :start,
+                news_end = :end,
+                news_recurrence = :rec
+            WHERE id = :id
         ');
 
+        // die(var_dump($params));
+
         $result = $res->execute($params);
+
+        //die(var_dump($result));
 
         return $result;
     }
 
-    public function deleteOffers($id) {
+    public function deleteNews($id) {
         $dbh = $this->connect();
 
         $res = $dbh->prepare('
-            DELETE FROM offer
-            WHERE offer_id = :id
+            DELETE FROM news
+            WHERE id = :id
         ');
 
         $res->bindParam('id', $id);

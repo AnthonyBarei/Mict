@@ -44,7 +44,7 @@ class News {
         // Traiter les données reçues
 
         $news = new newsModel();
-        $result = $news->updateNews();
+        $result = $news->updateNews($params);
 
         // Traiter les données reçues
 
