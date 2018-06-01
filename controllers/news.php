@@ -1,9 +1,9 @@
-<?php require_once('modeles/newsModel.php');
+<?php require_once('../modeles/newsModel.php');
 
 class News {
     public function NewsList() {
         $news = new newsModel();
-        $result = $offer->getOffers();
+        $result = $news->getNews();
 
         // Traiter les données reçues
 
@@ -44,7 +44,7 @@ class News {
         // Traiter les données reçues
 
         $news = new newsModel();
-        $result = $offer->updateOffer();
+        $result = $news->updateNews();
 
         // Traiter les données reçues
 
@@ -55,7 +55,7 @@ class News {
         $id = (integer) $id;
 
         $news = new newsModel();
-        $result = $offer->deleteOffer();
+        $result = $news->deleteNews();
 
         // Traiter les données reçues
 
