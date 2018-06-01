@@ -41,5 +41,6 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.</br>";
     }
 }
-header("Location:".$_POST['redirect']);
+header("Location: " . $_POST['redirect']);
+die();
 ?>

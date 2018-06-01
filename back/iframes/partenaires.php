@@ -63,7 +63,7 @@
 					echo"<div class='partner_a "; if ($i % 2 == 0 || $i % 2 == 0 ){ echo "impair";}else {echo "pair";} echo"'>";
 						echo"<div class='partner'>";
 							echo"<a href='". $partnerlist[$i]['partner_link']."' target='_blank'>";
-						 		echo"<img src='". $partnerlist[$i]['partner_image']."' alt='' />";
+						 		echo"<img src='../../". $partnerlist[$i]['partner_image']."' alt='' />";
 							echo"</a>";
 							echo"<div class='desc'>";
 								echo"<a href='". $partnerlist[$i]['partner_link']."' target='_blank'>";
