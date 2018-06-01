@@ -266,7 +266,7 @@
         </div>
     </div>
 <?php $offreList[0]['workshop_price'] = json_decode($offreList[0]['workshop_price']); ?>
-    <div class="show_tarifs">
+    <div class="show_tarifs" style="height: 500px;">
         <div class="tarifs">
             <div class="table">
                 <div class="thead">
@@ -343,7 +343,7 @@
         </div>
     </div>
 <?php $offreList[1]['workshop_price'] = json_decode($offreList[1]['workshop_price']); ?>
-    <div class="show_tarifs_cp">
+    <div class="show_tarifs_cp" style="height: 600px;">
         <div class="introbox">
             <p><?= $offreList[1]['workshop_projects'][0] ?></p>
             <p><?= $offreList[1]['workshop_projects'][1] ?></p>
