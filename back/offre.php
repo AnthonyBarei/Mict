@@ -237,7 +237,7 @@ require_once('base-back.php');
           <div class="panel panel-default">
             <div class="panel-heading">Rendu</div>
             <div class="panel-body">
-              <iframe src="iframes/offre.php" width="100%" height="800" sandbox="allow-scripts"></iframe>
+              <iframe src="iframes/offre.php" width="100%" height="800" sandbox="allow-same-origin allow-scripts"></iframe>
             </div>
           </div>
         </div>

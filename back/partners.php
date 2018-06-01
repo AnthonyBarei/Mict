@@ -196,6 +196,15 @@ require_once('base-back.php');
             </div>
         </div>
     </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h1>Rendu</h1></div>
+          <div class="panel-body">
+            <iframe
+            src="../index.php#partenaires" width="100%" height="500" sandbox="allow-same-origin allow-scripts"></iframe>
+          </div>
+        </div>
+      </div>
 </div>
 
 

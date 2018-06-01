@@ -121,7 +121,7 @@
           <div class="panel-heading">Rendu</div>
           <div class="panel-body">
             <iframe
-            src="../photo.php" width="100%" height="500" sandbox ></iframe>
+            src="../photo.php" width="100%" height="500" sandbox="allow-same-origin allow-scripts"></iframe>
           </div>
         </div>
       </div>

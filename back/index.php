@@ -50,7 +50,7 @@
           <iframe
  src="../index.php#home"
  width="100%" height="500"
- sandbox="allow-scripts">
+ sandbox="allow-same-origin allow-scripts">
 </iframe>
         </div>
       </div>
