@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="assets/css/baguetteBox.min.css"/>
 
     </head>
-    <body>
+    <body style="background-image: url(assets/images/bg/bgstar.png)">
 
   <nav class="navbar navbar-inverse navbar-center navbar-fixed-top" role="navigation">
 
