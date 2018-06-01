@@ -55,7 +55,7 @@ class News {
         $id = (integer) $id;
 
         $news = new newsModel();
-        $result = $news->deleteNews();
+        $result = $news->deleteNews($id);
 
         // Traiter les données reçues
 

@@ -36,10 +36,12 @@ class newsModel extends DbConnect {
       $res = $dbh->prepare('
           SELECT *
           FROM news
-          WHERE news_start < (SELECT NOW())
-          AND news_end > (SELECT NOW())
+          WHERE news_start <= (SELECT NOW())
+          AND news_end >= (SELECT NOW())
       ');
-      $result = $res->fetchAll();
+
+      $res->execute();
+      $result = $res->fetch();
 
       return $result;
     }

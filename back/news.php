@@ -2,23 +2,43 @@
 include_once('../controllers/news.php');
 
  $ws = new News();
+ $checkList = $ws->NewsList();
+$error = "";
+
  if(isset($_POST['create'])) {
-     if(!isset($_POST['reccurrence'])) {
-         $_POST['reccurrence'] = false;
-     } else {
-         $_POST['reccurrence'] = true;
+
+     foreach ($checkList as $key => $value) {
+
+         $dateverif = date('Y-m-d', strtotime($_POST['datedebut']));
+         $datedebutverif = date('Y-m-d', strtotime($value['news_start']));
+         $datefinverif = date('Y-m-d', strtotime($value['news_end']));
+
+        //die(var_dump($datedebutverif));
+
+         if($_POST['datedebut'] === $value['news_start'] || ($dateverif >= $datedebutverif) && ($dateverif <= $datefinverif)) {
+             $error = "Une news existe déjà pour cette date";
+             break;
+         }
      }
-     //die(var_dump($_POST['reccurrence']));
-     $try = $ws->createNews(
-         array(
-           "title" =>  $_POST['title'],
-           "body" => $_POST['body'],
-           "link" => $_POST['link'],
-           "start" => $_POST['datedebut'],
-           "end" => $_POST['datefin'],
-           "rec" => $_POST['reccurrence']
-        )
-    );
+
+     if($error === "") {
+         if(!isset($_POST['reccurrence'])) {
+             $_POST['reccurrence'] = false;
+         } else {
+             $_POST['reccurrence'] = true;
+         }
+         //die(var_dump($_POST['reccurrence']));
+         $try = $ws->createNews(
+             array(
+               "title" =>  $_POST['title'],
+               "body" => $_POST['body'],
+               "link" => $_POST['link'],
+               "start" => $_POST['datedebut'],
+               "end" => $_POST['datefin'],
+               "rec" => $_POST['reccurrence']
+            )
+        );
+     }
  }
 
  if(isset($_POST['update'])) {
@@ -35,8 +55,10 @@ include_once('../controllers/news.php');
     );
  }
 
- if(isset($_POST['delete'])) {
-     $try = $ws->deleteNews($_POST['id']);
+ if(isset($_GET['delete'])) {
+     $try = $ws->deleteNews($_GET['delete']);
+     header('Location: news.php');
+     die();
  }
 
  require_once('base-back.php');
@@ -50,6 +72,12 @@ include_once('../controllers/news.php');
             <div class="panel-body">
 
                 <form class="" action="" method="post">
+
+                    <?php if ($error !== "") : ?>
+                        <div class="alert alert-danger" role="alert" id="error-infos" style="margin-top: 20px;">
+                            <?= $error ?>
+                        </div>
+                    <?php endif; ?>
 
                     <div class="form-group">
                         <label for="title">Nom</label>
@@ -144,7 +172,7 @@ include_once('../controllers/news.php');
 
                     <button id="update" type="submit" class="btn btn-primary" name="update">Modifier News</button>
 
-                    <a href="" id="delete" onclick="confirm(Êtes vous sûr de vouloir supprimer cette news ?);">
+                    <a href="" id="delete">
                         <i class="fas fa-times fa-2x" style="float: right; font-size: 35px;"></i>
                     </a>
 
@@ -194,6 +222,10 @@ include_once('../controllers/news.php');
         }
 
     }
+
+    $('#delete').click(function() { console.log("delete");
+        confirm('Êtes vous sûr de vouloir supprimer cette news ?');
+    });
 </script>
 
   </body>

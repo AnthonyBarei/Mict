@@ -59,14 +59,14 @@
       <div class="panel panel-default">
         <div class="panel-heading">Supprimer une image de l'album 2</div>
         <div class="panel-body">
-          <?php if($dossier = opendir('../assets/images/album1')){ ?>
+          <?php if($dossier = opendir('../assets/images/album2')){ ?>
             <form action="../controllers/deleteFile.php" method="post">
               <select class="form-control" name="todeletefile">
                 <?php
                   $fichier = readdir($dossier);
                   $fichier = readdir($dossier);
                   while(false !== ($fichier = readdir($dossier))){
-                    echo"<option value='../assets/images/album1/". $fichier ."'>". $fichier ." ";
+                    echo"<option value='../assets/images/album2/". $fichier ."'>". $fichier ." ";
                   }
                 ?>
               </select> <br>

@@ -111,7 +111,14 @@
 			</div>
 		</div>
 		</div>
-<marquee style="margin-top: 20px;">Le texte à faire défiler, On place la donnée de la base ici et ca defile </marquee>
+
+        <?php include_once("modeles/newsModel.php");
+            $news = new NewsModel();
+            $current = $news->getCurrentNews();
+
+            //die(var_dump($current));
+        ?>
+<marquee style="margin-top: 20px;"><?= $current['news_body'] ?> <?php if($current['news_link'] !== "") { echo '<a href="'.$current['news_link'].'" style="color: blue;" target="_blank">'.$current['news_title'].'</a>'; } ?></marquee>
 		<h1> Ateliers et cours de couture chez toi</h1>
 	 <a class="scrollTo" href="#quoi"><div class="suite_fleche"></div></a>
 	</section>
@@ -259,7 +266,7 @@
         </div>
     </div>
 <?php $offreList[0]['workshop_price'] = json_decode($offreList[0]['workshop_price']); ?>
-    <div class="show_tarifs">
+    <div class="show_tarifs" style="height: 500px;">
         <div class="tarifs">
             <div class="table">
                 <div class="thead">
@@ -336,7 +343,7 @@
         </div>
     </div>
 <?php $offreList[1]['workshop_price'] = json_decode($offreList[1]['workshop_price']); ?>
-    <div class="show_tarifs_cp">
+    <div class="show_tarifs_cp" style="height: 600px;">
         <div class="introbox">
             <p><?= $offreList[1]['workshop_projects'][0] ?></p>
             <p><?= $offreList[1]['workshop_projects'][1] ?></p>
