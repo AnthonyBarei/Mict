@@ -111,7 +111,14 @@
 			</div>
 		</div>
 		</div>
-<marquee style="margin-top: 20px;">Le texte à faire défiler, On place la donnée de la base ici et ca defile </marquee>
+
+        <?php include_once("modeles/newsModel.php");
+            $news = new NewsModel();
+            $current = $news->getCurrentNews();
+
+            //die(var_dump($current));
+        ?>
+<marquee style="margin-top: 20px;"><?= $current['news_body'] ?></marquee>
 		<h1> Ateliers et cours de couture chez toi</h1>
 	 <a class="scrollTo" href="#quoi"><div class="suite_fleche"></div></a>
 	</section>

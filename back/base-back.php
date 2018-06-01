@@ -36,6 +36,7 @@
             <li><a href="photo.php">Photo</a></li>
             <li><a href="partners.php">Partenaires</a></li>
             <li><a href="boutique.php">Boutique</a></li>
+            <li><a href="news.php">News</a></li>
           </ul>
 
         </div><!-- /.navbar-collapse -->
